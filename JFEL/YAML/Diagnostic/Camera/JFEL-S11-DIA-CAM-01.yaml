@@ -1,0 +1,8 @@
+name: JFEL-S11-DIA-CAM-01
+hardware_model: MANTA
+machine_area: S11
+physical:
+  middle:
+    z: 67.316234
+hardware_type: Camera
+hardware_class: Diagnostic

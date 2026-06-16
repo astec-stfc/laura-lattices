@@ -1,0 +1,9 @@
+name: JFEL-MU2-SIM-SIM-APER-01
+hardware_class: Simulation
+machine_area: MU2
+physical:
+  middle:
+    z: 53.7062
+  global_rotation:
+    theta: -2.0e-06
+hardware_type: Marker

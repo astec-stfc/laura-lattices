@@ -1,0 +1,27 @@
+name: JFEL-FEL-MAG-WIGG-06
+machine_area: FEL
+simulation:
+  field_reference_position: middle
+controls:
+  variables:
+    READK:
+      identifier: JFEL-FEL-MAG-WIGG-06:CalcK
+      dtype: float
+      protocol: CA
+      description: Reads the calculated K value for the wiggler
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 97.5
+  length: 1.968
+magnetic:
+  length: 1.968
+  strength: 8.524
+  period: 0.082
+  num_periods: 24
+  helical: true
+  quadratic_roll_off_x: 0.5
+  quadratic_roll_off_y: 0.5
+hardware_type: Wiggler
+hardware_class: Magnet

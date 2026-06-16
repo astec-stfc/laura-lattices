@@ -1,0 +1,7 @@
+name: JFEL-S04-DIA-SCR-01
+machine_area: S04
+physical:
+  middle:
+    z: 17.313563
+hardware_type: Screen
+hardware_class: Diagnostic

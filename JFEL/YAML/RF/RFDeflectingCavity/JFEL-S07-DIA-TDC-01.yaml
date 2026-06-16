@@ -1,0 +1,16 @@
+name: JFEL-S07-DIA-TDC-01
+hardware_class: RF
+machine_area: S07
+simulation:
+  t_column: t
+  wx_column: Wx
+  wy_column: Wy
+  wz_column: Wz
+physical:
+  middle:
+    z: 40.5795
+  length: 0.45
+cavity:
+  n_cells: 9
+  cell_length: 0.05
+hardware_type: RFDeflectingCavity

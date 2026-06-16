@@ -1,0 +1,7 @@
+name: JFEL-VBC-SIM-MARK-01
+hardware_class: Simulation
+machine_area: VBC
+physical:
+  middle:
+    z: 31.2678
+hardware_type: Marker

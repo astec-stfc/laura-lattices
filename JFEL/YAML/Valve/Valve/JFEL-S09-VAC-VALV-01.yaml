@@ -1,0 +1,7 @@
+name: JFEL-S09-VAC-VALV-01
+hardware_class: Valve
+machine_area: S09
+physical:
+  middle:
+    z: 53.891
+hardware_type: Valve

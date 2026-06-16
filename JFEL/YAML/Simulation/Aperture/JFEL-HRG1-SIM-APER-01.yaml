@@ -1,0 +1,8 @@
+name: JFEL-HRG1-SIM-APER-01
+hardware_class: Simulation
+machine_area: HRG1
+aperture:
+  horizontal_size: 0.017
+  vertical_size: 0.017
+  shape: rectangular
+hardware_type: Aperture

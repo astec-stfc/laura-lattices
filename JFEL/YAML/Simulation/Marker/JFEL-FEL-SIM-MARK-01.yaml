@@ -1,0 +1,7 @@
+name: JFEL-FEL-SIM-MARK-01
+hardware_class: Simulation
+machine_area: FEL
+physical:
+  middle:
+    z: 84.016
+hardware_type: Marker

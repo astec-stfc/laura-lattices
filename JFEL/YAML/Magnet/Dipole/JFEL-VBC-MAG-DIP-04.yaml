@@ -1,0 +1,36 @@
+name: JFEL-VBC-MAG-DIP-04
+machine_area: VBC
+controls:
+  variables:
+    READK:
+      identifier: JFEL-VBC-MAG-DIP-04:CalcK
+      dtype: float
+      protocol: CA
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 31.065382
+  global_rotation:
+    theta: -0.13
+  length: 0.200981
+  physical_angle: 0.13
+magnetic:
+  length: 0.200981
+  multipoles:
+    K0L:
+      normal: 0.13
+    K1L:
+      order: 1
+    K2L:
+      order: 2
+    K3L:
+      order: 3
+    K4L:
+      order: 4
+  entrance_edge_angle: angle
+  order: 0
+hardware_type: Dipole
+hardware_class: Magnet

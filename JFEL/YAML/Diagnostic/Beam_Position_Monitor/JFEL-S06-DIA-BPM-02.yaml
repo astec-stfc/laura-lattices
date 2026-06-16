@@ -1,0 +1,7 @@
+name: JFEL-S06-DIA-BPM-02
+machine_area: S06
+physical:
+  middle:
+    z: 33.929478
+hardware_type: Beam_Position_Monitor
+hardware_class: Diagnostic

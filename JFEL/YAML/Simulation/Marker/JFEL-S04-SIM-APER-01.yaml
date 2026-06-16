@@ -1,0 +1,7 @@
+name: JFEL-S04-SIM-APER-01
+hardware_class: Simulation
+machine_area: S04
+physical:
+  middle:
+    z: 16.2002
+hardware_type: Marker

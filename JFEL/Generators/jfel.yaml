@@ -1,0 +1,36 @@
+defaults:
+  combine_distributions: false
+  species: electron
+  probe_particle: true
+  noise_reduction: false
+  high_resolution: true
+  cathode: true
+  reference_position: 0
+  reference_time: 0
+  initial_energy: 0
+  distribution_type_pz: i
+  thermal_emittance: 0.0009
+  distribution_type_x: radial
+  sigma_x: 0.00025
+  distribution_type_y: radial
+  sigma_y: 0.00025
+  offset_x: 0
+  offset_y: 0
+  laser_energy_ev: 0.000000266
+  work_function_ev: 4.31
+  fermi_energy_ev: 7.0
+  cathode_temperature: 300
+  rf_frequency: 2998500000
+  charge: 0.000000000250
+  distribution_type_px: radial
+  distribution_type_py: radial
+  gaussian_cutoff_x: 1
+  gaussian_cutoff_y: 1
+  gaussian_cutoff_z: 3
+  gaussian_cutoff_px: 1
+  gaussian_cutoff_py: 1
+  gaussian_cutoff_pz: 3
+jfel_400_3ps:
+  distribution_type_z: p
+  plateau_bunch_length: 0.000000000003
+  plateau_rise_time: 0.0000000000002

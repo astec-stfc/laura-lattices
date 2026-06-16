@@ -1,0 +1,11 @@
+name: JFEL-SP3-DIA-BPM-02
+machine_area: SP3
+physical:
+  middle:
+    x: -1.06939
+    z: 47.3447588
+  global_rotation:
+    theta: 0.523599
+  length: 0.21
+hardware_type: Beam_Position_Monitor
+hardware_class: Diagnostic

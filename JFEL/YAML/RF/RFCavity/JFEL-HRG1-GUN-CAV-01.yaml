@@ -1,0 +1,37 @@
+name: JFEL-HRG1-GUN-CAV-01
+hardware_class: RF
+machine_area: HRG1
+simulation:
+  field_definition: $master_lattice$Data_Files/HRRG_1D_RF.hdf5
+  field_amplitude: 120000000.0
+  t_column: t
+  wx_column: Wx
+  wy_column: Wy
+  wz_column: Wz
+controls:
+  variables:
+    OffCrestPhaseSet:
+      identifier: JFEL-GUNS-RF-CTRL-01:PHASE_OFF
+      dtype: float
+      protocol: CA
+      units: deg
+      description: Set cavity off-crest phase
+      read_only: false
+      type: scalar
+    PowerMWRead:
+      identifier: JFEL-GUNS-RF-CTRL-01:getPower
+      dtype: float
+      protocol: CA
+      units: MW
+      description: Read cavity forward power
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 0.16
+  length: 0.32
+cavity:
+  n_cells: 1.5
+  crest: 145.789
+  phase: 9.0
+hardware_type: RFCavity

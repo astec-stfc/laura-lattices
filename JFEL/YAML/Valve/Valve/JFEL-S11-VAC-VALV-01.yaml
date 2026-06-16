@@ -1,0 +1,7 @@
+name: JFEL-S11-VAC-VALV-01
+hardware_class: Valve
+machine_area: S11
+physical:
+  middle:
+    z: 67.891
+hardware_type: Valve

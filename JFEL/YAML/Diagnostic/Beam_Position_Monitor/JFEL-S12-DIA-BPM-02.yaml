@@ -1,0 +1,7 @@
+name: JFEL-S12-DIA-BPM-02
+machine_area: S12
+physical:
+  middle:
+    z: 75.320478
+hardware_type: Beam_Position_Monitor
+hardware_class: Diagnostic

@@ -1,0 +1,11 @@
+name: JFEL-L02-SIM-APER-02
+hardware_class: Simulation
+machine_area: L02
+physical:
+  middle:
+    z: 10.8965
+aperture:
+  horizontal_size: 0.01
+  vertical_size: 0.01
+  shape: rectangular
+hardware_type: Aperture

@@ -1,0 +1,7 @@
+name: JFEL-S05-DIA-ICT-01
+machine_area: S05
+physical:
+  middle:
+    z: 24.886968
+hardware_type: Integrated_Current_Transformer
+hardware_class: Diagnostic

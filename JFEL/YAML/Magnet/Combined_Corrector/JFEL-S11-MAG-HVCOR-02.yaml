@@ -1,0 +1,13 @@
+name: JFEL-S11-MAG-HVCOR-02
+machine_area: S11
+physical:
+  middle:
+    z: 68.234
+  length: 0.05
+magnetic:
+  length: 0.05
+  order: 0
+Horizontal_Corrector: JFEL-S11-MAG-HCOR-02
+Vertical_Corrector: JFEL-S11-MAG-VCOR-02
+hardware_type: Combined_Corrector
+hardware_class: Magnet

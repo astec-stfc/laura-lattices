@@ -1,0 +1,42 @@
+---
+# CLARA PHASE TWO
+# BEAM PATHS
+
+# Author: Mark Johnson (STFC DL ASTeC)
+# Date: 2024-01-12
+
+# This file defines the possible beam paths
+# for electrons moving along CLARA, defining
+# each path as a list of machine sections
+
+default_layout: JFELFULL
+layouts:
+  # default layout, beam to FEBE
+  JFELFULL:
+    - "HRG1"
+    - "S01"
+    - "L01"
+    - "S02"
+    - "L02"
+    - "S03"
+    - "L03"
+    - "L03"
+    - "S04"
+    - "L4H"
+    - "S05"
+    - "VBC"
+    - "S06"
+    - "L04"
+    - "S07"
+    - "S08"
+    - "L05"
+    - "S09"
+    - "L06"
+    - "S10"
+    - "L07"
+    - "S11"
+    - "L08"
+    - "S12"
+    - "L09"
+    - "S13"
+    - "FEL"

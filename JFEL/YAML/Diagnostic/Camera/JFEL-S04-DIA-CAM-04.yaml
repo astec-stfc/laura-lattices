@@ -1,0 +1,8 @@
+name: JFEL-S04-DIA-CAM-04
+hardware_model: MANTA
+machine_area: S04
+physical:
+  middle:
+    z: 20.488568
+hardware_type: Camera
+hardware_class: Diagnostic

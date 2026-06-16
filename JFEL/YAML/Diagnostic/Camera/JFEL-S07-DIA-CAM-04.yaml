@@ -1,0 +1,7 @@
+name: JFEL-S07-DIA-CAM-04
+machine_area: S07
+physical:
+  middle:
+    z: 47.810933
+hardware_type: Camera
+hardware_class: Diagnostic

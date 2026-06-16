@@ -1,0 +1,7 @@
+name: JFEL-S06-DIA-EOM-01
+machine_area: S06
+physical:
+  middle:
+    z: 32.39355
+hardware_type: Beam_Arrival_Monitor
+hardware_class: Diagnostic

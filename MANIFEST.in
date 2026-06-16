@@ -1,0 +1,2 @@
+recursive-include JFEL *.yaml *.json *.hdf5 *.gdf *.txt *.csv *.sdds *.dat *.opal *.astra *.T7 *.def
+include laura_lattices/__init__.py

@@ -1,0 +1,7 @@
+name: JFEL-S11-DIA-SCR-02
+machine_area: S11
+physical:
+  middle:
+    z: 68.376278
+hardware_type: Screen
+hardware_class: Diagnostic

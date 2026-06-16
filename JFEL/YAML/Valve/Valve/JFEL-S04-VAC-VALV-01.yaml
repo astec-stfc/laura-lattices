@@ -1,0 +1,7 @@
+name: JFEL-S04-VAC-VALV-01
+hardware_class: Valve
+machine_area: S04
+physical:
+  middle:
+    z: 17.2
+hardware_type: Valve

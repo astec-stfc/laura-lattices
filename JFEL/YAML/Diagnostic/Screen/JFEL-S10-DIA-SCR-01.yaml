@@ -1,0 +1,7 @@
+name: JFEL-S10-DIA-SCR-01
+machine_area: S10
+physical:
+  middle:
+    z: 60.316234
+hardware_type: Screen
+hardware_class: Diagnostic

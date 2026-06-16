@@ -1,0 +1,16 @@
+name: JFEL-SP1-MAG-HVCOR-01
+machine_area: SP1
+physical:
+  middle:
+    x: -1.7037938
+    z: 7.7416261
+  global_rotation:
+    theta: 0.785398
+  length: 0.05
+magnetic:
+  length: 0.05
+  order: 0
+Horizontal_Corrector: JFEL-SP1-MAG-HCOR-01
+Vertical_Corrector: JFEL-SP1-MAG-VCOR-01
+hardware_type: Combined_Corrector
+hardware_class: Magnet

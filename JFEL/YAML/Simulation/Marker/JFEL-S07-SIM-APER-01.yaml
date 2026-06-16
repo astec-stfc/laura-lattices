@@ -1,0 +1,7 @@
+name: JFEL-S07-SIM-APER-01
+hardware_class: Simulation
+machine_area: S07
+physical:
+  middle:
+    z: 38.2678
+hardware_type: Marker

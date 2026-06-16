@@ -1,0 +1,24 @@
+name: JFEL-SP3-MAG-HCOR-01
+machine_area: SP3
+controls:
+  variables:
+    READK:
+      identifier: JFEL-SP3-MAG-HCOR-01:CalcK
+      dtype: float
+      protocol: CA
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    x: -0.245001
+    z: 45.91687518
+  global_rotation:
+    theta: 0.523599
+  length: 0.1
+magnetic:
+  length: 0.1
+  order: 0
+hardware_type: Horizontal_Corrector
+hardware_class: Magnet

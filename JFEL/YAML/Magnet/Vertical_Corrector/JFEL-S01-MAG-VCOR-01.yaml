@@ -1,0 +1,21 @@
+name: JFEL-S01-MAG-VCOR-01
+machine_area: S01
+controls:
+  variables:
+    READK:
+      identifier: JFEL-S01-MAG-VCOR-01:CalcK
+      dtype: float
+      protocol: CA
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 0.335
+  length: 0.03
+magnetic:
+  length: 0.03
+  order: 0
+hardware_type: Vertical_Corrector
+hardware_class: Magnet

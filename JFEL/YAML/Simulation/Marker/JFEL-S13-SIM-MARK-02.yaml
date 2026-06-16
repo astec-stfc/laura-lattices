@@ -1,0 +1,7 @@
+name: JFEL-S13-SIM-MARK-02
+hardware_class: Simulation
+machine_area: S13
+physical:
+  middle:
+    z: 82.509
+hardware_type: Marker

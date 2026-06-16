@@ -1,0 +1,46 @@
+name: JFEL-L06-LIN-CAV-01
+hardware_class: RF
+machine_area: L06
+simulation:
+  field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+  wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+  field_amplitude: 32000000.0
+  t_column: t
+  wx_column: Wx
+  wy_column: Wy
+  wz_column: Wz
+controls:
+  variables:
+    OffCrestPhaseSet:
+      identifier: JFEL-L06-RF-CTRL-01:PHASE_OFF
+      dtype: float
+      protocol: CA
+      units: deg
+      description: Set cavity off-crest phase
+      read_only: false
+      type: scalar
+    PowerMWRead:
+      identifier: JFEL-L06-RF-CTRL-01:getPower
+      dtype: float
+      protocol: CA
+      units: MW
+      description: Read cavity forward power
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 56.583935
+  length: 4.06667
+cavity:
+  structure_Type: TravellingWave
+  coupling_cell_length: 0.0495
+  n_cells: 121
+  crest: 88.8
+  phase: 45.0
+  mode_numerator: 2.0
+  mode_denominator: 3.0
+  power_calibration: [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0,
+    46.0]
+  gradient_calibration: [60.0, 63.6, 67.2, 70.0, 72.8, 76.4, 79.6, 82.8, 86.4, 89.6,
+    90.4]
+hardware_type: RFCavity

@@ -1,0 +1,7 @@
+name: JFEL-S07-DCP-SCR-01
+hardware_class: Simulation
+machine_area: S07
+physical:
+  middle:
+    z: 43.9318
+hardware_type: Marker

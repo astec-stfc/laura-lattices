@@ -1,0 +1,35 @@
+name: JFEL-SP2-MAG-QUAD-01
+machine_area: SP2
+controls:
+  variables:
+    READK:
+      identifier: JFEL-SP2-MAG-QUAD-01:CalcK
+      dtype: float
+      protocol: CA
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    x: -0.4918485
+    z: 34.1643976
+  global_rotation:
+    theta: 0.523599
+  length: 0.162
+magnetic:
+  length: 0.162
+  multipoles:
+    K0L: {}
+    K1L:
+      order: 1
+      normal: 1.59249
+    K2L:
+      order: 2
+    K3L:
+      order: 3
+    K4L:
+      order: 4
+  order: 1
+hardware_type: Quadrupole
+hardware_class: Magnet

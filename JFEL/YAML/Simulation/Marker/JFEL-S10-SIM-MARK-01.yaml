@@ -1,0 +1,7 @@
+name: JFEL-S10-SIM-MARK-01
+hardware_class: Simulation
+machine_area: S10
+physical:
+  middle:
+    z: 59.2678
+hardware_type: Marker

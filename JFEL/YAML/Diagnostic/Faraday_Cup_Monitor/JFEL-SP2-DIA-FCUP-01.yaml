@@ -1,0 +1,10 @@
+name: JFEL-SP2-DIA-FCUP-01
+machine_area: SP2
+physical:
+  middle:
+    x: -1.5830055
+    z: 36.054337
+  global_rotation:
+    theta: 0.523599
+hardware_type: Faraday_Cup_Monitor
+hardware_class: Diagnostic

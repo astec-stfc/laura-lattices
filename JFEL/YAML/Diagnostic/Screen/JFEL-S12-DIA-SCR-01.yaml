@@ -1,0 +1,7 @@
+name: JFEL-S12-DIA-SCR-01
+machine_area: S12
+physical:
+  middle:
+    z: 74.316234
+hardware_type: Screen
+hardware_class: Diagnostic

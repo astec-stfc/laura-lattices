@@ -1,0 +1,7 @@
+name: JFEL-S09-DIA-CAM-02
+machine_area: S09
+physical:
+  middle:
+    z: 54.376278
+hardware_type: Camera
+hardware_class: Diagnostic

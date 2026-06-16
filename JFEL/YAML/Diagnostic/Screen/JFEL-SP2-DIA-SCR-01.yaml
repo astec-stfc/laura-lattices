@@ -1,0 +1,10 @@
+name: JFEL-SP2-DIA-SCR-01
+machine_area: SP2
+physical:
+  middle:
+    x: -0.3409865
+    z: 33.903097
+  global_rotation:
+    theta: 0.523599
+hardware_type: Screen
+hardware_class: Diagnostic

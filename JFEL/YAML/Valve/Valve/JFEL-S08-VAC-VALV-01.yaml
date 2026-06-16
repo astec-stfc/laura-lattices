@@ -1,0 +1,7 @@
+name: JFEL-S08-VAC-VALV-01
+hardware_class: Valve
+machine_area: S08
+physical:
+  middle:
+    z: 46.891
+hardware_type: Valve

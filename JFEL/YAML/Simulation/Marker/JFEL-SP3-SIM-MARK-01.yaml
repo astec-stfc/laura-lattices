@@ -1,0 +1,7 @@
+name: JFEL-SP3-SIM-MARK-01
+hardware_class: Simulation
+machine_area: SP3
+physical:
+  middle:
+    z: 45.287822
+hardware_type: Marker

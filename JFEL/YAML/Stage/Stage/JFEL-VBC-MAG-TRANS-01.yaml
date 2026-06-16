@@ -1,0 +1,10 @@
+name: JFEL-VBC-MAG-TRANS-01
+hardware_model: Generic
+machine_area: VBC
+physical:
+  middle:
+    z: 26.165835
+  maximum_position: 30.0
+  minimum_position: 372.0
+hardware_type: Stage
+hardware_class: Stage

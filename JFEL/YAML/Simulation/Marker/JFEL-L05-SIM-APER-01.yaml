@@ -1,0 +1,7 @@
+name: JFEL-L05-SIM-APER-01
+hardware_class: Simulation
+machine_area: L05
+physical:
+  middle:
+    z: 47.509
+hardware_type: Marker

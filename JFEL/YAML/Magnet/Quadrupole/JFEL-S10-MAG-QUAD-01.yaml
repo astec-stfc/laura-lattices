@@ -1,0 +1,32 @@
+name: JFEL-S10-MAG-QUAD-01
+machine_area: S10
+controls:
+  variables:
+    READK:
+      identifier: JFEL-S10-MAG-QUAD-01:CalcK
+      dtype: float
+      protocol: CA
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 59.852988
+  length: 0.15
+magnetic:
+  length: 0.15
+  multipoles:
+    K0L: {}
+    K1L:
+      order: 1
+      normal: 0.5
+    K2L:
+      order: 2
+    K3L:
+      order: 3
+    K4L:
+      order: 4
+  order: 1
+hardware_type: Quadrupole
+hardware_class: Magnet

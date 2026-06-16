@@ -1,0 +1,7 @@
+name: JFEL-S13-VAC-VALV-01
+hardware_class: Valve
+machine_area: S13
+physical:
+  middle:
+    z: 74.891
+hardware_type: Valve

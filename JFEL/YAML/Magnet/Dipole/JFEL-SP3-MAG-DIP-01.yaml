@@ -1,0 +1,21 @@
+name: JFEL-SP3-MAG-DIP-01
+machine_area: SP3
+controls:
+  variables:
+    READK:
+      identifier: JFEL-SP3-MAG-DIP-01:CalcK
+      dtype: float
+      protocol: CA
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 45.492521
+  length: 0.4
+magnetic:
+  length: 0.4
+  order: 0
+hardware_type: Dipole
+hardware_class: Magnet

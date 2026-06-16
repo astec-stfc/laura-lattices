@@ -1,0 +1,4 @@
+name: JFEL-PI-LSR-SHUT-01
+machine_area: LAS
+hardware_type: Shutter
+hardware_class: Shutter

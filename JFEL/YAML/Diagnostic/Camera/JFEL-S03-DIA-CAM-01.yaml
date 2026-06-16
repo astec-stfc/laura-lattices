@@ -1,0 +1,8 @@
+name: JFEL-S03-DIA-CAM-01
+hardware_model: MANTA
+machine_area: S03
+physical:
+  middle:
+    z: 11.9107
+hardware_type: Camera
+hardware_class: Diagnostic

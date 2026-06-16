@@ -1,0 +1,7 @@
+name: JFEL-S07-SIM-MARK-01
+hardware_class: Simulation
+machine_area: S07
+physical:
+  middle:
+    z: 39.0278
+hardware_type: Marker

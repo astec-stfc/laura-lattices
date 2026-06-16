@@ -1,0 +1,13 @@
+name: JFEL-S02-MAG-HVCOR-03
+machine_area: S02
+physical:
+  middle:
+    z: 4.83056
+  length: 0.03
+magnetic:
+  length: 0.03
+  order: 0
+Horizontal_Corrector: JFEL-S02-MAG-HCOR-03
+Vertical_Corrector: JFEL-S02-MAG-VCOR-03
+hardware_type: Combined_Corrector
+hardware_class: Magnet

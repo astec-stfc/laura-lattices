@@ -1,0 +1,13 @@
+name: JFEL-VBC-DIA-RCOL-01
+hardware_class: Simulation
+machine_area: VBC
+physical:
+  middle:
+    x: 0.161944
+    z: 28.6393
+  length: 0.48
+aperture:
+  horizontal_size: 1.0
+  vertical_size: 1.0
+  shape: rectangular
+hardware_type: Collimator

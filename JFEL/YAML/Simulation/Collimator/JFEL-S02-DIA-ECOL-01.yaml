@@ -1,0 +1,12 @@
+name: JFEL-S02-DIA-ECOL-01
+hardware_class: Simulation
+machine_area: S02
+physical:
+  middle:
+    z: 4.51862
+  length: 0.35
+aperture:
+  horizontal_size: 0.01
+  vertical_size: 0.01
+  shape: elliptical
+hardware_type: Collimator

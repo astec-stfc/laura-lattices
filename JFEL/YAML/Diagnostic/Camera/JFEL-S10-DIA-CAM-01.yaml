@@ -1,0 +1,8 @@
+name: JFEL-S10-DIA-CAM-01
+hardware_model: MANTA
+machine_area: S10
+physical:
+  middle:
+    z: 60.316234
+hardware_type: Camera
+hardware_class: Diagnostic

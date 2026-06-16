@@ -1,0 +1,8 @@
+name: JFEL-VBC-DIA-BPM-01
+machine_area: VBC
+physical:
+  middle:
+    x: 0.161944
+    z: 28.353848
+hardware_type: Beam_Position_Monitor
+hardware_class: Diagnostic

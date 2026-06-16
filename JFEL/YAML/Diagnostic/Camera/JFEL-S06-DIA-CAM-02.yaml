@@ -1,0 +1,7 @@
+name: JFEL-S06-DIA-CAM-02
+machine_area: S06
+physical:
+  middle:
+    z: 33.985278
+hardware_type: Camera
+hardware_class: Diagnostic

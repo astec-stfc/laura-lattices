@@ -1,0 +1,8 @@
+name: JFEL-VBC-DIA-SCR-01
+machine_area: VBC
+physical:
+  middle:
+    x: 0.161944
+    z: 28.9048
+hardware_type: Screen
+hardware_class: Diagnostic

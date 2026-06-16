@@ -1,0 +1,39 @@
+name: JFEL-L01-MAG-SOL-01
+machine_area: L01
+subelement: true
+simulation:
+  field_definition: $master_lattice$Data_Files/SwissFEL_linac_sols.hdf5
+  field_reference_position: start
+  field_amplitude: 0.025
+controls:
+  variables:
+    READK:
+      identifier: JFEL-L01-MAG-SOL-01:CalcK
+      dtype: float
+      protocol: CA
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 1.95
+  length: 0.5
+magnetic:
+  length: 0.5
+  fields:
+    S0L: 0.025
+    S1L: 0.0
+    S2L: 0.0
+    S3L: 0.0
+    S4L: 0.0
+    S5L: 0.0
+    S6L: 0.0
+    S7L: 0.0
+    S8L: 0.0
+    S9L: 0.0
+    S10L: 0.0
+    S11L: 0.0
+    S12L: 0.0
+hardware_type: Solenoid
+hardware_class: Magnet

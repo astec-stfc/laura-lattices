@@ -1,0 +1,7 @@
+name: JFEL-S05-VAC-VALV-01
+hardware_class: Valve
+machine_area: S05
+physical:
+  middle:
+    z: 24.5
+hardware_type: Valve

@@ -1,0 +1,10 @@
+name: JFEL-SP3-DIA-CAM-02
+machine_area: SP3
+physical:
+  middle:
+    x: -1.1433905
+    z: 47.4729314
+  global_rotation:
+    theta: 0.523599
+hardware_type: Camera
+hardware_class: Diagnostic

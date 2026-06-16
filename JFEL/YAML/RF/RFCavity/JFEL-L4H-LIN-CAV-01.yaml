@@ -1,0 +1,44 @@
+name: JFEL-L4H-LIN-CAV-01
+hardware_class: RF
+machine_area: L4H
+simulation:
+  field_definition: $master_lattice$Data_Files/TWS_X-DL.hdf5
+  wakefield_definition: $master_lattice$Data_Files/SzSx20um25mmxband.hdf5
+  field_amplitude: 24000000.0
+  t_column: t
+  wx_column: Wx
+  wy_column: Wy
+  wz_column: Wz
+controls:
+  variables:
+    OffCrestPhaseSet:
+      identifier: JFEL-4HC-RF-CTRL-01:PHASE_OFF
+      dtype: float
+      protocol: CA
+      units: deg
+      description: Set cavity off-crest phase
+      read_only: false
+      type: scalar
+    PowerMWRead:
+      identifier: JFEL-4HC-RF-CTRL-01:getPower
+      dtype: float
+      protocol: CA
+      units: MW
+      description: Read cavity forward power
+      read_only: false
+      type: scalar
+physical:
+  middle:
+    z: 23.9397
+  length: 0.75
+cavity:
+  structure_Type: TravellingWave
+  cell_length: 0.00833333
+  coupling_cell_length: 0.012375
+  frequency: 11994000000.0
+  n_cells: 89
+  crest: 250.639
+  phase: -184.0
+  mode_numerator: 2.5
+  mode_denominator: 6.0
+hardware_type: RFCavity

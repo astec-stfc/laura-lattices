@@ -1,0 +1,7 @@
+name: JFEL-S01-DIA-WCM-01
+machine_area: S01
+physical:
+  middle:
+    z: 0.7011
+hardware_type: Wall_Current_Monitor
+hardware_class: Diagnostic

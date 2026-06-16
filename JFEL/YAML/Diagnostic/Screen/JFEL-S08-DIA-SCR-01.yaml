@@ -1,0 +1,7 @@
+name: JFEL-S08-DIA-SCR-01
+machine_area: S08
+physical:
+  middle:
+    z: 46.316234
+hardware_type: Screen
+hardware_class: Diagnostic

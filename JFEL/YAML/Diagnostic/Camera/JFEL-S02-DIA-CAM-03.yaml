@@ -1,0 +1,7 @@
+name: JFEL-S02-DIA-CAM-03
+machine_area: S02
+physical:
+  middle:
+    z: 6.5846
+hardware_type: Camera
+hardware_class: Diagnostic

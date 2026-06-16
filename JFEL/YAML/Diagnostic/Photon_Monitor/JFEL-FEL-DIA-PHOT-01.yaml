@@ -1,0 +1,16 @@
+name: JFEL-FEL-DIA-PHOT-01
+machine_area: FEL
+controls:
+  variables:
+    INTENSITY:
+      identifier: JFEL-FEL-DIA-PHOT-01:INTENSITY
+      dtype: float
+      protocol: CA
+      units: J
+      description: Gets the total pulse intensity from the photon monitor.
+      type: scalar
+physical:
+  middle:
+    z: 108.9
+hardware_type: Photon_Monitor
+hardware_class: Diagnostic

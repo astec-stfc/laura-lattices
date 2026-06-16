@@ -1,0 +1,7 @@
+name: JFEL-S05-DIA-BPM-01
+machine_area: S05
+physical:
+  middle:
+    z: 25.125638
+hardware_type: Beam_Position_Monitor
+hardware_class: Diagnostic

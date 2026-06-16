@@ -1,0 +1,6 @@
+name: JFEL-LAS-LSR-EM-01
+hardware_class: LaserEnergyMeter
+machine_area: LAS
+laser:
+  calibration_factor: 15.4
+hardware_type: LaserEnergyMeter

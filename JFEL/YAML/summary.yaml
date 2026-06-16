@@ -1,0 +1,6893 @@
+JFEL-HRG1-GUN-CAV-01:
+  name: JFEL-HRG1-GUN-CAV-01
+  hardware_class: RF
+  machine_area: HRG1
+  simulation:
+    field_definition: $master_lattice$Data_Files/HRRG_1D_RF.hdf5
+    field_amplitude: 120000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-GUNS-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-GUNS-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 0.16
+    length: 0.32
+  cavity:
+    n_cells: 1.5
+    crest: 145.789
+    phase: 9
+  hardware_type: RFCavity
+JFEL-HRG1-MAG-SOL-01:
+  name: JFEL-HRG1-MAG-SOL-01
+  machine_area: HRG1
+  subelement: true
+  simulation:
+    field_definition: $master_lattice$Data_Files/HRRG_combined_sols_100mm_onaxis.hdf5
+    field_reference_position: start
+    field_amplitude: 0.345
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-HRG1-MAG-SOL-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 0.16241
+    length: 0.32
+  magnetic:
+    length: 0.32
+    fields:
+      S0L: 0.10560000000000001
+      S1L: 0
+      S2L: 0
+      S3L: 0
+      S4L: 0
+      S5L: 0
+      S6L: 0
+      S7L: 0
+      S8L: 0
+      S9L: 0
+      S10L: 0
+      S11L: 0
+      S12L: 0
+  hardware_type: Solenoid
+  hardware_class: Magnet
+JFEL-HRG1-SIM-APER-01:
+  name: JFEL-HRG1-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: HRG1
+  aperture:
+    horizontal_size: 0.017
+    vertical_size: 0.017
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-L01-LIN-CAV-01:
+  name: JFEL-L01-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L01
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 21000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L01-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L01-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 2.210235
+    length: 2.03333
+  cavity:
+    structure_Type: TravellingWave
+    attenuation_constant: 0.42
+    coupling_cell_length: 0.0495
+    design_gamma: 10.0
+    n_cells: 61
+    crest: 269.90983
+    phase: 16
+    shunt_impedance: 130693000.0
+    mode_numerator: 1.0
+    mode_denominator: 3.0
+    power_calibration: [0.0, 1.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0]
+    gradient_calibration: [0.0, 8.1, 14.0, 18.0, 21.4, 24.2, 26.8, 29.2]
+  hardware_type: RFCavity
+JFEL-L01-MAG-SOL-01:
+  name: JFEL-L01-MAG-SOL-01
+  machine_area: L01
+  subelement: true
+  simulation:
+    field_definition: $master_lattice$Data_Files/SwissFEL_linac_sols.hdf5
+    field_reference_position: start
+    field_amplitude: 0.025
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-L01-MAG-SOL-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 1.95
+    length: 0.5
+  magnetic:
+    length: 0.5
+    fields:
+      S0L: 0.025
+      S1L: 0
+      S2L: 0
+      S3L: 0
+      S4L: 0
+      S5L: 0
+      S6L: 0
+      S7L: 0
+      S8L: 0
+      S9L: 0
+      S10L: 0
+      S11L: 0
+      S12L: 0
+  hardware_type: Solenoid
+  hardware_class: Magnet
+JFEL-L01-MAG-SOL-02:
+  name: JFEL-L01-MAG-SOL-02
+  machine_area: L01
+  subelement: true
+  simulation:
+    field_definition: $master_lattice$Data_Files/SwissFEL_linac_sols.hdf5
+    field_reference_position: start
+    field_amplitude: -0.025
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-L01-MAG-SOL-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 2.95
+    length: 0.5
+  magnetic:
+    length: 0.5
+    fields:
+      S0L: -0.025
+      S1L: 0
+      S2L: 0
+      S3L: 0
+      S4L: 0
+      S5L: 0
+      S6L: 0
+      S7L: 0
+      S8L: 0
+      S9L: 0
+      S10L: 0
+      S11L: 0
+      S12L: 0
+  hardware_type: Solenoid
+  hardware_class: Magnet
+JFEL-L01-SIM-APER-01:
+  name: JFEL-L01-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L01
+  physical:
+    middle:
+      z: 1.0577
+  aperture:
+    horizontal_size: 0.01
+    vertical_size: 0.01
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-L02-LIN-CAV-01:
+  name: JFEL-L02-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L02
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 30000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L02-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L02-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 8.83099
+    length: 4.06667
+  cavity:
+    structure_Type: TravellingWave
+    attenuation_constant: 0.42
+    coupling_cell_length: 0.0495
+    design_gamma: 100.0
+    n_cells: 121
+    crest: 92.381
+    phase: 18
+    shunt_impedance: 130693000.0
+    mode_numerator: 1.0
+    mode_denominator: 3.0
+    power_calibration: [30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0]
+    gradient_calibration: [74.0, 76.8, 80.0, 82.8, 85.6, 88.4, 91.2, 94.0]
+  hardware_type: RFCavity
+JFEL-L02-SIM-APER-01:
+  name: JFEL-L02-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L02
+  physical:
+    middle:
+      z: 6.7485
+  hardware_type: Marker
+JFEL-L02-SIM-APER-02:
+  name: JFEL-L02-SIM-APER-02
+  hardware_class: Simulation
+  machine_area: L02
+  physical:
+    middle:
+      z: 10.8965
+  aperture:
+    horizontal_size: 0.01
+    vertical_size: 0.01
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-L03-LIN-CAV-01:
+  name: JFEL-L03-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L03
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 27000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L03-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L03-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 14.125235
+    length: 4.06667
+  cavity:
+    structure_Type: TravellingWave
+    coupling_cell_length: 0.0495
+    n_cells: 121
+    crest: 88.381
+    phase: 18
+    mode_numerator: 1.0
+    mode_denominator: 3.0
+    power_calibration: [30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0]
+    gradient_calibration: [74.0, 76.8, 80.0, 82.8, 85.6, 88.4, 91.2, 94.0]
+  hardware_type: RFCavity
+JFEL-L03-SIM-APER-01:
+  name: JFEL-L03-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L03
+  physical:
+    middle:
+      z: 12.0502
+  hardware_type: Marker
+JFEL-L04-LIN-CAV-01:
+  name: JFEL-L04-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L04
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 32000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L04-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L04-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 36.192935
+    length: 4.06667
+  cavity:
+    structure_Type: TravellingWave
+    coupling_cell_length: 0.0495
+    n_cells: 121
+    crest: 88.8
+    phase: 45.0
+    mode_numerator: 2.0
+    mode_denominator: 3.0
+    power_calibration: [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0,
+      46.0]
+    gradient_calibration: [60.0, 63.6, 67.2, 70.0, 72.8, 76.4, 79.6, 82.8, 86.4, 89.6,
+      90.4]
+  hardware_type: RFCavity
+JFEL-L04-SIM-APER-01:
+  name: JFEL-L04-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L04
+  physical:
+    middle:
+      z: 34.118
+  hardware_type: Marker
+JFEL-L05-LIN-CAV-01:
+  name: JFEL-L05-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L05
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 32000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L05-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L05-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 49.583935
+    length: 4.06667
+  cavity:
+    structure_Type: TravellingWave
+    coupling_cell_length: 0.0495
+    n_cells: 121
+    crest: 88.8
+    phase: 45.0
+    mode_numerator: 2.0
+    mode_denominator: 3.0
+    power_calibration: [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0,
+      46.0]
+    gradient_calibration: [60.0, 63.6, 67.2, 70.0, 72.8, 76.4, 79.6, 82.8, 86.4, 89.6,
+      90.4]
+  hardware_type: RFCavity
+JFEL-L05-SIM-APER-01:
+  name: JFEL-L05-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L05
+  physical:
+    middle:
+      z: 47.509
+  hardware_type: Marker
+JFEL-L06-LIN-CAV-01:
+  name: JFEL-L06-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L06
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 32000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L06-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L06-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 56.583935
+    length: 4.06667
+  cavity:
+    structure_Type: TravellingWave
+    coupling_cell_length: 0.0495
+    n_cells: 121
+    crest: 88.8
+    phase: 45.0
+    mode_numerator: 2.0
+    mode_denominator: 3.0
+    power_calibration: [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0,
+      46.0]
+    gradient_calibration: [60.0, 63.6, 67.2, 70.0, 72.8, 76.4, 79.6, 82.8, 86.4, 89.6,
+      90.4]
+  hardware_type: RFCavity
+JFEL-L06-SIM-APER-01:
+  name: JFEL-L06-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L06
+  physical:
+    middle:
+      z: 54.509
+  hardware_type: Marker
+JFEL-L07-LIN-CAV-01:
+  name: JFEL-L07-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L07
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 32000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L07-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L07-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 63.583935
+    length: 4.06667
+  cavity:
+    structure_Type: TravellingWave
+    coupling_cell_length: 0.0495
+    n_cells: 121
+    crest: 88.8
+    phase: 45.0
+    mode_numerator: 2.0
+    mode_denominator: 3.0
+    power_calibration: [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0,
+      46.0]
+    gradient_calibration: [60.0, 63.6, 67.2, 70.0, 72.8, 76.4, 79.6, 82.8, 86.4, 89.6,
+      90.4]
+  hardware_type: RFCavity
+JFEL-L07-SIM-APER-01:
+  name: JFEL-L07-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L07
+  physical:
+    middle:
+      z: 61.509
+  hardware_type: Marker
+JFEL-L08-LIN-CAV-01:
+  name: JFEL-L08-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L08
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 32000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L08-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L08-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 70.583935
+    length: 4.06667
+  cavity:
+    structure_Type: TravellingWave
+    coupling_cell_length: 0.0495
+    n_cells: 121
+    crest: 88.8
+    phase: 45.0
+    mode_numerator: 2.0
+    mode_denominator: 3.0
+    power_calibration: [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0,
+      46.0]
+    gradient_calibration: [60.0, 63.6, 67.2, 70.0, 72.8, 76.4, 79.6, 82.8, 86.4, 89.6,
+      90.4]
+  hardware_type: RFCavity
+JFEL-L08-SIM-APER-01:
+  name: JFEL-L08-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L08
+  physical:
+    middle:
+      z: 68.509
+  hardware_type: Marker
+JFEL-L09-LIN-CAV-01:
+  name: JFEL-L09-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L09
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+    field_amplitude: 32000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-L09-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-L09-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 77.583935
+    length: 4.06667
+  cavity:
+    structure_Type: TravellingWave
+    coupling_cell_length: 0.0495
+    n_cells: 121
+    crest: 88.8
+    phase: 45.0
+    mode_numerator: 2.0
+    mode_denominator: 3.0
+    power_calibration: [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0,
+      46.0]
+    gradient_calibration: [60.0, 63.6, 67.2, 70.0, 72.8, 76.4, 79.6, 82.8, 86.4, 89.6,
+      90.4]
+  hardware_type: RFCavity
+JFEL-L09-SIM-APER-01:
+  name: JFEL-L09-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L09
+  physical:
+    middle:
+      z: 75.509
+  hardware_type: Marker
+JFEL-L09-SIM-APER-02:
+  name: JFEL-L09-SIM-APER-02
+  hardware_class: Simulation
+  machine_area: L09
+  physical:
+    middle:
+      z: 80.0
+  hardware_type: Marker
+JFEL-L4H-LIN-CAV-01:
+  name: JFEL-L4H-LIN-CAV-01
+  hardware_class: RF
+  machine_area: L4H
+  simulation:
+    field_definition: $master_lattice$Data_Files/TWS_X-DL.hdf5
+    wakefield_definition: $master_lattice$Data_Files/SzSx20um25mmxband.hdf5
+    field_amplitude: 24000000.0
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  controls:
+    variables:
+      OffCrestPhaseSet:
+        identifier: JFEL-4HC-RF-CTRL-01:PHASE_OFF
+        dtype: float
+        protocol: CA
+        units: deg
+        description: Set cavity off-crest phase
+        read_only: false
+        type: scalar
+      PowerMWRead:
+        identifier: JFEL-4HC-RF-CTRL-01:getPower
+        dtype: float
+        protocol: CA
+        read_only: false
+        units: MW
+        description: Read cavity forward power
+        type: scalar
+  physical:
+    middle:
+      z: 23.9397
+    length: 0.75
+  cavity:
+    structure_Type: TravellingWave
+    cell_length: 0.00833333
+    coupling_cell_length: 0.012375
+    frequency: 11994000000.0
+    n_cells: 89
+    crest: 250.639
+    phase: -184.0
+    mode_numerator: 2.5
+    mode_denominator: 6.0
+  hardware_type: RFCavity
+JFEL-L4H-SIM-APER-01:
+  name: JFEL-L4H-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: L4H
+  physical:
+    middle:
+      z: 23.4572
+  hardware_type: Marker
+JFEL-LAS-LSR-EM-01:
+  name: JFEL-LAS-LSR-EM-01
+  hardware_class: LaserEnergyMeter
+  machine_area: LAS
+  laser:
+    calibration_factor: 15.4
+  hardware_type: LaserEnergyMeter
+JFEL-LAS-OPT-PM-4:
+  name: JFEL-LAS-OPT-PM-4
+  hardware_class: LaserMirror
+  machine_area: LAS
+  hardware_type: LaserMirror
+JFEL-MU1-SIM-MARK-01:
+  name: JFEL-MU1-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: MU1
+  physical:
+    middle:
+      z: 50.8568
+  hardware_type: Marker
+JFEL-MU1-SIM-SIM-APER-01:
+  name: JFEL-MU1-SIM-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: MU1
+  physical:
+    middle:
+      z: 50.3568
+  hardware_type: Marker
+JFEL-MU1-SIM-SIM-APER-02:
+  name: JFEL-MU1-SIM-SIM-APER-02
+  hardware_class: Simulation
+  machine_area: MU1
+  physical:
+    middle:
+      z: 53.4362
+  hardware_type: Marker
+JFEL-MU2-SIM-SIM-APER-01:
+  name: JFEL-MU2-SIM-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: MU2
+  physical:
+    middle:
+      z: 53.7062
+    global_rotation:
+      theta: -2.0e-06
+  hardware_type: Marker
+JFEL-PI-LSR-SHUT-01:
+  name: JFEL-PI-LSR-SHUT-01
+  machine_area: LAS
+  hardware_type: Shutter
+  hardware_class: Shutter
+JFEL-S01-DIA-BPM-01:
+  name: JFEL-S01-DIA-BPM-01
+  machine_area: S01
+  physical:
+    middle:
+      z: 0.894055
+    length: 0.08589
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S01-DIA-CAM-01:
+  name: JFEL-S01-DIA-CAM-01
+  machine_area: S01
+  physical:
+    middle:
+      z: 0.9803
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S01-DIA-SCR-01:
+  name: JFEL-S01-DIA-SCR-01
+  machine_area: S01
+  physical:
+    middle:
+      z: 0.9803
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S01-DIA-WCM-01:
+  name: JFEL-S01-DIA-WCM-01
+  machine_area: S01
+  physical:
+    middle:
+      z: 0.7011
+    length: 0.05
+  hardware_type: Wall_Current_Monitor
+  hardware_class: Diagnostic
+JFEL-S01-MAG-HCOR-01:
+  name: JFEL-S01-MAG-HCOR-01
+  machine_area: S01
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S01-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 0.335
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S01-MAG-HCOR-02:
+  name: JFEL-S01-MAG-HCOR-02
+  machine_area: S01
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S01-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 0.81361
+    length: 0.075
+  magnetic:
+    length: 0.075
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S01-MAG-HVCOR-01:
+  name: JFEL-S01-MAG-HVCOR-01
+  machine_area: S01
+  physical:
+    middle:
+      z: 0.335
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  Horizontal_Corrector: JFEL-S01-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S01-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S01-MAG-HVCOR-02:
+  name: JFEL-S01-MAG-HVCOR-02
+  machine_area: S01
+  physical:
+    middle:
+      z: 0.81361
+    length: 0.075
+  magnetic:
+    length: 0.075
+    order: 0
+  Horizontal_Corrector: JFEL-S01-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S01-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S01-MAG-VCOR-01:
+  name: JFEL-S01-MAG-VCOR-01
+  machine_area: S01
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S01-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 0.335
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S01-MAG-VCOR-02:
+  name: JFEL-S01-MAG-VCOR-02
+  machine_area: S01
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S01-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 0.81361
+    length: 0.075
+  magnetic:
+    length: 0.075
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S01-SIM-APER-01:
+  name: JFEL-S01-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S01
+  physical:
+    middle:
+      z: 0.32
+  aperture:
+    horizontal_size: 0.017
+    vertical_size: 0.017
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-S01-VAC-VALV-01:
+  name: JFEL-S01-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S01
+  physical:
+    middle:
+      z: 0.4
+  hardware_type: Valve
+JFEL-S02-DIA-BPM-01:
+  name: JFEL-S02-DIA-BPM-01
+  machine_area: S02
+  physical:
+    middle:
+      z: 3.63014
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S02-DIA-BPM-02:
+  name: JFEL-S02-DIA-BPM-02
+  machine_area: S02
+  physical:
+    middle:
+      z: 6.515975
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S02-DIA-CAM-01:
+  name: JFEL-S02-DIA-CAM-01
+  machine_area: S02
+  physical:
+    middle:
+      z: 4.08983
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S02-DIA-CAM-02:
+  name: JFEL-S02-DIA-CAM-02
+  machine_area: S02
+  physical:
+    middle:
+      z: 5.01083
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S02-DIA-CAM-03:
+  name: JFEL-S02-DIA-CAM-03
+  machine_area: S02
+  physical:
+    middle:
+      z: 6.5846
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S02-DIA-ECOL-01:
+  name: JFEL-S02-DIA-ECOL-01
+  hardware_class: Simulation
+  machine_area: S02
+  physical:
+    middle:
+      z: 4.51862
+    length: 0.35
+  aperture:
+    horizontal_size: 0.01
+    vertical_size: 0.01
+    shape: elliptical
+  hardware_type: Collimator
+JFEL-S02-DIA-SCR-01:
+  name: JFEL-S02-DIA-SCR-01
+  machine_area: S02
+  physical:
+    middle:
+      z: 4.08983
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S02-DIA-SCR-02:
+  name: JFEL-S02-DIA-SCR-02
+  machine_area: S02
+  physical:
+    middle:
+      z: 5.01083
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S02-DIA-SCR-03:
+  name: JFEL-S02-DIA-SCR-03
+  machine_area: S02
+  physical:
+    middle:
+      z: 6.5846
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S02-MAG-HCOR-01:
+  name: JFEL-S02-MAG-HCOR-01
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 3.4097735
+    length: 0.076607
+  magnetic:
+    length: 0.076607
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-HCOR-02:
+  name: JFEL-S02-MAG-HCOR-02
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 4.25307
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-HCOR-03:
+  name: JFEL-S02-MAG-HCOR-03
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-HCOR-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 4.83056
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-HCOR-04:
+  name: JFEL-S02-MAG-HCOR-04
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-HCOR-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 6.683746
+    length: 0.076607
+  magnetic:
+    length: 0.076607
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-HVCOR-01:
+  name: JFEL-S02-MAG-HVCOR-01
+  machine_area: S02
+  physical:
+    middle:
+      z: 3.4097735
+    length: 0.076607
+  magnetic:
+    length: 0.076607
+    order: 0
+  Horizontal_Corrector: JFEL-S02-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S02-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-HVCOR-02:
+  name: JFEL-S02-MAG-HVCOR-02
+  machine_area: S02
+  physical:
+    middle:
+      z: 4.25307
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  Horizontal_Corrector: JFEL-S02-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S02-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-HVCOR-03:
+  name: JFEL-S02-MAG-HVCOR-03
+  machine_area: S02
+  physical:
+    middle:
+      z: 4.83056
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  Horizontal_Corrector: JFEL-S02-MAG-HCOR-03
+  Vertical_Corrector: JFEL-S02-MAG-VCOR-03
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-HVCOR-04:
+  name: JFEL-S02-MAG-HVCOR-04
+  machine_area: S02
+  physical:
+    middle:
+      z: 6.683746
+    length: 0.076607
+  magnetic:
+    length: 0.076607
+    order: 0
+  Horizontal_Corrector: JFEL-S02-MAG-HCOR-04
+  Vertical_Corrector: JFEL-S02-MAG-VCOR-04
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-QUAD-01:
+  name: JFEL-S02-MAG-QUAD-01
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 3.52715239
+    length: 0.12868478212775
+  magnetic:
+    length: 0.12868478212775
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 1.3
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S02-MAG-QUAD-02:
+  name: JFEL-S02-MAG-QUAD-02
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 3.9271485
+    length: 0.126817
+  magnetic:
+    length: 0.126817
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -1.1
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S02-MAG-QUAD-03:
+  name: JFEL-S02-MAG-QUAD-03
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-QUAD-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 5.227151
+    length: 0.127242
+  magnetic:
+    length: 0.127242
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.6
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S02-MAG-QUAD-04:
+  name: JFEL-S02-MAG-QUAD-04
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-QUAD-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 5.627151
+    length: 0.127422
+  magnetic:
+    length: 0.127422
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 1.1
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S02-MAG-QUAD-05:
+  name: JFEL-S02-MAG-QUAD-05
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-QUAD-05:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 6.4403
+    length: 0.1007
+  magnetic:
+    length: 0.1007
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.3
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S02-MAG-VCOR-01:
+  name: JFEL-S02-MAG-VCOR-01
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 3.4097735
+    length: 0.076607
+  magnetic:
+    length: 0.076607
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-VCOR-02:
+  name: JFEL-S02-MAG-VCOR-02
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 4.25307
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-VCOR-03:
+  name: JFEL-S02-MAG-VCOR-03
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-VCOR-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 4.83056
+    length: 0.03
+  magnetic:
+    length: 0.03
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S02-MAG-VCOR-04:
+  name: JFEL-S02-MAG-VCOR-04
+  machine_area: S02
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S02-MAG-VCOR-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 6.683746
+    length: 0.076607
+  magnetic:
+    length: 0.076607
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S02-SIM-APER-01:
+  name: JFEL-S02-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S02
+  physical:
+    middle:
+      z: 3.37147
+  aperture:
+    horizontal_size: 0.017
+    vertical_size: 0.017
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-S02-SIM-APER-02:
+  name: JFEL-S02-SIM-APER-02
+  hardware_class: Simulation
+  machine_area: S02
+  physical:
+    middle:
+      z: 4.69362
+  aperture:
+    horizontal_size: 0.017
+    vertical_size: 0.017
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-S02-VAC-VALV-01:
+  name: JFEL-S02-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S02
+  physical:
+    middle:
+      z: 3.7
+  hardware_type: Valve
+JFEL-S03-DIA-BPM-01:
+  name: JFEL-S03-DIA-BPM-01
+  machine_area: S03
+  physical:
+    middle:
+      z: 11.1924
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S03-DIA-CAM-01:
+  name: JFEL-S03-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S03
+  physical:
+    middle:
+      z: 11.9107
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S03-DIA-SCR-01:
+  name: JFEL-S03-DIA-SCR-01
+  machine_area: S03
+  physical:
+    middle:
+      z: 11.9107
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S03-MAG-HCOR-01:
+  name: JFEL-S03-MAG-HCOR-01
+  machine_area: S03
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S03-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 11.7974
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S03-MAG-HVCOR-01:
+  name: JFEL-S03-MAG-HVCOR-01
+  machine_area: S03
+  physical:
+    middle:
+      z: 11.7974
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S03-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S03-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S03-MAG-QUAD-01:
+  name: JFEL-S03-MAG-QUAD-01
+  machine_area: S03
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S03-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 11.4664
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.157474
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S03-MAG-VCOR-01:
+  name: JFEL-S03-MAG-VCOR-01
+  machine_area: S03
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S03-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 11.7974
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S03-SIM-APER-01:
+  name: JFEL-S03-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S03
+  physical:
+    middle:
+      z: 10.8974
+  hardware_type: Marker
+JFEL-S04-DIA-BPM-01:
+  name: JFEL-S04-DIA-BPM-01
+  machine_area: S04
+  physical:
+    middle:
+      z: 16.785768
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S04-DIA-BPM-02:
+  name: JFEL-S04-DIA-BPM-02
+  machine_area: S04
+  physical:
+    middle:
+      z: 17.7552
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S04-DIA-BPM-03:
+  name: JFEL-S04-DIA-BPM-03
+  machine_area: S04
+  physical:
+    middle:
+      z: 19.5027
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S04-DIA-BPM-04:
+  name: JFEL-S04-DIA-BPM-04
+  machine_area: S04
+  physical:
+    middle:
+      z: 20.340268
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S04-DIA-BPM-05:
+  name: JFEL-S04-DIA-BPM-05
+  machine_area: S04
+  physical:
+    middle:
+      z: 22.300268
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S04-DIA-BPM-06:
+  name: JFEL-S04-DIA-BPM-06
+  machine_area: S04
+  physical:
+    middle:
+      z: 23.2802685
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S04-DIA-CAM-01:
+  name: JFEL-S04-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S04
+  physical:
+    middle:
+      z: 17.313563
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S04-DIA-CAM-02:
+  name: JFEL-S04-DIA-CAM-02
+  hardware_model: MANTA
+  machine_area: S04
+  physical:
+    middle:
+      z: 18.4536
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S04-DIA-CAM-03:
+  name: JFEL-S04-DIA-CAM-03
+  machine_area: S04
+  physical:
+    middle:
+      z: 19.233568
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S04-DIA-CAM-04:
+  name: JFEL-S04-DIA-CAM-04
+  hardware_model: MANTA
+  machine_area: S04
+  physical:
+    middle:
+      z: 20.488568
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S04-DIA-CAM-05:
+  name: JFEL-S04-DIA-CAM-05
+  hardware_model: MANTA
+  machine_area: S04
+  physical:
+    middle:
+      z: 21.3152
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S04-DIA-ICT-01:
+  name: JFEL-S04-DIA-ICT-01
+  machine_area: S04
+  physical:
+    middle:
+      z: 16.655768
+  hardware_type: Integrated_Current_Transformer
+  hardware_class: Diagnostic
+JFEL-S04-DIA-SCR-01:
+  name: JFEL-S04-DIA-SCR-01
+  machine_area: S04
+  physical:
+    middle:
+      z: 17.313563
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S04-DIA-SCR-02:
+  name: JFEL-S04-DIA-SCR-02
+  machine_area: S04
+  physical:
+    middle:
+      z: 18.4536
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S04-DIA-SCR-03:
+  name: JFEL-S04-DIA-SCR-03
+  machine_area: S04
+  physical:
+    middle:
+      z: 19.233568
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S04-DIA-SCR-04:
+  name: JFEL-S04-DIA-SCR-04
+  machine_area: S04
+  physical:
+    middle:
+      z: 20.488568
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S04-DIA-SCR-05:
+  name: JFEL-S04-DIA-SCR-05
+  machine_area: S04
+  physical:
+    middle:
+      z: 21.3152
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S04-MAG-HCOR-01:
+  name: JFEL-S04-MAG-HCOR-01
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 16.353768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HCOR-02:
+  name: JFEL-S04-MAG-HCOR-02
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 18.349768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HCOR-03:
+  name: JFEL-S04-MAG-HCOR-03
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-HCOR-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 19.4102
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HCOR-04:
+  name: JFEL-S04-MAG-HCOR-04
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-HCOR-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 21.729768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HCOR-05:
+  name: JFEL-S04-MAG-HCOR-05
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-HCOR-05:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 22.789768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HVCOR-01:
+  name: JFEL-S04-MAG-HVCOR-01
+  machine_area: S04
+  physical:
+    middle:
+      z: 16.353768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S04-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S04-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HVCOR-02:
+  name: JFEL-S04-MAG-HVCOR-02
+  machine_area: S04
+  physical:
+    middle:
+      z: 18.349768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S04-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S04-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HVCOR-03:
+  name: JFEL-S04-MAG-HVCOR-03
+  machine_area: S04
+  physical:
+    middle:
+      z: 19.4102
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S04-MAG-HCOR-03
+  Vertical_Corrector: JFEL-S04-MAG-VCOR-03
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HVCOR-04:
+  name: JFEL-S04-MAG-HVCOR-04
+  machine_area: S04
+  physical:
+    middle:
+      z: 21.729768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S04-MAG-HCOR-04
+  Vertical_Corrector: JFEL-S04-MAG-VCOR-04
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-HVCOR-05:
+  name: JFEL-S04-MAG-HVCOR-05
+  machine_area: S04
+  physical:
+    middle:
+      z: 22.789768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S04-MAG-HCOR-05
+  Vertical_Corrector: JFEL-S04-MAG-VCOR-05
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-QUAD-01:
+  name: JFEL-S04-MAG-QUAD-01
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 16.499268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.6
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S04-MAG-QUAD-02:
+  name: JFEL-S04-MAG-QUAD-02
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 17.019268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.2
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S04-MAG-QUAD-03:
+  name: JFEL-S04-MAG-QUAD-03
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-QUAD-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 17.519268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.2
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S04-MAG-QUAD-04:
+  name: JFEL-S04-MAG-QUAD-04
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-QUAD-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 18.019268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.033758
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S04-MAG-QUAD-05:
+  name: JFEL-S04-MAG-QUAD-05
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-QUAD-05:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 21.534268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.0410889
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S04-MAG-QUAD-06:
+  name: JFEL-S04-MAG-QUAD-06
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-QUAD-06:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 22.034268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.070186
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S04-MAG-QUAD-07:
+  name: JFEL-S04-MAG-QUAD-07
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-QUAD-07:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 22.534268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.0845327
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S04-MAG-QUAD-08:
+  name: JFEL-S04-MAG-QUAD-08
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-QUAD-08:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 23.044268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.043544
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S04-MAG-VCOR-01:
+  name: JFEL-S04-MAG-VCOR-01
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 16.353768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-VCOR-02:
+  name: JFEL-S04-MAG-VCOR-02
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 18.349768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-VCOR-03:
+  name: JFEL-S04-MAG-VCOR-03
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-VCOR-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 19.4102
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-VCOR-04:
+  name: JFEL-S04-MAG-VCOR-04
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-VCOR-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 21.729768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S04-MAG-VCOR-05:
+  name: JFEL-S04-MAG-VCOR-05
+  machine_area: S04
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S04-MAG-VCOR-05:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 22.789768
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S04-SIM-APER-01:
+  name: JFEL-S04-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S04
+  physical:
+    middle:
+      z: 16.2002
+  hardware_type: Marker
+JFEL-S04-SIM-MARK-01:
+  name: JFEL-S04-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S04
+  physical:
+    middle:
+      z: 16.2002
+  hardware_type: Marker
+JFEL-S04-SIM-MARK-02:
+  name: JFEL-S04-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S04
+  physical:
+    middle:
+      z: 23.4572
+  hardware_type: Marker
+JFEL-S04-VAC-VALV-01:
+  name: JFEL-S04-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S04
+  physical:
+    middle:
+      z: 17.2
+  hardware_type: Valve
+JFEL-S04-VAC-VALV-02:
+  name: JFEL-S04-VAC-VALV-02
+  hardware_class: Valve
+  machine_area: S04
+  physical:
+    middle:
+      z: 22.9
+  hardware_type: Valve
+JFEL-S05-DIA-BAM-01:
+  name: JFEL-S05-DIA-BAM-01
+  machine_area: S05
+  physical:
+    middle:
+      z: 25.267128
+  hardware_type: Beam_Arrival_Monitor
+  hardware_class: Diagnostic
+JFEL-S05-DIA-BPM-01:
+  name: JFEL-S05-DIA-BPM-01
+  machine_area: S05
+  physical:
+    middle:
+      z: 25.125638
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S05-DIA-BPM-02:
+  name: JFEL-S05-DIA-BPM-02
+  machine_area: S05
+  physical:
+    middle:
+      z: 25.720268
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S05-DIA-CAM-01:
+  name: JFEL-S05-DIA-CAM-01
+  machine_area: S05
+  physical:
+    middle:
+      z: 25.1794
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S05-DIA-ICT-01:
+  name: JFEL-S05-DIA-ICT-01
+  machine_area: S05
+  physical:
+    middle:
+      z: 24.886968
+  hardware_type: Integrated_Current_Transformer
+  hardware_class: Diagnostic
+JFEL-S05-DIA-SCR-01:
+  name: JFEL-S05-DIA-SCR-01
+  machine_area: S05
+  physical:
+    middle:
+      z: 25.1794
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S05-MAG-HCOR-01:
+  name: JFEL-S05-MAG-HCOR-01
+  machine_area: S05
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S05-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 25.0509
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S05-MAG-HVCOR-01:
+  name: JFEL-S05-MAG-HVCOR-01
+  machine_area: S05
+  physical:
+    middle:
+      z: 25.0509
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S05-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S05-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S05-MAG-QUAD-01:
+  name: JFEL-S05-MAG-QUAD-01
+  machine_area: S05
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S05-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 24.734268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.126655
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S05-MAG-QUAD-02:
+  name: JFEL-S05-MAG-QUAD-02
+  machine_area: S05
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S05-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 25.484268
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.209366
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S05-MAG-VCOR-01:
+  name: JFEL-S05-MAG-VCOR-01
+  machine_area: S05
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S05-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 25.0509
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S05-SIM-APER-01:
+  name: JFEL-S05-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S05
+  physical:
+    middle:
+      z: 24.4222
+  hardware_type: Marker
+JFEL-S05-SIM-MARK-01:
+  name: JFEL-S05-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S05
+  physical:
+    middle:
+      z: 25.8253
+  hardware_type: Marker
+JFEL-S05-VAC-VALV-01:
+  name: JFEL-S05-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S05
+  physical:
+    middle:
+      z: 24.5
+  hardware_type: Valve
+JFEL-S06-DIA-BAM-01:
+  name: JFEL-S06-DIA-BAM-01
+  machine_area: S06
+  physical:
+    middle:
+      z: 32.103988
+  hardware_type: Beam_Arrival_Monitor
+  hardware_class: Diagnostic
+JFEL-S06-DIA-BPM-01:
+  name: JFEL-S06-DIA-BPM-01
+  machine_area: S06
+  physical:
+    middle:
+      z: 31.667988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S06-DIA-BPM-02:
+  name: JFEL-S06-DIA-BPM-02
+  machine_area: S06
+  physical:
+    middle:
+      z: 33.929478
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S06-DIA-CAM-01:
+  name: JFEL-S06-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S06
+  physical:
+    middle:
+      z: 32.925234
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S06-DIA-CAM-02:
+  name: JFEL-S06-DIA-CAM-02
+  machine_area: S06
+  physical:
+    middle:
+      z: 33.985278
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S06-DIA-EOM-01:
+  name: JFEL-S06-DIA-EOM-01
+  machine_area: S06
+  physical:
+    middle:
+      z: 32.39355
+  hardware_type: Beam_Arrival_Monitor
+  hardware_class: Diagnostic
+JFEL-S06-DIA-SCR-01:
+  name: JFEL-S06-DIA-SCR-01
+  machine_area: S06
+  physical:
+    middle:
+      z: 32.925234
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S06-DIA-SCR-02:
+  name: JFEL-S06-DIA-SCR-02
+  machine_area: S06
+  physical:
+    middle:
+      z: 33.985278
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S06-MAG-HCOR-01:
+  name: JFEL-S06-MAG-HCOR-01
+  machine_area: S06
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S06-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 31.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S06-MAG-HCOR-02:
+  name: JFEL-S06-MAG-HCOR-02
+  machine_area: S06
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S06-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 33.843
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S06-MAG-HVCOR-01:
+  name: JFEL-S06-MAG-HVCOR-01
+  machine_area: S06
+  physical:
+    middle:
+      z: 31.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S06-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S06-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S06-MAG-HVCOR-02:
+  name: JFEL-S06-MAG-HVCOR-02
+  machine_area: S06
+  physical:
+    middle:
+      z: 33.843
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S06-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S06-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S06-MAG-QUAD-01:
+  name: JFEL-S06-MAG-QUAD-01
+  machine_area: S06
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S06-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 31.852988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.157575
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S06-MAG-QUAD-02:
+  name: JFEL-S06-MAG-QUAD-02
+  machine_area: S06
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S06-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 32.712988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.0616258
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S06-MAG-VCOR-01:
+  name: JFEL-S06-MAG-VCOR-01
+  machine_area: S06
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S06-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 31.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S06-MAG-VCOR-02:
+  name: JFEL-S06-MAG-VCOR-02
+  machine_area: S06
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S06-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 33.843
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S06-SIM-APER-01:
+  name: JFEL-S06-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S06
+  physical:
+    middle:
+      z: 31.2678
+  hardware_type: Marker
+JFEL-S06-SIM-MARK-01:
+  name: JFEL-S06-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S06
+  physical:
+    middle:
+      z: 31.2678
+  hardware_type: Marker
+JFEL-S06-SIM-MARK-02:
+  name: JFEL-S06-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S06
+  physical:
+    middle:
+      z: 34.118
+  hardware_type: Marker
+JFEL-S06-VAC-VALV-01:
+  name: JFEL-S06-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S06
+  physical:
+    middle:
+      z: 33.5
+  hardware_type: Valve
+JFEL-S07-DCP-SCR-01:
+  name: JFEL-S07-DCP-SCR-01
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 43.9318
+  hardware_type: Marker
+JFEL-S07-DIA-BPM-01:
+  name: JFEL-S07-DIA-BPM-01
+  machine_area: S07
+  physical:
+    middle:
+      z: 38.372988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-BPM-02:
+  name: JFEL-S07-DIA-BPM-02
+  machine_area: S07
+  physical:
+    middle:
+      z: 39.582988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-BPM-03:
+  name: JFEL-S07-DIA-BPM-03
+  machine_area: S07
+  physical:
+    middle:
+      z: 41.307988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-BPM-04:
+  name: JFEL-S07-DIA-BPM-04
+  machine_area: S07
+  physical:
+    middle:
+      z: 42.512988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-BPM-05:
+  name: JFEL-S07-DIA-BPM-05
+  machine_area: S07
+  physical:
+    middle:
+      z: 44.63296
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-BPM-06:
+  name: JFEL-S07-DIA-BPM-06
+  machine_area: S07
+  physical:
+    middle:
+      z: 46.272968
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-BPM-07:
+  name: JFEL-S07-DIA-BPM-07
+  machine_area: S07
+  physical:
+    middle:
+      z: 47.662633
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-BPM-08:
+  name: JFEL-S07-DIA-BPM-08
+  machine_area: S07
+  physical:
+    middle:
+      z: 48.9528
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-CAM-01:
+  name: JFEL-S07-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S07
+  physical:
+    middle:
+      z: 39.931277
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S07-DIA-CAM-02:
+  name: JFEL-S07-DIA-CAM-02
+  machine_area: S07
+  physical:
+    middle:
+      z: 42.661277
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S07-DIA-CAM-03:
+  name: JFEL-S07-DIA-CAM-03
+  hardware_model: MANTA
+  machine_area: S07
+  physical:
+    middle:
+      z: 46.440923
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S07-DIA-CAM-04:
+  name: JFEL-S07-DIA-CAM-04
+  machine_area: S07
+  physical:
+    middle:
+      z: 47.810933
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S07-DIA-CAM-05:
+  name: JFEL-S07-DIA-CAM-05
+  machine_area: S07
+  physical:
+    middle:
+      z: 49.1011
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S07-DIA-CDR-01:
+  name: JFEL-S07-DIA-CDR-01
+  machine_area: S07
+  physical:
+    middle:
+      z: 43.375
+  hardware_type: Bunch_Length_Monitor
+  hardware_class: Diagnostic
+JFEL-S07-DIA-SCR-01:
+  name: JFEL-S07-DIA-SCR-01
+  machine_area: S07
+  physical:
+    middle:
+      z: 39.931277
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S07-DIA-SCR-02:
+  name: JFEL-S07-DIA-SCR-02
+  machine_area: S07
+  physical:
+    middle:
+      z: 42.661277
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S07-DIA-SCR-03:
+  name: JFEL-S07-DIA-SCR-03
+  machine_area: S07
+  physical:
+    middle:
+      z: 46.440923
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S07-DIA-SCR-04:
+  name: JFEL-S07-DIA-SCR-04
+  machine_area: S07
+  physical:
+    middle:
+      z: 47.810933
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S07-DIA-SCR-05:
+  name: JFEL-S07-DIA-SCR-05
+  machine_area: S07
+  physical:
+    middle:
+      z: 49.1011
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S07-DIA-TDC-01:
+  name: JFEL-S07-DIA-TDC-01
+  hardware_class: RF
+  machine_area: S07
+  simulation:
+    t_column: t
+    wx_column: Wx
+    wy_column: Wy
+    wz_column: Wz
+  physical:
+    middle:
+      z: 40.5795
+    length: 0.45
+  cavity:
+    n_cells: 9
+    cell_length: 0.05
+  hardware_type: RFDeflectingCavity
+JFEL-S07-MAG-HCOR-01:
+  name: JFEL-S07-MAG-HCOR-01
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 38.653487
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HCOR-02:
+  name: JFEL-S07-MAG-HCOR-02
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 39.813464
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HCOR-03:
+  name: JFEL-S07-MAG-HCOR-03
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-HCOR-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 41.2328
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HCOR-04:
+  name: JFEL-S07-MAG-HCOR-04
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-HCOR-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 43.183528
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HCOR-05:
+  name: JFEL-S07-MAG-HCOR-05
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-HCOR-05:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 45.1373
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HCOR-06:
+  name: JFEL-S07-MAG-HCOR-06
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-HCOR-06:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 45.9983
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HCOR-07:
+  name: JFEL-S07-MAG-HCOR-07
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-HCOR-07:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 47.6728
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HVCOR-01:
+  name: JFEL-S07-MAG-HVCOR-01
+  machine_area: S07
+  physical:
+    middle:
+      z: 38.653487
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S07-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S07-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HVCOR-02:
+  name: JFEL-S07-MAG-HVCOR-02
+  machine_area: S07
+  physical:
+    middle:
+      z: 39.813464
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S07-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S07-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HVCOR-03:
+  name: JFEL-S07-MAG-HVCOR-03
+  machine_area: S07
+  physical:
+    middle:
+      z: 41.2328
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S07-MAG-HCOR-03
+  Vertical_Corrector: JFEL-S07-MAG-VCOR-03
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HVCOR-04:
+  name: JFEL-S07-MAG-HVCOR-04
+  machine_area: S07
+  physical:
+    middle:
+      z: 43.183528
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S07-MAG-HCOR-04
+  Vertical_Corrector: JFEL-S07-MAG-VCOR-04
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HVCOR-05:
+  name: JFEL-S07-MAG-HVCOR-05
+  machine_area: S07
+  physical:
+    middle:
+      z: 45.1373
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S07-MAG-HCOR-05
+  Vertical_Corrector: JFEL-S07-MAG-VCOR-05
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HVCOR-06:
+  name: JFEL-S07-MAG-HVCOR-06
+  machine_area: S07
+  physical:
+    middle:
+      z: 45.9983
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S07-MAG-HCOR-06
+  Vertical_Corrector: JFEL-S07-MAG-VCOR-06
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-HVCOR-07:
+  name: JFEL-S07-MAG-HVCOR-07
+  machine_area: S07
+  physical:
+    middle:
+      z: 47.6728
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S07-MAG-HCOR-07
+  Vertical_Corrector: JFEL-S07-MAG-VCOR-07
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-01:
+  name: JFEL-S07-MAG-QUAD-01
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 38.852988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-02:
+  name: JFEL-S07-MAG-QUAD-02
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 39.302988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-03:
+  name: JFEL-S07-MAG-QUAD-03
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 41.482988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-04:
+  name: JFEL-S07-MAG-QUAD-04
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 42.232988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-05:
+  name: JFEL-S07-MAG-QUAD-05
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-05:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 42.912988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-06:
+  name: JFEL-S07-MAG-QUAD-06
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-06:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 43.66296
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-07:
+  name: JFEL-S07-MAG-QUAD-07
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-07:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 44.91296
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-08:
+  name: JFEL-S07-MAG-QUAD-08
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-08:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 46.7928
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-09:
+  name: JFEL-S07-MAG-QUAD-09
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-09:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 47.3368
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-10:
+  name: JFEL-S07-MAG-QUAD-10
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-10:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 48.1168
+    length: 0.15
+  magnetic:
+    length: 0.15
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-QUAD-11:
+  name: JFEL-S07-MAG-QUAD-11
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-QUAD-11:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 48.6668
+    length: 0.162
+  magnetic:
+    length: 0.162
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S07-MAG-VCOR-01:
+  name: JFEL-S07-MAG-VCOR-01
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 38.653487
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-VCOR-02:
+  name: JFEL-S07-MAG-VCOR-02
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 39.813464
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-VCOR-03:
+  name: JFEL-S07-MAG-VCOR-03
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-VCOR-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 41.2328
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-VCOR-04:
+  name: JFEL-S07-MAG-VCOR-04
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-VCOR-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 43.183528
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-VCOR-05:
+  name: JFEL-S07-MAG-VCOR-05
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-VCOR-05:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 45.1373
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-VCOR-06:
+  name: JFEL-S07-MAG-VCOR-06
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-VCOR-06:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 45.9983
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S07-MAG-VCOR-07:
+  name: JFEL-S07-MAG-VCOR-07
+  machine_area: S07
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S07-MAG-VCOR-07:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 47.6728
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S07-SIM-APER-01:
+  name: JFEL-S07-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 38.2678
+  hardware_type: Marker
+JFEL-S07-SIM-APER-02:
+  name: JFEL-S07-SIM-APER-02
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 41.1078
+  aperture:
+    horizontal_size: 1.0
+    vertical_size: 0.017
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-S07-SIM-APER-03:
+  name: JFEL-S07-SIM-APER-03
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 44.5278
+  aperture:
+    horizontal_size: 1.0
+    vertical_size: 0.017
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-S07-SIM-MARK-01:
+  name: JFEL-S07-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 39.0278
+  hardware_type: Marker
+JFEL-S07-SIM-MARK-02:
+  name: JFEL-S07-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 46.5178
+  hardware_type: Marker
+JFEL-S07-SIM-MARK-03:
+  name: JFEL-S07-SIM-MARK-03
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 49.2778
+  hardware_type: Marker
+JFEL-S07-SIM-START-01:
+  name: JFEL-S07-SIM-START-01
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 38.2678
+  hardware_type: Marker
+JFEL-S07-SIM-TDC-01-APER:
+  name: JFEL-S07-SIM-TDC-01-APER
+  hardware_class: Simulation
+  machine_area: S07
+  physical:
+    middle:
+      z: 40.0078
+  aperture:
+    horizontal_size: 0.005
+    vertical_size: 0.005
+    shape: rectangular
+  hardware_type: Aperture
+JFEL-S07-VAC-VALV-01:
+  name: JFEL-S07-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S07
+  physical:
+    middle:
+      z: 41.0
+  hardware_type: Valve
+JFEL-S08-DIA-BPM-01:
+  name: JFEL-S08-DIA-BPM-01
+  machine_area: S08
+  physical:
+    middle:
+      z: 45.667988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S08-DIA-BPM-02:
+  name: JFEL-S08-DIA-BPM-02
+  machine_area: S08
+  physical:
+    middle:
+      z: 47.320478
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S08-DIA-CAM-01:
+  name: JFEL-S08-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S08
+  physical:
+    middle:
+      z: 46.316234
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S08-DIA-CAM-02:
+  name: JFEL-S08-DIA-CAM-02
+  machine_area: S08
+  physical:
+    middle:
+      z: 47.376278
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S08-DIA-SCR-01:
+  name: JFEL-S08-DIA-SCR-01
+  machine_area: S08
+  physical:
+    middle:
+      z: 46.316234
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S08-DIA-SCR-02:
+  name: JFEL-S08-DIA-SCR-02
+  machine_area: S08
+  physical:
+    middle:
+      z: 47.376278
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S08-MAG-HCOR-01:
+  name: JFEL-S08-MAG-HCOR-01
+  machine_area: S08
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S08-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 45.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S08-MAG-HCOR-02:
+  name: JFEL-S08-MAG-HCOR-02
+  machine_area: S08
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S08-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 47.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S08-MAG-HVCOR-01:
+  name: JFEL-S08-MAG-HVCOR-01
+  machine_area: S08
+  physical:
+    middle:
+      z: 45.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S08-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S08-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S08-MAG-HVCOR-02:
+  name: JFEL-S08-MAG-HVCOR-02
+  machine_area: S08
+  physical:
+    middle:
+      z: 47.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S08-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S08-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S08-MAG-QUAD-01:
+  name: JFEL-S08-MAG-QUAD-01
+  machine_area: S08
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S08-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 45.852988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S08-MAG-QUAD-02:
+  name: JFEL-S08-MAG-QUAD-02
+  machine_area: S08
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S08-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 46.103988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S08-MAG-VCOR-01:
+  name: JFEL-S08-MAG-VCOR-01
+  machine_area: S08
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S08-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 45.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S08-MAG-VCOR-02:
+  name: JFEL-S08-MAG-VCOR-02
+  machine_area: S08
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S08-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 47.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S08-SIM-APER-01:
+  name: JFEL-S08-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S08
+  physical:
+    middle:
+      z: 45.2678
+  hardware_type: Marker
+JFEL-S08-SIM-MARK-01:
+  name: JFEL-S08-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S08
+  physical:
+    middle:
+      z: 45.2678
+  hardware_type: Marker
+JFEL-S08-SIM-MARK-02:
+  name: JFEL-S08-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S08
+  physical:
+    middle:
+      z: 47.509
+  hardware_type: Marker
+JFEL-S08-VAC-VALV-01:
+  name: JFEL-S08-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S08
+  physical:
+    middle:
+      z: 46.891
+  hardware_type: Valve
+JFEL-S09-DIA-BPM-01:
+  name: JFEL-S09-DIA-BPM-01
+  machine_area: S09
+  physical:
+    middle:
+      z: 52.667988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S09-DIA-BPM-02:
+  name: JFEL-S09-DIA-BPM-02
+  machine_area: S09
+  physical:
+    middle:
+      z: 54.320478
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S09-DIA-CAM-01:
+  name: JFEL-S09-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S09
+  physical:
+    middle:
+      z: 53.316234
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S09-DIA-CAM-02:
+  name: JFEL-S09-DIA-CAM-02
+  machine_area: S09
+  physical:
+    middle:
+      z: 54.376278
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S09-DIA-SCR-01:
+  name: JFEL-S09-DIA-SCR-01
+  machine_area: S09
+  physical:
+    middle:
+      z: 53.316234
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S09-DIA-SCR-02:
+  name: JFEL-S09-DIA-SCR-02
+  machine_area: S09
+  physical:
+    middle:
+      z: 54.376278
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S09-MAG-HCOR-01:
+  name: JFEL-S09-MAG-HCOR-01
+  machine_area: S09
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S09-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 52.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S09-MAG-HCOR-02:
+  name: JFEL-S09-MAG-HCOR-02
+  machine_area: S09
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S09-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 54.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S09-MAG-HVCOR-01:
+  name: JFEL-S09-MAG-HVCOR-01
+  machine_area: S09
+  physical:
+    middle:
+      z: 52.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S09-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S09-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S09-MAG-HVCOR-02:
+  name: JFEL-S09-MAG-HVCOR-02
+  machine_area: S09
+  physical:
+    middle:
+      z: 54.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S09-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S09-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S09-MAG-QUAD-01:
+  name: JFEL-S09-MAG-QUAD-01
+  machine_area: S09
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S09-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 52.852988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S09-MAG-QUAD-02:
+  name: JFEL-S09-MAG-QUAD-02
+  machine_area: S09
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S09-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 53.103988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S09-MAG-VCOR-01:
+  name: JFEL-S09-MAG-VCOR-01
+  machine_area: S09
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S09-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 52.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S09-MAG-VCOR-02:
+  name: JFEL-S09-MAG-VCOR-02
+  machine_area: S09
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S09-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 54.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S09-SIM-APER-01:
+  name: JFEL-S09-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S09
+  physical:
+    middle:
+      z: 52.2678
+  hardware_type: Marker
+JFEL-S09-SIM-MARK-01:
+  name: JFEL-S09-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S09
+  physical:
+    middle:
+      z: 52.2678
+  hardware_type: Marker
+JFEL-S09-SIM-MARK-02:
+  name: JFEL-S09-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S09
+  physical:
+    middle:
+      z: 54.509
+  hardware_type: Marker
+JFEL-S09-VAC-VALV-01:
+  name: JFEL-S09-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S09
+  physical:
+    middle:
+      z: 53.891
+  hardware_type: Valve
+JFEL-S10-DIA-BPM-01:
+  name: JFEL-S10-DIA-BPM-01
+  machine_area: S10
+  physical:
+    middle:
+      z: 59.667988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S10-DIA-BPM-02:
+  name: JFEL-S10-DIA-BPM-02
+  machine_area: S10
+  physical:
+    middle:
+      z: 61.320478
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S10-DIA-CAM-01:
+  name: JFEL-S10-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S10
+  physical:
+    middle:
+      z: 60.316234
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S10-DIA-CAM-02:
+  name: JFEL-S10-DIA-CAM-02
+  machine_area: S10
+  physical:
+    middle:
+      z: 61.376278
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S10-DIA-SCR-01:
+  name: JFEL-S10-DIA-SCR-01
+  machine_area: S10
+  physical:
+    middle:
+      z: 60.316234
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S10-DIA-SCR-02:
+  name: JFEL-S10-DIA-SCR-02
+  machine_area: S10
+  physical:
+    middle:
+      z: 61.376278
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S10-MAG-HCOR-01:
+  name: JFEL-S10-MAG-HCOR-01
+  machine_area: S10
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S10-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 59.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S10-MAG-HCOR-02:
+  name: JFEL-S10-MAG-HCOR-02
+  machine_area: S10
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S10-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 61.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S10-MAG-HVCOR-01:
+  name: JFEL-S10-MAG-HVCOR-01
+  machine_area: S10
+  physical:
+    middle:
+      z: 59.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S10-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S10-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S10-MAG-HVCOR-02:
+  name: JFEL-S10-MAG-HVCOR-02
+  machine_area: S10
+  physical:
+    middle:
+      z: 61.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S10-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S10-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S10-MAG-QUAD-01:
+  name: JFEL-S10-MAG-QUAD-01
+  machine_area: S10
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S10-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 59.852988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S10-MAG-QUAD-02:
+  name: JFEL-S10-MAG-QUAD-02
+  machine_area: S10
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S10-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 60.103988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S10-MAG-VCOR-01:
+  name: JFEL-S10-MAG-VCOR-01
+  machine_area: S10
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S10-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 59.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S10-MAG-VCOR-02:
+  name: JFEL-S10-MAG-VCOR-02
+  machine_area: S10
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S10-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 61.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S10-SIM-APER-01:
+  name: JFEL-S10-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S10
+  physical:
+    middle:
+      z: 59.2678
+  hardware_type: Marker
+JFEL-S10-SIM-MARK-01:
+  name: JFEL-S10-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S10
+  physical:
+    middle:
+      z: 59.2678
+  hardware_type: Marker
+JFEL-S10-SIM-MARK-02:
+  name: JFEL-S10-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S10
+  physical:
+    middle:
+      z: 61.509
+  hardware_type: Marker
+JFEL-S10-VAC-VALV-01:
+  name: JFEL-S10-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S10
+  physical:
+    middle:
+      z: 60.891
+  hardware_type: Valve
+JFEL-S11-DIA-BPM-01:
+  name: JFEL-S11-DIA-BPM-01
+  machine_area: S11
+  physical:
+    middle:
+      z: 66.667988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S11-DIA-BPM-02:
+  name: JFEL-S11-DIA-BPM-02
+  machine_area: S11
+  physical:
+    middle:
+      z: 68.320478
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S11-DIA-CAM-01:
+  name: JFEL-S11-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S11
+  physical:
+    middle:
+      z: 67.316234
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S11-DIA-CAM-02:
+  name: JFEL-S11-DIA-CAM-02
+  machine_area: S11
+  physical:
+    middle:
+      z: 68.376278
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S11-DIA-SCR-01:
+  name: JFEL-S11-DIA-SCR-01
+  machine_area: S11
+  physical:
+    middle:
+      z: 67.316234
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S11-DIA-SCR-02:
+  name: JFEL-S11-DIA-SCR-02
+  machine_area: S11
+  physical:
+    middle:
+      z: 68.376278
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S11-MAG-HCOR-01:
+  name: JFEL-S11-MAG-HCOR-01
+  machine_area: S11
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S11-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 66.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S11-MAG-HCOR-02:
+  name: JFEL-S11-MAG-HCOR-02
+  machine_area: S11
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S11-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 68.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S11-MAG-HVCOR-01:
+  name: JFEL-S11-MAG-HVCOR-01
+  machine_area: S11
+  physical:
+    middle:
+      z: 66.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S11-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S11-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S11-MAG-HVCOR-02:
+  name: JFEL-S11-MAG-HVCOR-02
+  machine_area: S11
+  physical:
+    middle:
+      z: 68.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S11-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S11-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S11-MAG-QUAD-01:
+  name: JFEL-S11-MAG-QUAD-01
+  machine_area: S11
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S11-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 66.852988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S11-MAG-QUAD-02:
+  name: JFEL-S11-MAG-QUAD-02
+  machine_area: S11
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S11-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 67.103988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S11-MAG-VCOR-01:
+  name: JFEL-S11-MAG-VCOR-01
+  machine_area: S11
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S11-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 66.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S11-MAG-VCOR-02:
+  name: JFEL-S11-MAG-VCOR-02
+  machine_area: S11
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S11-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 68.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S11-SIM-APER-01:
+  name: JFEL-S11-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S11
+  physical:
+    middle:
+      z: 66.2678
+  hardware_type: Marker
+JFEL-S11-SIM-MARK-01:
+  name: JFEL-S11-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S11
+  physical:
+    middle:
+      z: 66.2678
+  hardware_type: Marker
+JFEL-S11-SIM-MARK-02:
+  name: JFEL-S11-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S11
+  physical:
+    middle:
+      z: 68.509
+  hardware_type: Marker
+JFEL-S11-VAC-VALV-01:
+  name: JFEL-S11-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S11
+  physical:
+    middle:
+      z: 67.891
+  hardware_type: Valve
+JFEL-S12-DIA-BPM-01:
+  name: JFEL-S12-DIA-BPM-01
+  machine_area: S12
+  physical:
+    middle:
+      z: 73.667988
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S12-DIA-BPM-02:
+  name: JFEL-S12-DIA-BPM-02
+  machine_area: S12
+  physical:
+    middle:
+      z: 75.320478
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-S12-DIA-CAM-01:
+  name: JFEL-S12-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: S12
+  physical:
+    middle:
+      z: 74.316234
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S12-DIA-CAM-02:
+  name: JFEL-S12-DIA-CAM-02
+  machine_area: S12
+  physical:
+    middle:
+      z: 75.376278
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-S12-DIA-SCR-01:
+  name: JFEL-S12-DIA-SCR-01
+  machine_area: S12
+  physical:
+    middle:
+      z: 74.316234
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S12-DIA-SCR-02:
+  name: JFEL-S12-DIA-SCR-02
+  machine_area: S12
+  physical:
+    middle:
+      z: 75.376278
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-S12-MAG-HCOR-01:
+  name: JFEL-S12-MAG-HCOR-01
+  machine_area: S12
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S12-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 73.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S12-MAG-HCOR-02:
+  name: JFEL-S12-MAG-HCOR-02
+  machine_area: S12
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S12-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 75.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-S12-MAG-HVCOR-01:
+  name: JFEL-S12-MAG-HVCOR-01
+  machine_area: S12
+  physical:
+    middle:
+      z: 73.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S12-MAG-HCOR-01
+  Vertical_Corrector: JFEL-S12-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S12-MAG-HVCOR-02:
+  name: JFEL-S12-MAG-HVCOR-02
+  machine_area: S12
+  physical:
+    middle:
+      z: 75.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-S12-MAG-HCOR-02
+  Vertical_Corrector: JFEL-S12-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-S12-MAG-QUAD-01:
+  name: JFEL-S12-MAG-QUAD-01
+  machine_area: S12
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S12-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 73.852988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S12-MAG-QUAD-02:
+  name: JFEL-S12-MAG-QUAD-02
+  machine_area: S12
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S12-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 74.103988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S12-MAG-VCOR-01:
+  name: JFEL-S12-MAG-VCOR-01
+  machine_area: S12
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S12-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 73.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S12-MAG-VCOR-02:
+  name: JFEL-S12-MAG-VCOR-02
+  machine_area: S12
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S12-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 75.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S12-SIM-APER-01:
+  name: JFEL-S12-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S12
+  physical:
+    middle:
+      z: 73.2678
+  hardware_type: Marker
+JFEL-S12-SIM-MARK-01:
+  name: JFEL-S12-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S12
+  physical:
+    middle:
+      z: 73.2678
+  hardware_type: Marker
+JFEL-S12-SIM-MARK-02:
+  name: JFEL-S12-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S12
+  physical:
+    middle:
+      z: 75.509
+  hardware_type: Marker
+JFEL-S12-VAC-VALV-01:
+  name: JFEL-S12-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S12
+  physical:
+    middle:
+      z: 74.891
+  hardware_type: Valve
+JFEL-S13-MAG-QUAD-01:
+  name: JFEL-S13-MAG-QUAD-01
+  machine_area: S13
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S13-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 80.852988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S13-MAG-QUAD-02:
+  name: JFEL-S13-MAG-QUAD-02
+  machine_area: S13
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S13-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 81.103988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S13-MAG-QUAD-03:
+  name: JFEL-S13-MAG-QUAD-03
+  machine_area: S13
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S13-MAG-QUAD-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 82.952988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S13-MAG-QUAD-04:
+  name: JFEL-S13-MAG-QUAD-04
+  machine_area: S13
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S13-MAG-QUAD-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 83.603988
+    length: 0.15
+  magnetic:
+    length: 0.15
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -0.5
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-S13-MAG-VCOR-01:
+  name: JFEL-S13-MAG-VCOR-01
+  machine_area: S13
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S13-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 80.6078
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S13-MAG-VCOR-02:
+  name: JFEL-S13-MAG-VCOR-02
+  machine_area: S13
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-S13-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 82.234
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-S13-SIM-APER-01:
+  name: JFEL-S13-SIM-APER-01
+  hardware_class: Simulation
+  machine_area: S13
+  physical:
+    middle:
+      z: 80.2678
+  hardware_type: Marker
+JFEL-S13-SIM-MARK-01:
+  name: JFEL-S13-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: S13
+  physical:
+    middle:
+      z: 80.2678
+  hardware_type: Marker
+JFEL-S13-SIM-MARK-02:
+  name: JFEL-S13-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: S13
+  physical:
+    middle:
+      z: 82.509
+  hardware_type: Marker
+JFEL-S13-VAC-VALV-01:
+  name: JFEL-S13-VAC-VALV-01
+  hardware_class: Valve
+  machine_area: S13
+  physical:
+    middle:
+      z: 74.891
+  hardware_type: Valve
+JFEL-SP1-DIA-BPM-01:
+  name: JFEL-SP1-DIA-BPM-01
+  machine_area: SP1
+  physical:
+    middle:
+      x: -1.6542938
+      z: 7.692126
+    global_rotation:
+      theta: 0.785398
+    length: 0.07
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-SP1-DIA-CAM-01:
+  name: JFEL-SP1-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: SP1
+  physical:
+    middle:
+      x: -2.7800087
+      z: 8.8178412
+    global_rotation:
+      theta: 0.785398
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-SP1-DIA-FCUP-01:
+  name: JFEL-SP1-DIA-FCUP-01
+  machine_area: SP1
+  physical:
+    middle:
+      x: -2.8493037
+      z: 8.8871362
+    global_rotation:
+      theta: 0.785398
+  hardware_type: Faraday_Cup_Monitor
+  hardware_class: Diagnostic
+JFEL-SP1-DIA-SCR-01:
+  name: JFEL-SP1-DIA-SCR-01
+  machine_area: SP1
+  physical:
+    middle:
+      x: -2.7800087
+      z: 8.8178412
+    global_rotation:
+      theta: 0.785398
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-SP1-MAG-HCOR-01:
+  name: JFEL-SP1-MAG-HCOR-01
+  machine_area: SP1
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP1-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -1.7037938
+      z: 7.7416261
+    global_rotation:
+      theta: 0.785398
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-SP1-MAG-HVCOR-01:
+  name: JFEL-SP1-MAG-HVCOR-01
+  machine_area: SP1
+  physical:
+    middle:
+      x: -1.7037938
+      z: 7.7416261
+    global_rotation:
+      theta: 0.785398
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-SP1-MAG-HCOR-01
+  Vertical_Corrector: JFEL-SP1-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-SP1-MAG-QUAD-01:
+  name: JFEL-SP1-MAG-QUAD-01
+  machine_area: SP1
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP1-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -1.8204638
+      z: 7.8582961
+    global_rotation:
+      theta: 0.785398
+    length: 0.1
+  magnetic:
+    length: 0.1
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -1.597658628810405
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-SP1-MAG-QUAD-02:
+  name: JFEL-SP1-MAG-QUAD-02
+  machine_area: SP1
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP1-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -2.0325938
+      z: 8.0704261
+    global_rotation:
+      theta: 0.785398
+    length: 0.1
+  magnetic:
+    length: 0.1
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: -1.597658628810405
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-SP1-MAG-VCOR-01:
+  name: JFEL-SP1-MAG-VCOR-01
+  machine_area: SP1
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP1-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -1.7037938
+      z: 7.7416261
+    global_rotation:
+      theta: 0.785398
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-SP2-DIA-BPM-01:
+  name: JFEL-SP2-DIA-BPM-01
+  machine_area: SP2
+  physical:
+    middle:
+      x: -0.2668365
+      z: 33.77466537531386
+    global_rotation:
+      theta: 0.523599
+    length: 0.21
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-SP2-DIA-BPM-02:
+  name: JFEL-SP2-DIA-BPM-02
+  machine_area: SP2
+  physical:
+    middle:
+      x: -1.209923
+      z: 35.4081391
+    global_rotation:
+      theta: 0.523599
+    length: 0.21
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-SP2-DIA-CAM-01:
+  name: JFEL-SP2-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: SP2
+  physical:
+    middle:
+      x: -0.3409865
+      z: 33.903097
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-SP2-DIA-CAM-02:
+  name: JFEL-SP2-DIA-CAM-02
+  machine_area: SP2
+  physical:
+    middle:
+      x: -1.2840715
+      z: 35.536568
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-SP2-DIA-FCUP-01:
+  name: JFEL-SP2-DIA-FCUP-01
+  machine_area: SP2
+  physical:
+    middle:
+      x: -1.5830055
+      z: 36.054337
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Faraday_Cup_Monitor
+  hardware_class: Diagnostic
+JFEL-SP2-DIA-SCR-01:
+  name: JFEL-SP2-DIA-SCR-01
+  machine_area: SP2
+  physical:
+    middle:
+      x: -0.3409865
+      z: 33.903097
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-SP2-DIA-SCR-02:
+  name: JFEL-SP2-DIA-SCR-02
+  machine_area: SP2
+  physical:
+    middle:
+      x: -1.2840715
+      z: 35.536568
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-SP2-MAG-DIP-01:
+  name: JFEL-SP2-MAG-DIP-01
+  machine_area: SP2
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP2-MAG-DIP-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+  physical:
+    middle:
+      z: 33.312491
+    length: 0.4
+  magnetic:
+    length: 0.4
+    order: 0
+  hardware_type: Dipole
+  hardware_class: Magnet
+JFEL-SP2-MAG-HCOR-01:
+  name: JFEL-SP2-MAG-HCOR-01
+  machine_area: SP2
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP2-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+  physical:
+    middle:
+      x: -0.1695265
+      z: 33.60611951122933
+    global_rotation:
+      theta: 0.523599
+    length: 0.1
+  magnetic:
+    length: 0.1
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-SP2-MAG-HCOR-02:
+  name: JFEL-SP2-MAG-HCOR-02
+  machine_area: SP2
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP2-MAG-HCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.9573485
+      z: 34.9706672
+    global_rotation:
+      theta: 0.523599
+    length: 0.2
+  magnetic:
+    length: 0.2
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-SP2-MAG-HVCOR-01:
+  name: JFEL-SP2-MAG-HVCOR-01
+  machine_area: SP2
+  physical:
+    middle:
+      x: -0.1695265
+      z: 33.60611951122933
+    global_rotation:
+      theta: 0.523599
+    length: 0.1
+  magnetic:
+    length: 0.1
+    order: 0
+  Horizontal_Corrector: JFEL-SP2-MAG-HCOR-01
+  Vertical_Corrector: JFEL-SP2-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-SP2-MAG-HVCOR-02:
+  name: JFEL-SP2-MAG-HVCOR-02
+  machine_area: SP2
+  physical:
+    middle:
+      x: -0.9573485
+      z: 34.9706672
+    global_rotation:
+      theta: 0.523599
+    length: 0.2
+  magnetic:
+    length: 0.2
+    order: 0
+  Horizontal_Corrector: JFEL-SP2-MAG-HCOR-02
+  Vertical_Corrector: JFEL-SP2-MAG-VCOR-02
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-SP2-MAG-QUAD-01:
+  name: JFEL-SP2-MAG-QUAD-01
+  machine_area: SP2
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP2-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.4918485
+      z: 34.1643976
+    global_rotation:
+      theta: 0.523599
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 1.59249
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-SP2-MAG-QUAD-02:
+  name: JFEL-SP2-MAG-QUAD-02
+  machine_area: SP2
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP2-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.8168485
+      z: 34.7273141
+    global_rotation:
+      theta: 0.523599
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 1.59249
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-SP2-MAG-VCOR-01:
+  name: JFEL-SP2-MAG-VCOR-01
+  machine_area: SP2
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP2-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.1695265
+      z: 33.60611951122933
+    global_rotation:
+      theta: 0.523599
+    length: 0.1
+  magnetic:
+    length: 0.1
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-SP2-MAG-VCOR-02:
+  name: JFEL-SP2-MAG-VCOR-02
+  machine_area: SP2
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP2-MAG-VCOR-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.9573485
+      z: 34.9706672
+    global_rotation:
+      theta: 0.523599
+    length: 0.2
+  magnetic:
+    length: 0.2
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-SP2-SIM-MARK-01:
+  name: JFEL-SP2-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: SP2
+  physical:
+    middle:
+      z: 33.10779289
+  hardware_type: Marker
+JFEL-SP3-DIA-BPM-01:
+  name: JFEL-SP3-DIA-BPM-01
+  machine_area: SP3
+  physical:
+    middle:
+      x: -0.3548355
+      z: 46.1071141
+    global_rotation:
+      theta: 0.523599
+    length: 0.21
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-SP3-DIA-BPM-02:
+  name: JFEL-SP3-DIA-BPM-02
+  machine_area: SP3
+  physical:
+    middle:
+      x: -1.06939
+      z: 47.3447588
+    global_rotation:
+      theta: 0.523599
+    length: 0.21
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-SP3-DIA-CAM-01:
+  name: JFEL-SP3-DIA-CAM-01
+  hardware_model: MANTA
+  machine_area: SP3
+  physical:
+    middle:
+      x: -0.4788055
+      z: 46.32183645
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-SP3-DIA-CAM-02:
+  name: JFEL-SP3-DIA-CAM-02
+  machine_area: SP3
+  physical:
+    middle:
+      x: -1.1433905
+      z: 47.4729314
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-SP3-DIA-FCUP-01:
+  name: JFEL-SP3-DIA-FCUP-01
+  machine_area: SP3
+  physical:
+    middle:
+      x: -1.442333
+      z: 47.990715
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Faraday_Cup_Monitor
+  hardware_class: Diagnostic
+JFEL-SP3-DIA-SCR-01:
+  name: JFEL-SP3-DIA-SCR-01
+  machine_area: SP3
+  physical:
+    middle:
+      x: -0.4788055
+      z: 46.32183645
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-SP3-DIA-SCR-02:
+  name: JFEL-SP3-DIA-SCR-02
+  machine_area: SP3
+  physical:
+    middle:
+      x: -1.1433905
+      z: 47.4729314
+    global_rotation:
+      theta: 0.523599
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-SP3-MAG-DIP-01:
+  name: JFEL-SP3-MAG-DIP-01
+  machine_area: SP3
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP3-MAG-DIP-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 45.492521
+    length: 0.4
+  magnetic:
+    length: 0.4
+    order: 0
+  hardware_type: Dipole
+  hardware_class: Magnet
+JFEL-SP3-MAG-HCOR-01:
+  name: JFEL-SP3-MAG-HCOR-01
+  machine_area: SP3
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP3-MAG-HCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.245001
+      z: 45.91687518
+    global_rotation:
+      theta: 0.523599
+    length: 0.1
+  magnetic:
+    length: 0.1
+    order: 0
+  hardware_type: Horizontal_Corrector
+  hardware_class: Magnet
+JFEL-SP3-MAG-HVCOR-01:
+  name: JFEL-SP3-MAG-HVCOR-01
+  machine_area: SP3
+  physical:
+    middle:
+      x: -0.245001
+      z: 45.91687518
+    global_rotation:
+      theta: 0.523599
+    length: 0.1
+  magnetic:
+    length: 0.1
+    order: 0
+  Horizontal_Corrector: JFEL-SP3-MAG-HCOR-01
+  Vertical_Corrector: JFEL-SP3-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-SP3-MAG-QUAD-01:
+  name: JFEL-SP3-MAG-QUAD-01
+  machine_area: SP3
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP3-MAG-QUAD-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.604833
+      z: 46.5401225
+    global_rotation:
+      theta: 0.523599
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 1.59249
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-SP3-MAG-QUAD-02:
+  name: JFEL-SP3-MAG-QUAD-02
+  machine_area: SP3
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP3-MAG-QUAD-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.929743
+      z: 47.1028831
+    global_rotation:
+      theta: 0.523599
+    length: 0.162
+  magnetic:
+    length: 0.162
+    multipoles:
+      K0L: {}
+      K1L:
+        order: 1
+        normal: 1.59249
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    order: 1
+  hardware_type: Quadrupole
+  hardware_class: Magnet
+JFEL-SP3-MAG-VCOR-01:
+  name: JFEL-SP3-MAG-VCOR-01
+  machine_area: SP3
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-SP3-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.245001
+      z: 45.91687518
+    global_rotation:
+      theta: 0.523599
+    length: 0.1
+  magnetic:
+    length: 0.1
+    order: 0
+  hardware_type: Vertical_Corrector
+  hardware_class: Magnet
+JFEL-SP3-SIM-MARK-01:
+  name: JFEL-SP3-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: SP3
+  physical:
+    middle:
+      z: 45.287822
+  hardware_type: Marker
+JFEL-VBC-DIA-BPM-01:
+  name: JFEL-VBC-DIA-BPM-01
+  machine_area: VBC
+  physical:
+    middle:
+      x: 0.161944
+      z: 28.353848
+  hardware_type: Beam_Position_Monitor
+  hardware_class: Diagnostic
+JFEL-VBC-DIA-CAM-01:
+  name: JFEL-VBC-DIA-CAM-01
+  machine_area: VBC
+  physical:
+    middle:
+      x: 0.161944
+      z: 28.9048
+  hardware_type: Camera
+  hardware_class: Diagnostic
+JFEL-VBC-DIA-RCOL-01:
+  name: JFEL-VBC-DIA-RCOL-01
+  hardware_class: Simulation
+  machine_area: VBC
+  physical:
+    middle:
+      x: 0.161944
+      z: 28.6393
+    length: 0.48
+  aperture:
+    horizontal_size: 1.0
+    vertical_size: 1.0
+    shape: rectangular
+  hardware_type: Collimator
+JFEL-VBC-DIA-SCR-01:
+  name: JFEL-VBC-DIA-SCR-01
+  machine_area: VBC
+  physical:
+    middle:
+      x: 0.161944
+      z: 28.9048
+  hardware_type: Screen
+  hardware_class: Diagnostic
+JFEL-VBC-MAG-DIP-01:
+  name: JFEL-VBC-MAG-DIP-01
+  machine_area: VBC
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-VBC-MAG-DIP-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 26.165835
+    length: 0.200981
+    physical_angle: 0.13
+  magnetic:
+    length: 0.200981
+    multipoles:
+      K0L:
+        normal: 0.13
+      K1L:
+        order: 1
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    exit_edge_angle: angle
+    order: 0
+  hardware_type: Dipole
+  hardware_class: Magnet
+JFEL-VBC-MAG-DIP-02:
+  name: JFEL-VBC-MAG-DIP-02
+  machine_area: VBC
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-VBC-MAG-DIP-02:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.22219421660252595
+      z: 27.865382
+    global_rotation:
+      theta: 0.13
+    length: 0.200981
+    physical_angle: -0.13
+  magnetic:
+    length: 0.200981
+    multipoles:
+      K0L:
+        normal: -0.13
+      K1L:
+        order: 1
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    entrance_edge_angle: angle
+    order: 0
+  hardware_type: Dipole
+  hardware_class: Magnet
+JFEL-VBC-MAG-DIP-03:
+  name: JFEL-VBC-MAG-DIP-03
+  machine_area: VBC
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-VBC-MAG-DIP-03:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: -0.22219421660252595
+      z: 29.365835
+    length: 0.200981
+    physical_angle: -0.13
+  magnetic:
+    length: 0.200981
+    multipoles:
+      K0L:
+        normal: -0.13
+      K1L:
+        order: 1
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    exit_edge_angle: angle
+    order: 0
+  hardware_type: Dipole
+  hardware_class: Magnet
+JFEL-VBC-MAG-DIP-04:
+  name: JFEL-VBC-MAG-DIP-04
+  machine_area: VBC
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-VBC-MAG-DIP-04:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      z: 31.065382
+    global_rotation:
+      theta: -0.13
+    length: 0.200981
+    physical_angle: 0.13
+  magnetic:
+    length: 0.200981
+    multipoles:
+      K0L:
+        normal: 0.13
+      K1L:
+        order: 1
+      K2L:
+        order: 2
+      K3L:
+        order: 3
+      K4L:
+        order: 4
+    entrance_edge_angle: angle
+    order: 0
+  hardware_type: Dipole
+  hardware_class: Magnet
+JFEL-VBC-MAG-TRANS-01:
+  name: JFEL-VBC-MAG-TRANS-01
+  hardware_model: Generic
+  machine_area: VBC
+  physical:
+    middle:
+      z: 26.165835
+    maximum_position: 30.0
+    minimum_position: 372.0
+  hardware_type: Stage
+  hardware_class: Stage
+JFEL-VBC-MAG-VCOR-01:
+  name: JFEL-VBC-MAG-VCOR-01
+  machine_area: VBC
+  controls:
+    variables:
+      READK:
+        identifier: JFEL-VBC-MAG-VCOR-01:CalcK
+        dtype: float
+        protocol: CA
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        type: scalar
+        read_only: False
+  physical:
+    middle:
+      x: 0.161944
+      z: 28.2881
+    length: 0.05
+  magnetic:
+    length: 0.05
+    order: 0
+  Horizontal_Corrector: JFEL-VBC-MAG-VCOR-01
+  Vertical_Corrector: JFEL-VBC-MAG-VCOR-01
+  hardware_type: Combined_Corrector
+  hardware_class: Magnet
+JFEL-VBC-SIM-MARK-01:
+  name: JFEL-VBC-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: VBC
+  physical:
+    middle:
+      z: 31.2678
+  hardware_type: Marker
+JFEL-FEL-SIM-MARK-01:
+  name: JFEL-FEL-SIM-MARK-01
+  hardware_class: Simulation
+  machine_area: FEL
+  physical:
+    middle:
+      z: 84.016
+  hardware_type: Marker
+JFEL-FEL-MAG-WIGG-01:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-01:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-01
+  physical:
+    length: 1.968
+    middle:
+      z: 85.0
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-02:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-02:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-02
+  physical:
+    length: 1.968
+    middle:
+      z: 87.5
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-03:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-03:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-03
+  physical:
+    length: 1.968
+    middle:
+      z: 90
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-04:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-04:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-04
+  physical:
+    length: 1.968
+    middle:
+      z: 92.5
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-05:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-05:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-05
+  physical:
+    length: 1.968
+    middle:
+      z: 95
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-06:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-06:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-06
+  physical:
+    length: 1.968
+    middle:
+      z: 97.5
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-07:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-07:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-07
+  physical:
+    length: 1.968
+    middle:
+      z: 100.0
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-08:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-08:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-08
+  physical:
+    length: 1.968
+    middle:
+      z: 102.5
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-09:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-09:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-09
+  physical:
+    length: 1.968
+    middle:
+      z: 105
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-WIGG-10:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for the wiggler
+        dtype: float
+        identifier: JFEL-FEL-MAG-WIGG-10:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Wiggler
+  machine_area: FEL
+  magnetic:
+    helical: true
+    length: 1.968
+    num_periods: 24
+    peak_magnetic_field: 0.0
+    period: 0.082
+    quadratic_roll_off_x: 0.5
+    quadratic_roll_off_y: 0.5
+    strength: 8.524
+    transverse_gradient_x: 0.0
+    transverse_gradient_y: 0.0
+  name: JFEL-FEL-MAG-WIGG-10
+  physical:
+    length: 1.968
+    middle:
+      z: 107.5
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-01:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-01:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: -0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-01
+  physical:
+    length: 0.15
+    middle:
+      z: 86.25
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-02:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-02:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: 0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-02
+  physical:
+    length: 0.15
+    middle:
+      z: 88.75
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-03:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-03:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: -0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-03
+  physical:
+    length: 0.15
+    middle:
+      z: 91.25
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-04:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-04:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: 0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-04
+  physical:
+    length: 0.15
+    middle:
+      z: 93.75
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-05:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-05:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: -0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-05
+  physical:
+    length: 0.15
+    middle:
+      z: 96.25
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-06:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-06:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: 0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-06
+  physical:
+    length: 0.15
+    middle:
+      z: 98.75
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-07:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-07:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: -0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-07
+  physical:
+    length: 0.15
+    middle:
+      z: 101.25
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-08:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-08:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: 0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-08
+  physical:
+    length: 0.15
+    middle:
+      z: 103.75
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-09:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-09:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: -0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-09
+  physical:
+    length: 0.15
+    middle:
+      z: 106.25
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-MAG-QUAD-10:
+  controls:
+    variables:
+      READK:
+        description: Reads the calculated K value for a magnet based on momentum of
+          the section
+        dtype: float
+        identifier: JFEL-FEL-MAG-QUAD-10:CalcK
+        protocol: CA
+        units: Arb. Units
+        type: scalar
+        read_only: False
+  hardware_class: Magnet
+  hardware_model: Generic
+  hardware_type: Quadrupole
+  machine_area: FEL
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        order: 1
+        normal: 0.157474
+    order: 1
+  name: JFEL-FEL-MAG-QUAD-10
+  physical:
+    length: 0.15
+    middle:
+      z: 108.75
+  simulation:
+    field_reference_position: middle
+  subelement: false
+JFEL-FEL-DIA-PHOT-01:
+  name: JFEL-FEL-DIA-PHOT-01
+  controls:
+    variables:
+      INTENSITY:
+        description: Gets the total pulse intensity from the photon monitor.
+        dtype: float
+        identifier: JFEL-FEL-DIA-PHOT-01:INTENSITY
+        protocol: CA
+        type: scalar
+        units: J
+  hardware_class: Diagnostic
+  hardware_type: Photon_Monitor
+  hardware_model: Photon_Monitor
+  machine_area: FEL
+  virtual_name: ''
+  physical:
+    middle:
+      z: 108.9
+  intensity:
+    type: I0
+    intensity: 0.0
+JFEL-FEL-SIM-MARK-02:
+  name: JFEL-FEL-SIM-MARK-02
+  hardware_class: Simulation
+  machine_area: FEL
+  physical:
+    middle:
+      z: 109
+  hardware_type: Marker

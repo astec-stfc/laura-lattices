@@ -1,0 +1,7 @@
+name: JFEL-MU1-SIM-MARK-01
+hardware_class: Simulation
+machine_area: MU1
+physical:
+  middle:
+    z: 50.8568
+hardware_type: Marker

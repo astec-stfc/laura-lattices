@@ -1,0 +1,7 @@
+name: JFEL-S09-SIM-MARK-02
+hardware_class: Simulation
+machine_area: S09
+physical:
+  middle:
+    z: 54.509
+hardware_type: Marker
