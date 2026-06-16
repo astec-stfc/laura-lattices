@@ -17,21 +17,6 @@ Note: JFEL (JANUS Free-Electron Laser) is not a real accelerator: it is primaril
 
 Requires Python >= 3.10.
 
-### Install all machines
-
-```bash
-pip install laura-lattices
-```
-
-### Install a single machine
-
-Each machine is also published as its own package. These install into the same
-`laura_lattices` namespace so they can be mixed freely:
-
-```bash
-pip install laura-lattices-jfel
-```
-
 ### Install from source (editable / development)
 
 ```bash
