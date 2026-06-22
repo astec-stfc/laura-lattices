@@ -9,6 +9,7 @@ controls:
       units: J
       description: Gets the total pulse intensity from the photon monitor.
       type: scalar
+      read_only: False
 physical:
   middle:
     z: 108.9

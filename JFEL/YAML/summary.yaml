@@ -6872,6 +6872,7 @@ JFEL-FEL-DIA-PHOT-01:
         protocol: CA
         type: scalar
         units: J
+        read_only: False
   hardware_class: Diagnostic
   hardware_type: Photon_Monitor
   hardware_model: Photon_Monitor
