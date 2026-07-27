@@ -433,7 +433,7 @@ JFEL-L05-LIN-CAV-01:
         type: scalar
   physical:
     middle:
-      z: 49.583935
+      z: 53.593935
     length: 4.06667
   cavity:
     structure_Type: TravellingWave
@@ -454,7 +454,7 @@ JFEL-L05-SIM-APER-01:
   machine_area: L05
   physical:
     middle:
-      z: 47.509
+      z: 51.5190
   hardware_type: Marker
 JFEL-L06-LIN-CAV-01:
   name: JFEL-L06-LIN-CAV-01
@@ -488,7 +488,7 @@ JFEL-L06-LIN-CAV-01:
         type: scalar
   physical:
     middle:
-      z: 56.583935
+      z: 60.593935
     length: 4.06667
   cavity:
     structure_Type: TravellingWave
@@ -509,7 +509,7 @@ JFEL-L06-SIM-APER-01:
   machine_area: L06
   physical:
     middle:
-      z: 54.509
+      z: 58.5190
   hardware_type: Marker
 JFEL-L07-LIN-CAV-01:
   name: JFEL-L07-LIN-CAV-01
@@ -543,7 +543,7 @@ JFEL-L07-LIN-CAV-01:
         type: scalar
   physical:
     middle:
-      z: 63.583935
+      z: 67.593935
     length: 4.06667
   cavity:
     structure_Type: TravellingWave
@@ -564,7 +564,7 @@ JFEL-L07-SIM-APER-01:
   machine_area: L07
   physical:
     middle:
-      z: 61.509
+      z: 65.5190
   hardware_type: Marker
 JFEL-L08-LIN-CAV-01:
   name: JFEL-L08-LIN-CAV-01
@@ -598,7 +598,7 @@ JFEL-L08-LIN-CAV-01:
         type: scalar
   physical:
     middle:
-      z: 70.583935
+      z: 74.593935
     length: 4.06667
   cavity:
     structure_Type: TravellingWave
@@ -619,7 +619,7 @@ JFEL-L08-SIM-APER-01:
   machine_area: L08
   physical:
     middle:
-      z: 68.509
+      z: 72.5190
   hardware_type: Marker
 JFEL-L09-LIN-CAV-01:
   name: JFEL-L09-LIN-CAV-01
@@ -653,7 +653,7 @@ JFEL-L09-LIN-CAV-01:
         type: scalar
   physical:
     middle:
-      z: 77.583935
+      z: 81.593935
     length: 4.06667
   cavity:
     structure_Type: TravellingWave
@@ -674,7 +674,7 @@ JFEL-L09-SIM-APER-01:
   machine_area: L09
   physical:
     middle:
-      z: 75.509
+      z: 79.5190
   hardware_type: Marker
 JFEL-L09-SIM-APER-02:
   name: JFEL-L09-SIM-APER-02
@@ -682,7 +682,7 @@ JFEL-L09-SIM-APER-02:
   machine_area: L09
   physical:
     middle:
-      z: 80.0
+      z: 84.0100
   hardware_type: Marker
 JFEL-L4H-LIN-CAV-01:
   name: JFEL-L4H-LIN-CAV-01
@@ -3708,7 +3708,7 @@ JFEL-S08-DIA-BPM-01:
   machine_area: S08
   physical:
     middle:
-      z: 45.667988
+      z: 49.677988
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S08-DIA-BPM-02:
@@ -3716,7 +3716,7 @@ JFEL-S08-DIA-BPM-02:
   machine_area: S08
   physical:
     middle:
-      z: 47.320478
+      z: 51.330478
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S08-DIA-CAM-01:
@@ -3725,7 +3725,7 @@ JFEL-S08-DIA-CAM-01:
   machine_area: S08
   physical:
     middle:
-      z: 46.316234
+      z: 50.326234
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S08-DIA-CAM-02:
@@ -3733,7 +3733,7 @@ JFEL-S08-DIA-CAM-02:
   machine_area: S08
   physical:
     middle:
-      z: 47.376278
+      z: 51.386278
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S08-DIA-SCR-01:
@@ -3741,7 +3741,7 @@ JFEL-S08-DIA-SCR-01:
   machine_area: S08
   physical:
     middle:
-      z: 46.316234
+      z: 50.326234
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S08-DIA-SCR-02:
@@ -3749,7 +3749,7 @@ JFEL-S08-DIA-SCR-02:
   machine_area: S08
   physical:
     middle:
-      z: 47.376278
+      z: 51.386278
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S08-MAG-HCOR-01:
@@ -3767,7 +3767,7 @@ JFEL-S08-MAG-HCOR-01:
         read_only: False
   physical:
     middle:
-      z: 45.6078
+      z: 49.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -3789,7 +3789,7 @@ JFEL-S08-MAG-HCOR-02:
         read_only: False
   physical:
     middle:
-      z: 47.234
+      z: 51.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -3801,7 +3801,7 @@ JFEL-S08-MAG-HVCOR-01:
   machine_area: S08
   physical:
     middle:
-      z: 45.6078
+      z: 49.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -3815,7 +3815,7 @@ JFEL-S08-MAG-HVCOR-02:
   machine_area: S08
   physical:
     middle:
-      z: 47.234
+      z: 51.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -3839,7 +3839,7 @@ JFEL-S08-MAG-QUAD-01:
         read_only: False
   physical:
     middle:
-      z: 45.852988
+      z: 49.862988
     length: 0.15
   magnetic:
     length: 0.15
@@ -3872,7 +3872,7 @@ JFEL-S08-MAG-QUAD-02:
         read_only: False
   physical:
     middle:
-      z: 46.103988
+      z: 50.113988
     length: 0.15
   magnetic:
     length: 0.15
@@ -3905,7 +3905,7 @@ JFEL-S08-MAG-VCOR-01:
         read_only: False
   physical:
     middle:
-      z: 45.6078
+      z: 49.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -3927,7 +3927,7 @@ JFEL-S08-MAG-VCOR-02:
         read_only: False
   physical:
     middle:
-      z: 47.234
+      z: 51.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -3940,7 +3940,7 @@ JFEL-S08-SIM-APER-01:
   machine_area: S08
   physical:
     middle:
-      z: 45.2678
+      z: 49.2778
   hardware_type: Marker
 JFEL-S08-SIM-MARK-01:
   name: JFEL-S08-SIM-MARK-01
@@ -3948,7 +3948,7 @@ JFEL-S08-SIM-MARK-01:
   machine_area: S08
   physical:
     middle:
-      z: 45.2678
+      z: 49.2778
   hardware_type: Marker
 JFEL-S08-SIM-MARK-02:
   name: JFEL-S08-SIM-MARK-02
@@ -3956,7 +3956,7 @@ JFEL-S08-SIM-MARK-02:
   machine_area: S08
   physical:
     middle:
-      z: 47.509
+      z: 51.5190
   hardware_type: Marker
 JFEL-S08-VAC-VALV-01:
   name: JFEL-S08-VAC-VALV-01
@@ -3964,14 +3964,14 @@ JFEL-S08-VAC-VALV-01:
   machine_area: S08
   physical:
     middle:
-      z: 46.891
+      z: 50.9010
   hardware_type: Valve
 JFEL-S09-DIA-BPM-01:
   name: JFEL-S09-DIA-BPM-01
   machine_area: S09
   physical:
     middle:
-      z: 52.667988
+      z: 56.677988
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S09-DIA-BPM-02:
@@ -3979,7 +3979,7 @@ JFEL-S09-DIA-BPM-02:
   machine_area: S09
   physical:
     middle:
-      z: 54.320478
+      z: 58.330478
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S09-DIA-CAM-01:
@@ -3988,7 +3988,7 @@ JFEL-S09-DIA-CAM-01:
   machine_area: S09
   physical:
     middle:
-      z: 53.316234
+      z: 57.326234
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S09-DIA-CAM-02:
@@ -3996,7 +3996,7 @@ JFEL-S09-DIA-CAM-02:
   machine_area: S09
   physical:
     middle:
-      z: 54.376278
+      z: 58.386278
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S09-DIA-SCR-01:
@@ -4004,7 +4004,7 @@ JFEL-S09-DIA-SCR-01:
   machine_area: S09
   physical:
     middle:
-      z: 53.316234
+      z: 57.326234
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S09-DIA-SCR-02:
@@ -4012,7 +4012,7 @@ JFEL-S09-DIA-SCR-02:
   machine_area: S09
   physical:
     middle:
-      z: 54.376278
+      z: 58.386278
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S09-MAG-HCOR-01:
@@ -4030,7 +4030,7 @@ JFEL-S09-MAG-HCOR-01:
         read_only: False
   physical:
     middle:
-      z: 52.6078
+      z: 56.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4052,7 +4052,7 @@ JFEL-S09-MAG-HCOR-02:
         read_only: False
   physical:
     middle:
-      z: 54.234
+      z: 58.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4064,7 +4064,7 @@ JFEL-S09-MAG-HVCOR-01:
   machine_area: S09
   physical:
     middle:
-      z: 52.6078
+      z: 56.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4078,7 +4078,7 @@ JFEL-S09-MAG-HVCOR-02:
   machine_area: S09
   physical:
     middle:
-      z: 54.234
+      z: 58.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4102,7 +4102,7 @@ JFEL-S09-MAG-QUAD-01:
         read_only: False
   physical:
     middle:
-      z: 52.852988
+      z: 56.862988
     length: 0.15
   magnetic:
     length: 0.15
@@ -4135,7 +4135,7 @@ JFEL-S09-MAG-QUAD-02:
         read_only: False
   physical:
     middle:
-      z: 53.103988
+      z: 57.113988
     length: 0.15
   magnetic:
     length: 0.15
@@ -4168,7 +4168,7 @@ JFEL-S09-MAG-VCOR-01:
         read_only: False
   physical:
     middle:
-      z: 52.6078
+      z: 56.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4190,7 +4190,7 @@ JFEL-S09-MAG-VCOR-02:
         read_only: False
   physical:
     middle:
-      z: 54.234
+      z: 58.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4203,7 +4203,7 @@ JFEL-S09-SIM-APER-01:
   machine_area: S09
   physical:
     middle:
-      z: 52.2678
+      z: 56.2778
   hardware_type: Marker
 JFEL-S09-SIM-MARK-01:
   name: JFEL-S09-SIM-MARK-01
@@ -4211,7 +4211,7 @@ JFEL-S09-SIM-MARK-01:
   machine_area: S09
   physical:
     middle:
-      z: 52.2678
+      z: 56.2778
   hardware_type: Marker
 JFEL-S09-SIM-MARK-02:
   name: JFEL-S09-SIM-MARK-02
@@ -4219,7 +4219,7 @@ JFEL-S09-SIM-MARK-02:
   machine_area: S09
   physical:
     middle:
-      z: 54.509
+      z: 58.5190
   hardware_type: Marker
 JFEL-S09-VAC-VALV-01:
   name: JFEL-S09-VAC-VALV-01
@@ -4227,14 +4227,14 @@ JFEL-S09-VAC-VALV-01:
   machine_area: S09
   physical:
     middle:
-      z: 53.891
+      z: 57.9010
   hardware_type: Valve
 JFEL-S10-DIA-BPM-01:
   name: JFEL-S10-DIA-BPM-01
   machine_area: S10
   physical:
     middle:
-      z: 59.667988
+      z: 63.677988
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S10-DIA-BPM-02:
@@ -4242,7 +4242,7 @@ JFEL-S10-DIA-BPM-02:
   machine_area: S10
   physical:
     middle:
-      z: 61.320478
+      z: 65.330478
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S10-DIA-CAM-01:
@@ -4251,7 +4251,7 @@ JFEL-S10-DIA-CAM-01:
   machine_area: S10
   physical:
     middle:
-      z: 60.316234
+      z: 64.326234
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S10-DIA-CAM-02:
@@ -4259,7 +4259,7 @@ JFEL-S10-DIA-CAM-02:
   machine_area: S10
   physical:
     middle:
-      z: 61.376278
+      z: 65.386278
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S10-DIA-SCR-01:
@@ -4267,7 +4267,7 @@ JFEL-S10-DIA-SCR-01:
   machine_area: S10
   physical:
     middle:
-      z: 60.316234
+      z: 64.326234
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S10-DIA-SCR-02:
@@ -4275,7 +4275,7 @@ JFEL-S10-DIA-SCR-02:
   machine_area: S10
   physical:
     middle:
-      z: 61.376278
+      z: 65.386278
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S10-MAG-HCOR-01:
@@ -4293,7 +4293,7 @@ JFEL-S10-MAG-HCOR-01:
         read_only: False
   physical:
     middle:
-      z: 59.6078
+      z: 63.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4315,7 +4315,7 @@ JFEL-S10-MAG-HCOR-02:
         read_only: False
   physical:
     middle:
-      z: 61.234
+      z: 65.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4327,7 +4327,7 @@ JFEL-S10-MAG-HVCOR-01:
   machine_area: S10
   physical:
     middle:
-      z: 59.6078
+      z: 63.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4341,7 +4341,7 @@ JFEL-S10-MAG-HVCOR-02:
   machine_area: S10
   physical:
     middle:
-      z: 61.234
+      z: 65.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4365,7 +4365,7 @@ JFEL-S10-MAG-QUAD-01:
         read_only: False
   physical:
     middle:
-      z: 59.852988
+      z: 63.862988
     length: 0.15
   magnetic:
     length: 0.15
@@ -4398,7 +4398,7 @@ JFEL-S10-MAG-QUAD-02:
         read_only: False
   physical:
     middle:
-      z: 60.103988
+      z: 64.113988
     length: 0.15
   magnetic:
     length: 0.15
@@ -4431,7 +4431,7 @@ JFEL-S10-MAG-VCOR-01:
         read_only: False
   physical:
     middle:
-      z: 59.6078
+      z: 63.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4453,7 +4453,7 @@ JFEL-S10-MAG-VCOR-02:
         read_only: False
   physical:
     middle:
-      z: 61.234
+      z: 65.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4466,7 +4466,7 @@ JFEL-S10-SIM-APER-01:
   machine_area: S10
   physical:
     middle:
-      z: 59.2678
+      z: 63.2778
   hardware_type: Marker
 JFEL-S10-SIM-MARK-01:
   name: JFEL-S10-SIM-MARK-01
@@ -4474,7 +4474,7 @@ JFEL-S10-SIM-MARK-01:
   machine_area: S10
   physical:
     middle:
-      z: 59.2678
+      z: 63.2778
   hardware_type: Marker
 JFEL-S10-SIM-MARK-02:
   name: JFEL-S10-SIM-MARK-02
@@ -4482,7 +4482,7 @@ JFEL-S10-SIM-MARK-02:
   machine_area: S10
   physical:
     middle:
-      z: 61.509
+      z: 65.5190
   hardware_type: Marker
 JFEL-S10-VAC-VALV-01:
   name: JFEL-S10-VAC-VALV-01
@@ -4490,14 +4490,14 @@ JFEL-S10-VAC-VALV-01:
   machine_area: S10
   physical:
     middle:
-      z: 60.891
+      z: 64.9010
   hardware_type: Valve
 JFEL-S11-DIA-BPM-01:
   name: JFEL-S11-DIA-BPM-01
   machine_area: S11
   physical:
     middle:
-      z: 66.667988
+      z: 70.677988
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S11-DIA-BPM-02:
@@ -4505,7 +4505,7 @@ JFEL-S11-DIA-BPM-02:
   machine_area: S11
   physical:
     middle:
-      z: 68.320478
+      z: 72.330478
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S11-DIA-CAM-01:
@@ -4514,7 +4514,7 @@ JFEL-S11-DIA-CAM-01:
   machine_area: S11
   physical:
     middle:
-      z: 67.316234
+      z: 71.326234
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S11-DIA-CAM-02:
@@ -4522,7 +4522,7 @@ JFEL-S11-DIA-CAM-02:
   machine_area: S11
   physical:
     middle:
-      z: 68.376278
+      z: 72.386278
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S11-DIA-SCR-01:
@@ -4530,7 +4530,7 @@ JFEL-S11-DIA-SCR-01:
   machine_area: S11
   physical:
     middle:
-      z: 67.316234
+      z: 71.326234
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S11-DIA-SCR-02:
@@ -4538,7 +4538,7 @@ JFEL-S11-DIA-SCR-02:
   machine_area: S11
   physical:
     middle:
-      z: 68.376278
+      z: 72.386278
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S11-MAG-HCOR-01:
@@ -4556,7 +4556,7 @@ JFEL-S11-MAG-HCOR-01:
         read_only: False
   physical:
     middle:
-      z: 66.6078
+      z: 70.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4578,7 +4578,7 @@ JFEL-S11-MAG-HCOR-02:
         read_only: False
   physical:
     middle:
-      z: 68.234
+      z: 72.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4590,7 +4590,7 @@ JFEL-S11-MAG-HVCOR-01:
   machine_area: S11
   physical:
     middle:
-      z: 66.6078
+      z: 70.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4604,7 +4604,7 @@ JFEL-S11-MAG-HVCOR-02:
   machine_area: S11
   physical:
     middle:
-      z: 68.234
+      z: 72.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4628,7 +4628,7 @@ JFEL-S11-MAG-QUAD-01:
         read_only: False
   physical:
     middle:
-      z: 66.852988
+      z: 70.862988
     length: 0.15
   magnetic:
     length: 0.15
@@ -4661,7 +4661,7 @@ JFEL-S11-MAG-QUAD-02:
         read_only: False
   physical:
     middle:
-      z: 67.103988
+      z: 71.113988
     length: 0.15
   magnetic:
     length: 0.15
@@ -4694,7 +4694,7 @@ JFEL-S11-MAG-VCOR-01:
         read_only: False
   physical:
     middle:
-      z: 66.6078
+      z: 70.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4716,7 +4716,7 @@ JFEL-S11-MAG-VCOR-02:
         read_only: False
   physical:
     middle:
-      z: 68.234
+      z: 72.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4729,7 +4729,7 @@ JFEL-S11-SIM-APER-01:
   machine_area: S11
   physical:
     middle:
-      z: 66.2678
+      z: 70.2778
   hardware_type: Marker
 JFEL-S11-SIM-MARK-01:
   name: JFEL-S11-SIM-MARK-01
@@ -4737,7 +4737,7 @@ JFEL-S11-SIM-MARK-01:
   machine_area: S11
   physical:
     middle:
-      z: 66.2678
+      z: 70.2778
   hardware_type: Marker
 JFEL-S11-SIM-MARK-02:
   name: JFEL-S11-SIM-MARK-02
@@ -4745,7 +4745,7 @@ JFEL-S11-SIM-MARK-02:
   machine_area: S11
   physical:
     middle:
-      z: 68.509
+      z: 72.5190
   hardware_type: Marker
 JFEL-S11-VAC-VALV-01:
   name: JFEL-S11-VAC-VALV-01
@@ -4753,14 +4753,14 @@ JFEL-S11-VAC-VALV-01:
   machine_area: S11
   physical:
     middle:
-      z: 67.891
+      z: 71.9010
   hardware_type: Valve
 JFEL-S12-DIA-BPM-01:
   name: JFEL-S12-DIA-BPM-01
   machine_area: S12
   physical:
     middle:
-      z: 73.667988
+      z: 77.677988
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S12-DIA-BPM-02:
@@ -4768,7 +4768,7 @@ JFEL-S12-DIA-BPM-02:
   machine_area: S12
   physical:
     middle:
-      z: 75.320478
+      z: 79.330478
   hardware_type: Beam_Position_Monitor
   hardware_class: Diagnostic
 JFEL-S12-DIA-CAM-01:
@@ -4777,7 +4777,7 @@ JFEL-S12-DIA-CAM-01:
   machine_area: S12
   physical:
     middle:
-      z: 74.316234
+      z: 78.326234
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S12-DIA-CAM-02:
@@ -4785,7 +4785,7 @@ JFEL-S12-DIA-CAM-02:
   machine_area: S12
   physical:
     middle:
-      z: 75.376278
+      z: 79.386278
   hardware_type: Camera
   hardware_class: Diagnostic
 JFEL-S12-DIA-SCR-01:
@@ -4793,7 +4793,7 @@ JFEL-S12-DIA-SCR-01:
   machine_area: S12
   physical:
     middle:
-      z: 74.316234
+      z: 78.326234
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S12-DIA-SCR-02:
@@ -4801,7 +4801,7 @@ JFEL-S12-DIA-SCR-02:
   machine_area: S12
   physical:
     middle:
-      z: 75.376278
+      z: 79.386278
   hardware_type: Screen
   hardware_class: Diagnostic
 JFEL-S12-MAG-HCOR-01:
@@ -4819,7 +4819,7 @@ JFEL-S12-MAG-HCOR-01:
         read_only: False
   physical:
     middle:
-      z: 73.6078
+      z: 77.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4841,7 +4841,7 @@ JFEL-S12-MAG-HCOR-02:
         read_only: False
   physical:
     middle:
-      z: 75.234
+      z: 79.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4853,7 +4853,7 @@ JFEL-S12-MAG-HVCOR-01:
   machine_area: S12
   physical:
     middle:
-      z: 73.6078
+      z: 77.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4867,7 +4867,7 @@ JFEL-S12-MAG-HVCOR-02:
   machine_area: S12
   physical:
     middle:
-      z: 75.234
+      z: 79.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4891,7 +4891,7 @@ JFEL-S12-MAG-QUAD-01:
         read_only: False
   physical:
     middle:
-      z: 73.852988
+      z: 77.862988
     length: 0.15
   magnetic:
     length: 0.15
@@ -4924,7 +4924,7 @@ JFEL-S12-MAG-QUAD-02:
         read_only: False
   physical:
     middle:
-      z: 74.103988
+      z: 78.113988
     length: 0.15
   magnetic:
     length: 0.15
@@ -4957,7 +4957,7 @@ JFEL-S12-MAG-VCOR-01:
         read_only: False
   physical:
     middle:
-      z: 73.6078
+      z: 77.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -4979,7 +4979,7 @@ JFEL-S12-MAG-VCOR-02:
         read_only: False
   physical:
     middle:
-      z: 75.234
+      z: 79.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -4992,7 +4992,7 @@ JFEL-S12-SIM-APER-01:
   machine_area: S12
   physical:
     middle:
-      z: 73.2678
+      z: 77.2778
   hardware_type: Marker
 JFEL-S12-SIM-MARK-01:
   name: JFEL-S12-SIM-MARK-01
@@ -5000,7 +5000,7 @@ JFEL-S12-SIM-MARK-01:
   machine_area: S12
   physical:
     middle:
-      z: 73.2678
+      z: 77.2778
   hardware_type: Marker
 JFEL-S12-SIM-MARK-02:
   name: JFEL-S12-SIM-MARK-02
@@ -5008,7 +5008,7 @@ JFEL-S12-SIM-MARK-02:
   machine_area: S12
   physical:
     middle:
-      z: 75.509
+      z: 79.5190
   hardware_type: Marker
 JFEL-S12-VAC-VALV-01:
   name: JFEL-S12-VAC-VALV-01
@@ -5016,7 +5016,7 @@ JFEL-S12-VAC-VALV-01:
   machine_area: S12
   physical:
     middle:
-      z: 74.891
+      z: 78.9010
   hardware_type: Valve
 JFEL-S13-MAG-QUAD-01:
   name: JFEL-S13-MAG-QUAD-01
@@ -5033,7 +5033,7 @@ JFEL-S13-MAG-QUAD-01:
         read_only: False
   physical:
     middle:
-      z: 80.852988
+      z: 84.862988
     length: 0.15
   magnetic:
     length: 0.15
@@ -5066,7 +5066,7 @@ JFEL-S13-MAG-QUAD-02:
         read_only: False
   physical:
     middle:
-      z: 81.103988
+      z: 85.113988
     length: 0.15
   magnetic:
     length: 0.15
@@ -5099,7 +5099,7 @@ JFEL-S13-MAG-QUAD-03:
         read_only: False
   physical:
     middle:
-      z: 82.952988
+      z: 86.962988
     length: 0.15
   magnetic:
     length: 0.15
@@ -5132,7 +5132,7 @@ JFEL-S13-MAG-QUAD-04:
         read_only: False
   physical:
     middle:
-      z: 83.603988
+      z: 87.613988
     length: 0.15
   magnetic:
     length: 0.15
@@ -5165,7 +5165,7 @@ JFEL-S13-MAG-VCOR-01:
         read_only: False
   physical:
     middle:
-      z: 80.6078
+      z: 84.6178
     length: 0.05
   magnetic:
     length: 0.05
@@ -5187,7 +5187,7 @@ JFEL-S13-MAG-VCOR-02:
         read_only: False
   physical:
     middle:
-      z: 82.234
+      z: 86.2440
     length: 0.05
   magnetic:
     length: 0.05
@@ -5200,7 +5200,7 @@ JFEL-S13-SIM-APER-01:
   machine_area: S13
   physical:
     middle:
-      z: 80.2678
+      z: 84.2778
   hardware_type: Marker
 JFEL-S13-SIM-MARK-01:
   name: JFEL-S13-SIM-MARK-01
@@ -5208,7 +5208,7 @@ JFEL-S13-SIM-MARK-01:
   machine_area: S13
   physical:
     middle:
-      z: 80.2678
+      z: 84.2778
   hardware_type: Marker
 JFEL-S13-SIM-MARK-02:
   name: JFEL-S13-SIM-MARK-02
@@ -5216,7 +5216,7 @@ JFEL-S13-SIM-MARK-02:
   machine_area: S13
   physical:
     middle:
-      z: 82.509
+      z: 86.5190
   hardware_type: Marker
 JFEL-S13-VAC-VALV-01:
   name: JFEL-S13-VAC-VALV-01
@@ -5224,7 +5224,7 @@ JFEL-S13-VAC-VALV-01:
   machine_area: S13
   physical:
     middle:
-      z: 74.891
+      z: 78.9010
   hardware_type: Valve
 JFEL-SP1-DIA-BPM-01:
   name: JFEL-SP1-DIA-BPM-01
@@ -6209,7 +6209,7 @@ JFEL-FEL-SIM-MARK-01:
   machine_area: FEL
   physical:
     middle:
-      z: 84.016
+      z: 88.0260
   hardware_type: Marker
 JFEL-FEL-MAG-WIGG-01:
   controls:
@@ -6241,7 +6241,7 @@ JFEL-FEL-MAG-WIGG-01:
   physical:
     length: 1.968
     middle:
-      z: 85.0
+      z: 89.0100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6275,7 +6275,7 @@ JFEL-FEL-MAG-WIGG-02:
   physical:
     length: 1.968
     middle:
-      z: 87.5
+      z: 91.5100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6309,7 +6309,7 @@ JFEL-FEL-MAG-WIGG-03:
   physical:
     length: 1.968
     middle:
-      z: 90
+      z: 94.0100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6343,7 +6343,7 @@ JFEL-FEL-MAG-WIGG-04:
   physical:
     length: 1.968
     middle:
-      z: 92.5
+      z: 96.5100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6377,7 +6377,7 @@ JFEL-FEL-MAG-WIGG-05:
   physical:
     length: 1.968
     middle:
-      z: 95
+      z: 99.0100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6411,7 +6411,7 @@ JFEL-FEL-MAG-WIGG-06:
   physical:
     length: 1.968
     middle:
-      z: 97.5
+      z: 101.5100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6445,7 +6445,7 @@ JFEL-FEL-MAG-WIGG-07:
   physical:
     length: 1.968
     middle:
-      z: 100.0
+      z: 104.0100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6479,7 +6479,7 @@ JFEL-FEL-MAG-WIGG-08:
   physical:
     length: 1.968
     middle:
-      z: 102.5
+      z: 106.5100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6513,7 +6513,7 @@ JFEL-FEL-MAG-WIGG-09:
   physical:
     length: 1.968
     middle:
-      z: 105
+      z: 109.0100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6547,7 +6547,7 @@ JFEL-FEL-MAG-WIGG-10:
   physical:
     length: 1.968
     middle:
-      z: 107.5
+      z: 111.5100
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6578,7 +6578,7 @@ JFEL-FEL-MAG-QUAD-01:
   physical:
     length: 0.15
     middle:
-      z: 86.25
+      z: 90.2600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6609,7 +6609,7 @@ JFEL-FEL-MAG-QUAD-02:
   physical:
     length: 0.15
     middle:
-      z: 88.75
+      z: 92.7600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6640,7 +6640,7 @@ JFEL-FEL-MAG-QUAD-03:
   physical:
     length: 0.15
     middle:
-      z: 91.25
+      z: 95.2600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6671,7 +6671,7 @@ JFEL-FEL-MAG-QUAD-04:
   physical:
     length: 0.15
     middle:
-      z: 93.75
+      z: 97.7600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6702,7 +6702,7 @@ JFEL-FEL-MAG-QUAD-05:
   physical:
     length: 0.15
     middle:
-      z: 96.25
+      z: 100.2600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6733,7 +6733,7 @@ JFEL-FEL-MAG-QUAD-06:
   physical:
     length: 0.15
     middle:
-      z: 98.75
+      z: 102.7600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6764,7 +6764,7 @@ JFEL-FEL-MAG-QUAD-07:
   physical:
     length: 0.15
     middle:
-      z: 101.25
+      z: 105.2600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6795,7 +6795,7 @@ JFEL-FEL-MAG-QUAD-08:
   physical:
     length: 0.15
     middle:
-      z: 103.75
+      z: 107.7600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6826,7 +6826,7 @@ JFEL-FEL-MAG-QUAD-09:
   physical:
     length: 0.15
     middle:
-      z: 106.25
+      z: 110.2600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6857,7 +6857,7 @@ JFEL-FEL-MAG-QUAD-10:
   physical:
     length: 0.15
     middle:
-      z: 108.75
+      z: 112.7600
   simulation:
     field_reference_position: middle
   subelement: false
@@ -6880,7 +6880,7 @@ JFEL-FEL-DIA-PHOT-01:
   virtual_name: ''
   physical:
     middle:
-      z: 108.9
+      z: 112.9100
   intensity:
     type: I0
     intensity: 0.0
@@ -6890,5 +6890,5 @@ JFEL-FEL-SIM-MARK-02:
   machine_area: FEL
   physical:
     middle:
-      z: 109
+      z: 113.0100
   hardware_type: Marker

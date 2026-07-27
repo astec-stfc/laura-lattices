@@ -2,6 +2,29 @@ name: JFEL-S11-MAG-QUAD-02
 machine_area: S11
 controls:
   variables:
+    SETI:
+      identifier: JFEL-S11-MAG-QUAD-02:SETI
+      dtype: float
+      protocol: CA
+      description: Sets the target current for a magnet power supply.
+      units: A
+      read_only: false
+      type: scalar
+      readback: READI
+      dynamics:
+        model: laura.utils.dynamics.FirstOrderResponse
+        tau: 0.2
+    READI:
+      identifier: JFEL-S11-MAG-QUAD-02:READI
+      dtype: float
+      protocol: CA
+      description: Gets the readback current of a magnet power supply.
+      units: A
+      read_only: true
+      type: scalar
+      update:
+        function: laura.utils.signals.RandomWalk
+        noise: 0.001
     READK:
       identifier: JFEL-S11-MAG-QUAD-02:CalcK
       dtype: float

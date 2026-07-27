@@ -4,6 +4,29 @@ simulation:
   field_reference_position: middle
 controls:
   variables:
+    SETI:
+      identifier: JFEL-FEL-MAG-QUAD-05:SETI
+      dtype: float
+      protocol: CA
+      description: Sets the target current for a magnet power supply.
+      units: A
+      read_only: false
+      type: scalar
+      readback: READI
+      dynamics:
+        model: laura.utils.dynamics.FirstOrderResponse
+        tau: 0.2
+    READI:
+      identifier: JFEL-FEL-MAG-QUAD-05:READI
+      dtype: float
+      protocol: CA
+      description: Gets the readback current of a magnet power supply.
+      units: A
+      read_only: true
+      type: scalar
+      update:
+        function: laura.utils.signals.RandomWalk
+        noise: 0.001
     READK:
       identifier: JFEL-FEL-MAG-QUAD-05:CalcK
       dtype: float
