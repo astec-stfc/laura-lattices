@@ -26,10 +26,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # No `cache: pip`: these jobs install pyyaml/build and nothing else, so
+      # there is nothing worth caching, and the post-job cache save errors out
+      # when pip never populated ~/.cache/pip.
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
 
       # Deliberately no `laura` install: the summaries are a verbatim union of
       # the element documents, so the check needs nothing but a YAML parser.
@@ -46,10 +48,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # No `cache: pip`: these jobs install pyyaml/build and nothing else, so
+      # there is nothing worth caching, and the post-job cache save errors out
+      # when pip never populated ~/.cache/pip.
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
 
       - name: Install the collection
         run: pip install -e .
@@ -90,10 +94,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # No `cache: pip`: these jobs install pyyaml/build and nothing else, so
+      # there is nothing worth caching, and the post-job cache save errors out
+      # when pip never populated ~/.cache/pip.
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
 
       - name: Install build tooling
         run: pip install build
