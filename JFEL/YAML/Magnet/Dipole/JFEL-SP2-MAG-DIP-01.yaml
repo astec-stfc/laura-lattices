@@ -6,14 +6,63 @@ controls:
       identifier: JFEL-SP2-MAG-DIP-01:CalcK
       dtype: float
       protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of
-        the section
+      description: Reads the calculated K value for a magnet based on momentum of the section
 physical:
   middle:
-    z: 33.312491
+  - 0.0
+  - 0.0
+  - 33.312491
   length: 0.4
+  datum:
+  - -0.102349
+  - 0.0
+  - 33.489765
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 magnetic:
   length: 0.4
   order: 0
+  field_integral_coefficients:
+    coefficients:
+    - 0
+  linear_saturation_coefficients:
+    I0: 600.7483518642364
+    I_max: 244.04124568119096
+    L: 400.0
+    a: -0.002048337915870075
+    d: 601.1839314402813
+    f: 0.0
+    m: 1.3963693845296439
+  multipoles: {}
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
 hardware_type: Dipole
 hardware_class: Magnet
+hardware_model: Generic
+subelement: false

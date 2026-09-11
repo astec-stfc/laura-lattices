@@ -2,6 +2,41 @@ name: JFEL-S05-DIA-BPM-01
 machine_area: S05
 physical:
   middle:
-    z: 25.125638
+  - 0.0
+  - 0.0
+  - 25.125638
+  datum:
+  - 0.0
+  - 0.0
+  - 25.136138
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.021
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Beam_Position_Monitor
 hardware_class: Diagnostic
+hardware_model: Stripline
+subelement: false

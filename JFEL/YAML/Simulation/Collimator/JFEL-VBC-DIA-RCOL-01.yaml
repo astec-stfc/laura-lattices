@@ -3,11 +3,44 @@ hardware_class: Simulation
 machine_area: VBC
 physical:
   middle:
-    x: 0.161944
-    z: 28.6393
+  - 0.161944
+  - 0.0
+  - 28.6393
   length: 0.48
+  datum:
+  - 0.161944
+  - 0.0
+  - 28.8793
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 aperture:
   horizontal_size: 1.0
   vertical_size: 1.0
   shape: rectangular
 hardware_type: Collimator
+hardware_model: Simulation
+subelement: false

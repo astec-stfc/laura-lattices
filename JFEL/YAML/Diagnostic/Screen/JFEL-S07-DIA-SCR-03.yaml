@@ -2,6 +2,41 @@ name: JFEL-S07-DIA-SCR-03
 machine_area: S07
 physical:
   middle:
-    z: 46.440923
+  - 0.0
+  - 0.0
+  - 46.440923
+  datum:
+  - 0.0
+  - 0.0
+  - 46.440923
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Screen
 hardware_class: Diagnostic
+hardware_model: YAG
+subelement: false

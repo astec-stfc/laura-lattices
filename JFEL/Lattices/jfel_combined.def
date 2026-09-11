@@ -49,6 +49,6 @@ groups:
   bunch_compressor:
     type: chicane
     elements: [JFEL-VBC-MAG-DIP-01, JFEL-VBC-MAG-DIP-02, JFEL-VBC-MAG-DIP-03, JFEL-VBC-MAG-DIP-04]
-layout: "../../laura-lattices/JFEL/layouts.yaml"
-section: "../../laura-lattices/JFEL/sections.yaml"
-element_list: "../../laura-lattices/JFEL/YAML/summary.yaml"
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

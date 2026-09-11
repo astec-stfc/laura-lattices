@@ -2,6 +2,41 @@ name: JFEL-S04-DIA-SCR-04
 machine_area: S04
 physical:
   middle:
-    z: 20.488568
+  - 0.0
+  - 0.0
+  - 20.488568
+  datum:
+  - 0.0
+  - 0.0
+  - 20.488568
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Screen
 hardware_class: Diagnostic
+hardware_model: YAG
+subelement: false

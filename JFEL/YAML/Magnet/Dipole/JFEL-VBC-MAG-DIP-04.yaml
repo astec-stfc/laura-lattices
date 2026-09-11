@@ -6,17 +6,46 @@ controls:
       identifier: JFEL-VBC-MAG-DIP-04:CalcK
       dtype: float
       protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of
-        the section
+      description: Reads the calculated K value for a magnet based on momentum of the section
       read_only: false
       type: scalar
 physical:
   middle:
-    z: 31.065382
+  - 0.0
+  - 0.0
+  - 31.065382
   global_rotation:
-    theta: -0.13
+  - 0.0
+  - 0.0
+  - 0.095
   length: 0.200981
   physical_angle: 0.13
+  datum:
+  - 0.0
+  - 0.0
+  - 31.165948
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 magnetic:
   length: 0.200981
   multipoles:
@@ -32,5 +61,25 @@ magnetic:
       order: 4
   entrance_edge_angle: angle
   order: 0
+  exit_edge_angle: 0.0
+  edge_field_integral: 0.5
+  field_integral_coefficients:
+    coefficients:
+    - 0
+  linear_saturation_coefficients:
+    I0: 286.6994811486062
+    I_max: 124.48754536264167
+    L: 232.147
+    a: -0.0024446214805770336
+    d: 159.04854179409267
+    f: 0.0
+    m: 0.7599753314422656
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
+  gap: 0.032
 hardware_type: Dipole
 hardware_class: Magnet
+hardware_model: Generic
+subelement: false

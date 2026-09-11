@@ -3,5 +3,40 @@ hardware_class: Simulation
 machine_area: S03
 physical:
   middle:
-    z: 10.8974
+  - 0.0
+  - 0.0
+  - 10.8974
+  datum:
+  - 0.0
+  - 0.0
+  - 10.8974
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Marker
+hardware_model: Simulation
+subelement: false

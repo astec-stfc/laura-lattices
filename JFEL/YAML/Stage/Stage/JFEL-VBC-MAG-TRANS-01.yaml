@@ -3,8 +3,42 @@ hardware_model: Generic
 machine_area: VBC
 physical:
   middle:
-    z: 26.165835
+  - 0.0
+  - 0.0
+  - 26.165835
   maximum_position: 30.0
   minimum_position: 372.0
+  datum:
+  - 0.0
+  - 0.0
+  - 26.165835
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Stage
 hardware_class: Stage
+subelement: false

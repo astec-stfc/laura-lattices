@@ -2,9 +2,41 @@ name: JFEL-SP1-DIA-SCR-01
 machine_area: SP1
 physical:
   middle:
-    x: -2.7800087
-    z: 8.8178412
+  - -2.7800087
+  - 0.0
+  - 8.8178412
   global_rotation:
-    theta: 0.785398
+  - 0.0
+  - 0.0
+  - 0.785398
+  datum:
+  - -2.7800087
+  - 0.0
+  - 8.8178412
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Screen
 hardware_class: Diagnostic
+hardware_model: YAG
+subelement: false

@@ -6,16 +6,69 @@ controls:
       identifier: JFEL-S07-MAG-QUAD-10:CalcK
       dtype: float
       protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of
-        the section
+      description: Reads the calculated K value for a magnet based on momentum of the section
       read_only: false
       type: scalar
 physical:
   middle:
-    z: 48.1168
+  - 0.0
+  - 0.0
+  - 48.1168
   length: 0.15
+  datum:
+  - 0.0
+  - 0.0
+  - 48.1978
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 magnetic:
   length: 0.15
   order: 1
+  field_integral_coefficients:
+    coefficients:
+    - 0
+  linear_saturation_coefficients:
+    I0: 769.9222440459716
+    I_max: 34.20417354811565
+    L: 178.0810474996782
+    a: -2.245989289971188e-05
+    d: 13.287504793652161
+    f: 0.0
+    m: 0.033048298135529036
+  multipoles:
+    K1L:
+      order: 1
+      radius: 0.0
+      skew: 0.0
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
 hardware_type: Quadrupole
 hardware_class: Magnet
+hardware_model: Generic
+subelement: false

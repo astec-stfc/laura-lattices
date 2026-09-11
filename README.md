@@ -8,6 +8,7 @@ Each accelerator is stored in its own directory and can be installed as part of 
 | Package | Machine | Install individually |
 |---|---|---|
 | `laura-lattices` (main) | All machines below | `pip install laura-lattices` |
+| `laura-lattices-jfel` | JANUS FEL | `pip install laura-lattices-jfel` |
 
 Note: JFEL (JANUS Free-Electron Laser) is not a real accelerator: it is primarily used as an example case for the [JANUS](https://github.com/astec-stfc/janus) digital shadow.
 
@@ -16,6 +17,29 @@ Note: JFEL (JANUS Free-Electron Laser) is not a real accelerator: it is primaril
 ## Installation
 
 Requires Python >= 3.10.
+
+### Install all machines
+
+```bash
+pip install laura-lattices
+```
+
+### Install a single machine
+
+Each machine is also published as its own package. These install into the same
+`laura_lattices` namespace so they can be mixed freely:
+
+```bash
+pip install laura-lattices-jfel
+```
+
+The individual packages carry only their own data, so `MACHINES` and
+`get_machine` come from the main package. Install both together with the
+matching extra:
+
+```bash
+pip install "laura-lattices[jfel]"
+```
 
 ### Install from source (editable / development)
 
@@ -142,6 +166,10 @@ The `YAML/` directory can contain either:
 - A flat **summary file** (`summary.yaml` or `summary.json`) with all elements, or
 - A tree of individual `.yaml` files (one per element) which LAURA will discover recursively.
 
+Where both are present, see **[Keeping the summary files in sync](#keeping-the-summary-files-in-sync)**
+below — the summary is a derived cache and must be regenerated whenever an
+element file changes.
+
 ### 2. Create `__init__.py`
 
 Create `DIAMOND/__init__.py` to expose the standard attributes:
@@ -250,12 +278,77 @@ If your machine uses a file type not in this list, add the extension to the
 
 ---
 
+## Keeping the summary files in sync
+
+The per-element YAML files under `<MACHINE>/YAML/` are the **source of truth**.
+`summary.yaml` and `summary.json` beside them are a *derived cache*: a single
+mapping of `element name -> that element's YAML document`, verbatim.
+
+This matters because a machine can load the cache rather than the directory:
+
+| Machine | `element_list` points at |
+|---------|--------------------------|
+| JFEL | `YAML/` (the directory — no summary to keep in sync) |
+
+For any machine that points at a summary, **editing an element file has no
+effect until the summary is regenerated**. Editing a summary by hand is worse:
+the change is silently reverted the next time anyone regenerates.
+
+### How to sync
+
+After changing anything under a machine's `YAML/` tree:
+
+```bash
+python tools/sync_summaries.py          # rewrite every summary
+python tools/sync_summaries.py JFEL     # or just one machine
+```
+
+Commit the regenerated summaries **in the same commit** as the element changes,
+so the two never diverge in history. To see whether you need to:
+
+```bash
+python tools/sync_summaries.py --check  # exits 1 and lists anything stale
+```
+
+The script needs only PyYAML — it does not import `laura`, so it cannot break
+because of an unrelated change to the LAURA schema, and the summaries cannot
+drift into an older schema's shape.
+
+### CI
+
+`.github/workflows/checks.yml` runs `sync_summaries.py --check` on every pull
+request and on `main`. If it fails, the fix is always the same: run
+`python tools/sync_summaries.py`, commit the result, and push.
+
+The same workflow installs the package and asserts that every path advertised
+by every machine module exists on disk, and builds both the collection and each
+individual machine wheel.
+
+### Notes
+
+- No machine in this repository currently uses a summary file, so the check
+  reports that there is nothing to do and passes. It becomes active the moment
+  a `summary.yaml`/`summary.json` is added — that is all it takes to opt a
+  machine in. The script discovers whatever already exists and never invents a
+  summary for a machine that loads its directory directly.
+- Files that are not element documents are ignored, matching what LAURA itself
+  does.
+- If two element files declare the same `name:`, the summary can only keep one.
+  The script visits files in sorted order, keeps the last, and warns — but the
+  duplicate is a bug in the lattice data and should be fixed at source.
+
+---
+
 ## Repository structure
 
 ```
 laura-lattices/
 ├── pyproject.toml              # Main package build config
 ├── MANIFEST.in                 # Source distribution includes
+├── .github/workflows/
+│   └── checks.yml              # Summary sync, install and build checks
+├── tools/
+│   └── sync_summaries.py       # Regenerate/verify the derived summary files
 ├── laura_lattices/
 │   └── __init__.py             # Top-level package with MACHINES list
 ├── JFEL/

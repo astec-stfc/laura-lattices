@@ -2,6 +2,41 @@ name: JFEL-S05-DIA-ICT-01
 machine_area: S05
 physical:
   middle:
-    z: 24.886968
+  - 0.0
+  - 0.0
+  - 24.886968
+  datum:
+  - 0.0
+  - 0.0
+  - 24.911968
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.05
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Integrated_Current_Transformer
 hardware_class: Diagnostic
+hardware_model: Generic
+subelement: false

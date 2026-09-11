@@ -2,6 +2,41 @@ name: JFEL-S02-DIA-CAM-01
 machine_area: S02
 physical:
   middle:
-    z: 4.08983
+  - 0.0
+  - 0.0
+  - 4.08983
+  datum:
+  - 0.0
+  - 0.0
+  - 4.08983
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Camera
 hardware_class: Diagnostic
+hardware_model: PCO
+subelement: false

@@ -2,7 +2,41 @@ name: JFEL-VBC-DIA-BPM-01
 machine_area: VBC
 physical:
   middle:
-    x: 0.161944
-    z: 28.353848
+  - 0.161944
+  - 0.0
+  - 28.353848
+  datum:
+  - 0.161944
+  - 0.0
+  - 28.369448
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0312
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Beam_Position_Monitor
 hardware_class: Diagnostic
+hardware_model: Stripline
+subelement: false

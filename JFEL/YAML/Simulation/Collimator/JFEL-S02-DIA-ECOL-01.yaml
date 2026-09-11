@@ -3,10 +3,44 @@ hardware_class: Simulation
 machine_area: S02
 physical:
   middle:
-    z: 4.51862
+  - 0.0
+  - 0.0
+  - 4.51862
   length: 0.35
+  datum:
+  - 0.0
+  - 0.0
+  - 4.69362
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 aperture:
   horizontal_size: 0.01
   vertical_size: 0.01
   shape: elliptical
 hardware_type: Collimator
+hardware_model: Simulation
+subelement: false

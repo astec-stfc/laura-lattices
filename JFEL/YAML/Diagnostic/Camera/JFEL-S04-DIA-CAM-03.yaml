@@ -2,6 +2,41 @@ name: JFEL-S04-DIA-CAM-03
 machine_area: S04
 physical:
   middle:
-    z: 19.233568
+  - 0.0
+  - 0.0
+  - 19.233568
+  datum:
+  - 0.0
+  - 0.0
+  - 19.233568
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Camera
 hardware_class: Diagnostic
+hardware_model: PCO
+subelement: false

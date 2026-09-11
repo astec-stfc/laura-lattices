@@ -29,18 +29,78 @@ controls:
       type: scalar
 physical:
   middle:
-    z: 36.192935
+  - 0.0
+  - 0.0
+  - 36.192935
   length: 4.06667
+  datum:
+  - 0.0
+  - 0.0
+  - 38.22627
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 cavity:
   structure_Type: TravellingWave
   coupling_cell_length: 0.0495
   n_cells: 121
   crest: 88.8
   phase: 45.0
-  mode_numerator: 2.0
-  mode_denominator: 3.0
-  power_calibration: [26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 40.0, 42.0, 44.0,
-    46.0]
-  gradient_calibration: [60.0, 63.6, 67.2, 70.0, 72.8, 76.4, 79.6, 82.8, 86.4, 89.6,
-    90.4]
+  mode_numerator: 2
+  mode_denominator: 3
+  power_calibration:
+  - 26.0
+  - 28.0
+  - 30.0
+  - 32.0
+  - 34.0
+  - 36.0
+  - 38.0
+  - 40.0
+  - 42.0
+  - 44.0
+  - 46.0
+  gradient_calibration:
+  - 60.0
+  - 63.6
+  - 67.2
+  - 70.0
+  - 72.8
+  - 76.4
+  - 79.6
+  - 82.8
+  - 86.4
+  - 89.6
+  - 90.4
+  attenuation_constant: 0
+  cell_length: 0.0333333333333333
+  design_gamma:
+  design_power: 25000000
+  frequency: 2998500000.0
+  shunt_impedance:
 hardware_type: RFCavity
+hardware_model: SBand
+subelement: false

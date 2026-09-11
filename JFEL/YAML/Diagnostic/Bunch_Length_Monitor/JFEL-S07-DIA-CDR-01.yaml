@@ -2,6 +2,41 @@ name: JFEL-S07-DIA-CDR-01
 machine_area: S07
 physical:
   middle:
-    z: 43.375
+  - 0.0
+  - 0.0
+  - 43.375
+  datum:
+  - 0.0
+  - 0.0
+  - 43.525
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.3
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Bunch_Length_Monitor
 hardware_class: Diagnostic
+hardware_model: CDR
+subelement: false

@@ -19,7 +19,7 @@ packages = ["laura_lattices.JFEL"]
 "laura_lattices.JFEL" = "."
 
 [tool.setuptools.package-data]
-"laura_lattices.CLARA" = [
+"laura_lattices.JFEL" = [
     "**/*.yaml", "**/*.json", "**/*.hdf5", "**/*.gdf",
     "**/*.txt", "**/*.csv", "**/*.sdds", "**/*.dat",
     "**/*.opal", "**/*.astra", "**/*.T7", "**/*.def",

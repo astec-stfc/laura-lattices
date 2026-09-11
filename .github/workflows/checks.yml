@@ -1,0 +1,109 @@
+# CI for laura-lattices.
+#
+# The per-element YAML files under <MACHINE>/YAML/ are the source of truth.
+# summary.yaml / summary.json beside them are a derived cache, and several
+# machines load from that cache rather than from the directory (see the
+# element_list line in each <MACHINE>/__init__.py). A stale cache therefore
+# means edits to the element files silently have no effect, which is exactly
+# what this pipeline exists to prevent.
+#
+# Ported from the GitLab pipeline in the internal laura-lattices repository.
+
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  summaries-in-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      # Deliberately no `laura` install: the summaries are a verbatim union of
+      # the element documents, so the check needs nothing but a YAML parser.
+      # That keeps this job fast and stops an unrelated LAURA schema change
+      # from breaking lattice CI.
+      - name: Install PyYAML
+        run: pip install --no-cache-dir pyyaml
+
+      - name: Check summaries against the per-element YAML files
+        run: python tools/sync_summaries.py --check
+
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install the collection
+        run: pip install -e .
+
+      # laura_lattices was previously mapped to the repository root, which made
+      # it an implicit namespace package: importing it appeared to work while
+      # MACHINES and get_machine did not exist. Assert the real package is what
+      # gets imported, and that every path it advertises is on disk.
+      - name: Check every machine resolves to real files
+        run: |
+          python - <<'PY'
+          import os
+          import laura_lattices
+
+          assert laura_lattices.__file__, "laura_lattices imported as a namespace package"
+          print("package:", laura_lattices.__file__)
+
+          missing = []
+          for name in laura_lattices.MACHINES:
+              machine = laura_lattices.get_machine(name)
+              for attr in ("layout", "section", "element_list", "data_files",
+                           "generators", "lattices"):
+                  path = getattr(machine, attr, None)
+                  if path is None:
+                      continue
+                  ok = os.path.exists(path)
+                  print(f"  {name}.{attr}: {'ok ' if ok else 'MISSING'} {path}")
+                  if not ok:
+                      missing.append(f"{name}.{attr} -> {path}")
+
+          if missing:
+              raise SystemExit("missing lattice files:\n  " + "\n  ".join(missing))
+          print(f"\n{len(laura_lattices.MACHINES)} machine(s) resolve to real files.")
+          PY
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install build tooling
+        run: pip install build
+
+      # Each machine directory is also published on its own, so a broken
+      # per-machine pyproject only shows up here.
+      - name: Build the collection and every individual machine
+        run: |
+          python -m build --outdir dist/ .
+          for machine in */pyproject.toml; do
+            python -m build --outdir dist/ "$(dirname "$machine")"
+          done
+          ls -l dist/

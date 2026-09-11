@@ -6,12 +6,28 @@ controls:
       identifier: JFEL-S07-MAG-VCOR-07:CalcK
       dtype: float
       protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of
-        the section
+      description: Reads the calculated K value for a magnet based on momentum of the section
       read_only: false
       type: scalar
 physical:
   middle:
     z: 47.6728
+  datum:
+    z: 47.6978
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.05
 hardware_type: Vertical_Corrector
 hardware_class: Magnet
+magnetic:
+  field_integral_coefficients: {}
+  linear_saturation_coefficients:
+    L: 194.0
+    m: 0.54514
+  multipoles: {}
+  order: 0
+  random_multipoles: {}
+  settle_time: 45.0
+  systematic_multipoles: {}

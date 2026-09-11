@@ -28,10 +28,52 @@ controls:
       type: scalar
 physical:
   middle:
-    z: 0.16
+  - 0.0
+  - 0.0
+  - 0.16
   length: 0.32
+  datum:
+  - 0.0
+  - 0.0
+  - 0.32
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 cavity:
   n_cells: 1.5
   crest: 145.789
   phase: 9.0
+  attenuation_constant: 0
+  cell_length: 0.0333333333333333
+  coupling_cell_length:
+  design_gamma:
+  design_power: 25000000
+  frequency: 2998500000.0
+  shunt_impedance:
+  structure_Type: StandingWave
 hardware_type: RFCavity
+hardware_model: SBand
+subelement: false

@@ -2,7 +2,41 @@ name: JFEL-VBC-DIA-CAM-01
 machine_area: VBC
 physical:
   middle:
-    x: 0.161944
-    z: 28.9048
+  - 0.161944
+  - 0.0
+  - 28.9048
+  datum:
+  - 0.161944
+  - 0.0
+  - 28.9048
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Camera
 hardware_class: Diagnostic
+hardware_model: PCO
+subelement: false

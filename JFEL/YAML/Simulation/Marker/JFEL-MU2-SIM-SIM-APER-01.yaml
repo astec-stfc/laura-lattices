@@ -3,7 +3,40 @@ hardware_class: Simulation
 machine_area: MU2
 physical:
   middle:
-    z: 53.7062
+  - 0.0
+  - 0.0
+  - 53.7062
   global_rotation:
-    theta: -2.0e-06
+  - 0.0
+  - 0.0
+  - -2.0e-06
+  datum:
+  - 0.0
+  - 0.0
+  - 53.7062
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Marker
+hardware_model: Simulation
+subelement: false

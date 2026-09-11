@@ -3,6 +3,40 @@ hardware_model: MANTA
 machine_area: S06
 physical:
   middle:
-    z: 32.925234
+  - 0.0
+  - 0.0
+  - 32.925234
+  datum:
+  - 0.0
+  - 0.0
+  - 32.925234
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Camera
 hardware_class: Diagnostic
+subelement: false

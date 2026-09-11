@@ -6,17 +6,45 @@ controls:
       identifier: JFEL-SP3-MAG-QUAD-02:CalcK
       dtype: float
       protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of
-        the section
+      description: Reads the calculated K value for a magnet based on momentum of the section
       read_only: false
       type: scalar
 physical:
   middle:
-    x: -0.929743
-    z: 47.1028831
+  - -0.929743
+  - 0.0
+  - 47.1028831
   global_rotation:
-    theta: 0.523599
+  - 0.0
+  - 0.0
+  - 0.523599
   length: 0.162
+  datum:
+  - -0.967243
+  - 0.0
+  - 47.167835
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 magnetic:
   length: 0.162
   multipoles:
@@ -24,6 +52,8 @@ magnetic:
     K1L:
       order: 1
       normal: 1.59249
+      radius: 0.0
+      skew: 0.0
     K2L:
       order: 2
     K3L:
@@ -31,5 +61,22 @@ magnetic:
     K4L:
       order: 4
   order: 1
+  field_integral_coefficients:
+    coefficients:
+    - 0
+  linear_saturation_coefficients:
+    I0: 775.7259390448014
+    I_max: 34.34483574248418
+    L: 178.86229867703756
+    a: -2.2305184660138387e-05
+    d: 13.395850731632384
+    f: 0.0
+    m: 0.03307328482539064
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
 hardware_type: Quadrupole
 hardware_class: Magnet
+hardware_model: Generic
+subelement: false

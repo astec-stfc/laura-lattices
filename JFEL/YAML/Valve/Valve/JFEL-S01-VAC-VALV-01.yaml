@@ -3,5 +3,39 @@ hardware_class: Valve
 machine_area: S01
 physical:
   middle:
-    z: 0.4
+  - 0.0
+  - 0.0
+  - 0.4 # assumed
+  datum:
+  - 0.0
+  - 0.0
+  - 0.4
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Valve
+subelement: false

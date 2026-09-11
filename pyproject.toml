@@ -17,6 +17,9 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 ]
 
+[project.optional-dependencies]
+jfel = ["laura-lattices-jfel"]
+
 [tool.setuptools]
 packages = [
     "laura_lattices",
@@ -24,7 +27,9 @@ packages = [
 ]
 
 [tool.setuptools.package-dir]
-"laura_lattices" = "."
+# Mapping laura_lattices to "." made it an implicit namespace package, so
+# laura_lattices.__file__ was None and MACHINES/get_machine did not exist.
+"laura_lattices" = "laura_lattices"
 "laura_lattices.JFEL" = "JFEL"
 
 [tool.setuptools.package-data]

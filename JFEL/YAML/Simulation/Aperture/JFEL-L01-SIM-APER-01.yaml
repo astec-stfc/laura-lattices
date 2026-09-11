@@ -3,9 +3,44 @@ hardware_class: Simulation
 machine_area: L01
 physical:
   middle:
-    z: 1.0577
+  - 0.0
+  - 0.0
+  - 1.0577
+  datum:
+  - 0.0
+  - 0.0
+  - 1.0577
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 aperture:
   horizontal_size: 0.01
   vertical_size: 0.01
   shape: rectangular
 hardware_type: Aperture
+hardware_model: Simulation
+subelement: false

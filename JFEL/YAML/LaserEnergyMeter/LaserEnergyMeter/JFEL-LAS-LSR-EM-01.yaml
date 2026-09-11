@@ -4,3 +4,4 @@ machine_area: LAS
 laser:
   calibration_factor: 15.4
 hardware_type: LaserEnergyMeter
+subelement: false

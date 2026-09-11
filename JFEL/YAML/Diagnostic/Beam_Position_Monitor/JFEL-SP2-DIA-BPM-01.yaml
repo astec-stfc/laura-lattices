@@ -2,10 +2,41 @@ name: JFEL-SP2-DIA-BPM-01
 machine_area: SP2
 physical:
   middle:
-    x: -0.2668365
-    z: 33.77466537531386
+  - -0.2668365
+  - 0.0
+  - 33.77466537531386
   global_rotation:
-    theta: 0.523599
+  - 0.0
+  - 0.0
+  - 0.523599
   length: 0.21
+  datum:
+  - -0.3193365
+  - 0.0
+  - 33.86559804271122
+  error:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+  rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  survey:
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+    rotation:
+    - 0.0
+    - 0.0
+    - 0.0
 hardware_type: Beam_Position_Monitor
 hardware_class: Diagnostic
+hardware_model: Stripline
+subelement: false
