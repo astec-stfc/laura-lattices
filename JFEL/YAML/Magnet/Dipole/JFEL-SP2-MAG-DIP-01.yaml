@@ -7,6 +7,8 @@ controls:
       dtype: float
       protocol: CA
       description: Reads the calculated K value for a magnet based on momentum of the section
+      read_only: false
+      type: scalar
 physical:
   middle:
   - 0.0
