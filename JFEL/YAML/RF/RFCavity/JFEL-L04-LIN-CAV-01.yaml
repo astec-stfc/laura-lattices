@@ -1,38 +1,50 @@
-name: JFEL-L04-LIN-CAV-01
-hardware_class: RF
-machine_area: L04
-simulation:
-  field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
-  wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
-  field_amplitude: 32000000.0
-  t_column: t
-  wx_column: Wx
-  wy_column: Wy
-  wz_column: Wz
+cavity:
+  attenuation_constant: 0
+  cell_length: 0.0333333333333333
+  coupling_cell_length: 0.0495
+  crest: 88.8
+  design_gamma: null
+  design_power: 25000000
+  frequency: 2998500000.0
+  gradient_calibration:
+  - 60.0
+  - 63.6
+  - 67.2
+  - 70.0
+  - 72.8
+  - 76.4
+  - 79.6
+  - 82.8
+  - 86.4
+  - 89.6
+  - 90.4
+  mode_denominator: 3
+  mode_numerator: 2
+  n_cells: 121
+  phase: 45.0
+  power_calibration:
+  - 26.0
+  - 28.0
+  - 30.0
+  - 32.0
+  - 34.0
+  - 36.0
+  - 38.0
+  - 40.0
+  - 42.0
+  - 44.0
+  - 46.0
+  shunt_impedance: null
+  structure_Type: TravellingWave
 controls:
-  variables:
-    OffCrestPhaseSet:
-      identifier: JFEL-L04-RF-CTRL-01:PHASE_OFF
-      dtype: float
-      protocol: CA
-      units: deg
-      description: Set cavity off-crest phase
-      read_only: false
-      type: scalar
-    PowerMWRead:
-      identifier: JFEL-L04-RF-CTRL-01:getPower
-      dtype: float
-      protocol: CA
-      units: MW
-      description: Read cavity forward power
-      read_only: false
-      type: scalar
+  identifier_pattern: JFEL-L04-RF-CTRL-01
+  schema: _schema.yaml
+hardware_class: RF
+hardware_model: SBand
+hardware_type: RFCavity
+machine_area: L04
+name: JFEL-L04-LIN-CAV-01
 physical:
-  middle:
-  - 0.0
-  - 0.0
-  - 36.192935
-  length: 4.06667
   datum:
   - 0.0
   - 0.0
@@ -50,6 +62,11 @@ physical:
   - 0.0
   - 0.0
   - 0.0
+  length: 4.06667
+  middle:
+  - 0.0
+  - 0.0
+  - 36.192935
   rotation:
   - 0.0
   - 0.0
@@ -63,44 +80,12 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-cavity:
-  structure_Type: TravellingWave
-  coupling_cell_length: 0.0495
-  n_cells: 121
-  crest: 88.8
-  phase: 45.0
-  mode_numerator: 2
-  mode_denominator: 3
-  power_calibration:
-  - 26.0
-  - 28.0
-  - 30.0
-  - 32.0
-  - 34.0
-  - 36.0
-  - 38.0
-  - 40.0
-  - 42.0
-  - 44.0
-  - 46.0
-  gradient_calibration:
-  - 60.0
-  - 63.6
-  - 67.2
-  - 70.0
-  - 72.8
-  - 76.4
-  - 79.6
-  - 82.8
-  - 86.4
-  - 89.6
-  - 90.4
-  attenuation_constant: 0
-  cell_length: 0.0333333333333333
-  design_gamma:
-  design_power: 25000000
-  frequency: 2998500000.0
-  shunt_impedance:
-hardware_type: RFCavity
-hardware_model: SBand
+simulation:
+  field_amplitude: 32000000.0
+  field_definition: $master_lattice$Data_Files/TWS_S-DL.hdf5
+  t_column: t
+  wakefield_definition: $master_lattice$Data_Files/SzSx5um10mm.hdf5
+  wx_column: Wx
+  wy_column: Wy
+  wz_column: Wz
 subelement: false

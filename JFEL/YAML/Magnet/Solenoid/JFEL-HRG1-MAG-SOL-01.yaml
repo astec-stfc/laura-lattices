@@ -1,28 +1,14 @@
-name: JFEL-HRG1-MAG-SOL-01
-machine_area: HRG1
-subelement: true
-simulation:
-  field_definition: $master_lattice$Data_Files/HRRG_combined_sols_100mm_onaxis.hdf5
-  field_reference_position: start
-  field_amplitude: 0.345
 controls:
-  variables:
-    READK:
-      identifier: JFEL-HRG1-MAG-SOL-01:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of
-        the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-    z: 0.16241
-  length: 0.32
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_type: Solenoid
+machine_area: HRG1
 magnetic:
-  length: 0.32
   fields:
     S0L: 0.10560000000000001
+    S10L: 0.0
+    S11L: 0.0
+    S12L: 0.0
     S1L: 0.0
     S2L: 0.0
     S3L: 0.0
@@ -32,8 +18,14 @@ magnetic:
     S7L: 0.0
     S8L: 0.0
     S9L: 0.0
-    S10L: 0.0
-    S11L: 0.0
-    S12L: 0.0
-hardware_type: Solenoid
-hardware_class: Magnet
+  length: 0.32
+name: JFEL-HRG1-MAG-SOL-01
+physical:
+  length: 0.32
+  middle:
+    z: 0.16241
+simulation:
+  field_amplitude: 0.345
+  field_definition: $master_lattice$Data_Files/HRRG_combined_sols_100mm_onaxis.hdf5
+  field_reference_position: start
+subelement: true

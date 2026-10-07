@@ -1,0 +1,8 @@
+variables:
+  READK:
+    description: Reads the calculated K value for the wiggler
+    dtype: float
+    identifier: '{name}:CalcK'
+    protocol: CA
+    read_only: false
+    type: scalar

@@ -1,24 +1,42 @@
-name: JFEL-SP1-MAG-QUAD-01
-machine_area: SP1
 controls:
-  variables:
-    READK:
-      identifier: JFEL-SP1-MAG-QUAD-01:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-  - -1.8204638
-  - 0.0
-  - 7.8582961
-  global_rotation:
-  - 0.0
-  - 0.0
-  - 0.785398
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_model: Generic
+hardware_type: Quadrupole
+machine_area: SP1
+magnetic:
+  field_integral_coefficients:
+    coefficients:
+    - 0
   length: 0.1
+  linear_saturation_coefficients:
+    I0: 0
+    I_max: 0
+    L: 0
+    a: 0
+    d: 0
+    f: 0
+    m: 0
+  multipoles:
+    K0L: {}
+    K1L:
+      normal: -1.597658628810405
+      order: 1
+      radius: 0.0
+      skew: 0.0
+    K2L:
+      order: 2
+    K3L:
+      order: 3
+    K4L:
+      order: 4
+  order: 1
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
+name: JFEL-SP1-MAG-QUAD-01
+physical:
   datum:
   - -1.8204638
   - 0.0
@@ -32,6 +50,15 @@ physical:
     - 0.0
     - 0.0
     - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.785398
+  length: 0.1
+  middle:
+  - -1.8204638
+  - 0.0
+  - 7.8582961
   rotation:
   - 0.0
   - 0.0
@@ -45,38 +72,4 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-magnetic:
-  length: 0.1
-  multipoles:
-    K0L: {}
-    K1L:
-      order: 1
-      normal: -1.597658628810405
-      radius: 0.0
-      skew: 0.0
-    K2L:
-      order: 2
-    K3L:
-      order: 3
-    K4L:
-      order: 4
-  order: 1
-  field_integral_coefficients:
-    coefficients:
-    - 0
-  linear_saturation_coefficients:
-    I0: 0
-    I_max: 0
-    L: 0
-    a: 0
-    d: 0
-    f: 0
-    m: 0
-  random_multipoles: {}
-  settle_time: 45.0
-  skew: false
-  systematic_multipoles: {}
-hardware_type: Quadrupole
-hardware_class: Magnet
-hardware_model: Generic
 subelement: false

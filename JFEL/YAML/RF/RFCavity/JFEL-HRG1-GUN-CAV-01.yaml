@@ -1,37 +1,24 @@
-name: JFEL-HRG1-GUN-CAV-01
-hardware_class: RF
-machine_area: HRG1
-simulation:
-  field_definition: $master_lattice$Data_Files/HRRG_1D_RF.hdf5
-  field_amplitude: 120000000.0
-  t_column: t
-  wx_column: Wx
-  wy_column: Wy
-  wz_column: Wz
+cavity:
+  attenuation_constant: 0
+  cell_length: 0.0333333333333333
+  coupling_cell_length: null
+  crest: 145.789
+  design_gamma: null
+  design_power: 25000000
+  frequency: 2998500000.0
+  n_cells: 1.5
+  phase: 9.0
+  shunt_impedance: null
+  structure_Type: StandingWave
 controls:
-  variables:
-    OffCrestPhaseSet:
-      identifier: JFEL-GUNS-RF-CTRL-01:PHASE_OFF
-      dtype: float
-      protocol: CA
-      units: deg
-      description: Set cavity off-crest phase
-      read_only: false
-      type: scalar
-    PowerMWRead:
-      identifier: JFEL-GUNS-RF-CTRL-01:getPower
-      dtype: float
-      protocol: CA
-      units: MW
-      description: Read cavity forward power
-      read_only: false
-      type: scalar
+  identifier_pattern: JFEL-GUNS-RF-CTRL-01
+  schema: _schema.yaml
+hardware_class: RF
+hardware_model: SBand
+hardware_type: RFCavity
+machine_area: HRG1
+name: JFEL-HRG1-GUN-CAV-01
 physical:
-  middle:
-  - 0.0
-  - 0.0
-  - 0.16
-  length: 0.32
   datum:
   - 0.0
   - 0.0
@@ -49,6 +36,11 @@ physical:
   - 0.0
   - 0.0
   - 0.0
+  length: 0.32
+  middle:
+  - 0.0
+  - 0.0
+  - 0.16
   rotation:
   - 0.0
   - 0.0
@@ -62,18 +54,11 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-cavity:
-  n_cells: 1.5
-  crest: 145.789
-  phase: 9.0
-  attenuation_constant: 0
-  cell_length: 0.0333333333333333
-  coupling_cell_length:
-  design_gamma:
-  design_power: 25000000
-  frequency: 2998500000.0
-  shunt_impedance:
-  structure_Type: StandingWave
-hardware_type: RFCavity
-hardware_model: SBand
+simulation:
+  field_amplitude: 120000000.0
+  field_definition: $master_lattice$Data_Files/HRRG_1D_RF.hdf5
+  t_column: t
+  wx_column: Wx
+  wy_column: Wy
+  wz_column: Wz
 subelement: false
