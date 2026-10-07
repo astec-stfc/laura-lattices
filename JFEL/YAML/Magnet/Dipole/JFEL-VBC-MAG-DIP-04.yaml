@@ -1,25 +1,44 @@
-name: JFEL-VBC-MAG-DIP-04
-machine_area: VBC
 controls:
-  variables:
-    READK:
-      identifier: JFEL-VBC-MAG-DIP-04:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-  - 0.0
-  - 0.0
-  - 31.065382
-  global_rotation:
-  - 0.0
-  - 0.0
-  - 0.095
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_model: Generic
+hardware_type: Dipole
+machine_area: VBC
+magnetic:
+  edge_field_integral: 0.5
+  entrance_edge_angle: angle
+  exit_edge_angle: 0.0
+  field_integral_coefficients:
+    coefficients:
+    - 0
+  gap: 0.032
   length: 0.200981
-  physical_angle: 0.13
+  linear_saturation_coefficients:
+    I0: 286.6994811486062
+    I_max: 124.48754536264167
+    L: 232.147
+    a: -0.0024446214805770336
+    d: 159.04854179409267
+    f: 0.0
+    m: 0.7599753314422656
+  multipoles:
+    K0L:
+      normal: 0.13
+    K1L:
+      order: 1
+    K2L:
+      order: 2
+    K3L:
+      order: 3
+    K4L:
+      order: 4
+  order: 0
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
+name: JFEL-VBC-MAG-DIP-04
+physical:
   datum:
   - 0.0
   - 0.0
@@ -33,6 +52,16 @@ physical:
     - 0.0
     - 0.0
     - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.095
+  length: 0.200981
+  middle:
+  - 0.0
+  - 0.0
+  - 31.065382
+  physical_angle: 0.13
   rotation:
   - 0.0
   - 0.0
@@ -46,40 +75,4 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-magnetic:
-  length: 0.200981
-  multipoles:
-    K0L:
-      normal: 0.13
-    K1L:
-      order: 1
-    K2L:
-      order: 2
-    K3L:
-      order: 3
-    K4L:
-      order: 4
-  entrance_edge_angle: angle
-  order: 0
-  exit_edge_angle: 0.0
-  edge_field_integral: 0.5
-  field_integral_coefficients:
-    coefficients:
-    - 0
-  linear_saturation_coefficients:
-    I0: 286.6994811486062
-    I_max: 124.48754536264167
-    L: 232.147
-    a: -0.0024446214805770336
-    d: 159.04854179409267
-    f: 0.0
-    m: 0.7599753314422656
-  random_multipoles: {}
-  settle_time: 45.0
-  skew: false
-  systematic_multipoles: {}
-  gap: 0.032
-hardware_type: Dipole
-hardware_class: Magnet
-hardware_model: Generic
 subelement: false

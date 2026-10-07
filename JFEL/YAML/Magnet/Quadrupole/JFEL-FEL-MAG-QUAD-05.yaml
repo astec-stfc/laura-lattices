@@ -1,28 +1,15 @@
-name: JFEL-FEL-MAG-QUAD-05
-machine_area: FEL
-simulation:
-  field_reference_position: middle
 controls:
-  variables:
-    READK:
-      identifier: JFEL-FEL-MAG-QUAD-05:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of
-        the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-    z: 96.25
-  length: 0.15
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_type: Quadrupole
+machine_area: FEL
 magnetic:
   length: 0.15
   multipoles:
     K0L: {}
     K1L:
-      order: 1
       normal: -0.157474
+      order: 1
     K2L:
       order: 2
     K3L:
@@ -30,5 +17,10 @@ magnetic:
     K4L:
       order: 4
   order: 1
-hardware_type: Quadrupole
-hardware_class: Magnet
+name: JFEL-FEL-MAG-QUAD-05
+physical:
+  length: 0.15
+  middle:
+    z: 96.25
+simulation:
+  field_reference_position: middle

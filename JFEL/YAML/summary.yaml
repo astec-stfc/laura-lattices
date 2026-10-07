@@ -18,15 +18,7 @@ JFEL-FEL-DIA-PHOT-01:
       z: 108.9
 JFEL-FEL-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -53,15 +45,7 @@ JFEL-FEL-MAG-QUAD-01:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -88,15 +72,7 @@ JFEL-FEL-MAG-QUAD-02:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -123,15 +99,7 @@ JFEL-FEL-MAG-QUAD-03:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -158,15 +126,7 @@ JFEL-FEL-MAG-QUAD-04:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -193,15 +153,7 @@ JFEL-FEL-MAG-QUAD-05:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-06:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-06:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -228,15 +180,7 @@ JFEL-FEL-MAG-QUAD-06:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-07:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-07:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -263,15 +207,7 @@ JFEL-FEL-MAG-QUAD-07:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-08:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-08:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -298,15 +234,7 @@ JFEL-FEL-MAG-QUAD-08:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-09:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-09:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -333,15 +261,7 @@ JFEL-FEL-MAG-QUAD-09:
     field_reference_position: middle
 JFEL-FEL-MAG-QUAD-10:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-FEL-MAG-QUAD-10:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: FEL
@@ -368,14 +288,7 @@ JFEL-FEL-MAG-QUAD-10:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -396,14 +309,7 @@ JFEL-FEL-MAG-WIGG-01:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -424,14 +330,7 @@ JFEL-FEL-MAG-WIGG-02:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -452,14 +351,7 @@ JFEL-FEL-MAG-WIGG-03:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -480,14 +372,7 @@ JFEL-FEL-MAG-WIGG-04:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -508,14 +393,7 @@ JFEL-FEL-MAG-WIGG-05:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-06:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-06:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -536,14 +414,7 @@ JFEL-FEL-MAG-WIGG-06:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-07:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-07:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -564,14 +435,7 @@ JFEL-FEL-MAG-WIGG-07:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-08:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-08:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -592,14 +456,7 @@ JFEL-FEL-MAG-WIGG-08:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-09:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-09:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -620,14 +477,7 @@ JFEL-FEL-MAG-WIGG-09:
     field_reference_position: middle
 JFEL-FEL-MAG-WIGG-10:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for the wiggler
-        dtype: float
-        identifier: JFEL-FEL-MAG-WIGG-10:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Wiggler/_schema.yaml
   hardware_class: Magnet
   hardware_type: Wiggler
   machine_area: FEL
@@ -676,23 +526,8 @@ JFEL-HRG1-GUN-CAV-01:
     shunt_impedance: null
     structure_Type: StandingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-GUNS-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-GUNS-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-GUNS-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_model: SBand
   hardware_type: RFCavity
@@ -744,15 +579,7 @@ JFEL-HRG1-GUN-CAV-01:
   subelement: false
 JFEL-HRG1-MAG-SOL-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-HRG1-MAG-SOL-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Solenoid/_schema.yaml
   hardware_class: Magnet
   hardware_type: Solenoid
   machine_area: HRG1
@@ -863,23 +690,8 @@ JFEL-L01-LIN-CAV-01:
     shunt_impedance: 130693000.0
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L01-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L01-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L01-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_model: SBand
   hardware_type: RFCavity
@@ -932,15 +744,7 @@ JFEL-L01-LIN-CAV-01:
   subelement: false
 JFEL-L01-MAG-SOL-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-L01-MAG-SOL-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Solenoid/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Solenoid
@@ -1020,15 +824,7 @@ JFEL-L01-MAG-SOL-01:
   subelement: true
 JFEL-L01-MAG-SOL-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-L01-MAG-SOL-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Solenoid/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Solenoid
@@ -1187,23 +983,8 @@ JFEL-L02-LIN-CAV-01:
     shunt_impedance: 130693000.0
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L02-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L02-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L02-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_model: SBand
   hardware_type: RFCavity
@@ -1378,23 +1159,8 @@ JFEL-L03-LIN-CAV-01:
     shunt_impedance: null
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L03-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L03-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L03-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_model: SBand
   hardware_type: RFCavity
@@ -1528,23 +1294,8 @@ JFEL-L04-LIN-CAV-01:
     shunt_impedance: null
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L04-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L04-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L04-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_model: SBand
   hardware_type: RFCavity
@@ -1672,23 +1423,8 @@ JFEL-L05-LIN-CAV-01:
     - 46.0
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L05-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L05-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L05-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_type: RFCavity
   machine_area: L05
@@ -1747,23 +1483,8 @@ JFEL-L06-LIN-CAV-01:
     - 46.0
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L06-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L06-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L06-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_type: RFCavity
   machine_area: L06
@@ -1822,23 +1543,8 @@ JFEL-L07-LIN-CAV-01:
     - 46.0
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L07-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L07-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L07-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_type: RFCavity
   machine_area: L07
@@ -1897,23 +1603,8 @@ JFEL-L08-LIN-CAV-01:
     - 46.0
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L08-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L08-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L08-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_type: RFCavity
   machine_area: L08
@@ -1972,23 +1663,8 @@ JFEL-L09-LIN-CAV-01:
     - 46.0
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-L09-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-L09-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-L09-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_type: RFCavity
   machine_area: L09
@@ -2037,23 +1713,8 @@ JFEL-L4H-LIN-CAV-01:
     shunt_impedance: null
     structure_Type: TravellingWave
   controls:
-    variables:
-      OffCrestPhaseSet:
-        description: Set cavity off-crest phase
-        dtype: float
-        identifier: JFEL-4HC-RF-CTRL-01:PHASE_OFF
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: deg
-      PowerMWRead:
-        description: Read cavity forward power
-        dtype: float
-        identifier: JFEL-4HC-RF-CTRL-01:getPower
-        protocol: CA
-        read_only: false
-        type: scalar
-        units: MW
+    identifier_pattern: JFEL-4HC-RF-CTRL-01
+    schema: RF/RFCavity/_schema.yaml
   hardware_class: RF
   hardware_model: SBand
   hardware_type: RFCavity
@@ -2550,15 +2211,7 @@ JFEL-S01-DIA-WCM-01:
   subelement: false
 JFEL-S01-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S01-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -2622,15 +2275,7 @@ JFEL-S01-MAG-HCOR-01:
   subelement: false
 JFEL-S01-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S01-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -2822,15 +2467,7 @@ JFEL-S01-MAG-HVCOR-02:
   subelement: false
 JFEL-S01-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S01-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -2894,15 +2531,7 @@ JFEL-S01-MAG-VCOR-01:
   subelement: false
 JFEL-S01-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S01-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -3446,15 +3075,7 @@ JFEL-S02-DIA-SCR-03:
   subelement: false
 JFEL-S02-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -3518,15 +3139,7 @@ JFEL-S02-MAG-HCOR-01:
   subelement: false
 JFEL-S02-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -3590,15 +3203,7 @@ JFEL-S02-MAG-HCOR-02:
   subelement: false
 JFEL-S02-MAG-HCOR-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-HCOR-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -3662,15 +3267,7 @@ JFEL-S02-MAG-HCOR-03:
   subelement: false
 JFEL-S02-MAG-HCOR-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-HCOR-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -3990,15 +3587,7 @@ JFEL-S02-MAG-HVCOR-04:
   subelement: false
 JFEL-S02-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -4079,15 +3668,7 @@ JFEL-S02-MAG-QUAD-01:
   subelement: false
 JFEL-S02-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -4168,15 +3749,7 @@ JFEL-S02-MAG-QUAD-02:
   subelement: false
 JFEL-S02-MAG-QUAD-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-QUAD-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -4257,15 +3830,7 @@ JFEL-S02-MAG-QUAD-03:
   subelement: false
 JFEL-S02-MAG-QUAD-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-QUAD-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -4346,15 +3911,7 @@ JFEL-S02-MAG-QUAD-04:
   subelement: false
 JFEL-S02-MAG-QUAD-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-QUAD-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -4430,15 +3987,7 @@ JFEL-S02-MAG-QUAD-05:
   subelement: false
 JFEL-S02-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -4502,15 +4051,7 @@ JFEL-S02-MAG-VCOR-01:
   subelement: false
 JFEL-S02-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -4574,15 +4115,7 @@ JFEL-S02-MAG-VCOR-02:
   subelement: false
 JFEL-S02-MAG-VCOR-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-VCOR-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -4646,15 +4179,7 @@ JFEL-S02-MAG-VCOR-03:
   subelement: false
 JFEL-S02-MAG-VCOR-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S02-MAG-VCOR-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -4983,15 +4508,7 @@ JFEL-S03-DIA-SCR-01:
   subelement: false
 JFEL-S03-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S03-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -5119,15 +4636,7 @@ JFEL-S03-MAG-HVCOR-01:
   subelement: false
 JFEL-S03-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S03-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -5203,15 +4712,7 @@ JFEL-S03-MAG-QUAD-01:
   subelement: false
 JFEL-S03-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S03-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -6049,15 +5550,7 @@ JFEL-S04-DIA-SCR-05:
   subelement: false
 JFEL-S04-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -6121,15 +5614,7 @@ JFEL-S04-MAG-HCOR-01:
   subelement: false
 JFEL-S04-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -6193,15 +5678,7 @@ JFEL-S04-MAG-HCOR-02:
   subelement: false
 JFEL-S04-MAG-HCOR-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-HCOR-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -6265,15 +5742,7 @@ JFEL-S04-MAG-HCOR-03:
   subelement: false
 JFEL-S04-MAG-HCOR-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-HCOR-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -6337,15 +5806,7 @@ JFEL-S04-MAG-HCOR-04:
   subelement: false
 JFEL-S04-MAG-HCOR-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-HCOR-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -6729,15 +6190,7 @@ JFEL-S04-MAG-HVCOR-05:
   subelement: false
 JFEL-S04-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -6813,15 +6266,7 @@ JFEL-S04-MAG-QUAD-01:
   subelement: false
 JFEL-S04-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -6897,15 +6342,7 @@ JFEL-S04-MAG-QUAD-02:
   subelement: false
 JFEL-S04-MAG-QUAD-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-QUAD-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -6981,15 +6418,7 @@ JFEL-S04-MAG-QUAD-03:
   subelement: false
 JFEL-S04-MAG-QUAD-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-QUAD-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -7065,15 +6494,7 @@ JFEL-S04-MAG-QUAD-04:
   subelement: false
 JFEL-S04-MAG-QUAD-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-QUAD-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -7149,15 +6570,7 @@ JFEL-S04-MAG-QUAD-05:
   subelement: false
 JFEL-S04-MAG-QUAD-06:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-QUAD-06:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -7233,15 +6646,7 @@ JFEL-S04-MAG-QUAD-06:
   subelement: false
 JFEL-S04-MAG-QUAD-07:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-QUAD-07:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -7317,15 +6722,7 @@ JFEL-S04-MAG-QUAD-07:
   subelement: false
 JFEL-S04-MAG-QUAD-08:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-QUAD-08:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -7401,15 +6798,7 @@ JFEL-S04-MAG-QUAD-08:
   subelement: false
 JFEL-S04-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -7473,15 +6862,7 @@ JFEL-S04-MAG-VCOR-01:
   subelement: false
 JFEL-S04-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -7545,15 +6926,7 @@ JFEL-S04-MAG-VCOR-02:
   subelement: false
 JFEL-S04-MAG-VCOR-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-VCOR-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -7617,15 +6990,7 @@ JFEL-S04-MAG-VCOR-03:
   subelement: false
 JFEL-S04-MAG-VCOR-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-VCOR-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -7689,15 +7054,7 @@ JFEL-S04-MAG-VCOR-04:
   subelement: false
 JFEL-S04-MAG-VCOR-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S04-MAG-VCOR-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -8232,15 +7589,7 @@ JFEL-S05-DIA-SCR-01:
   subelement: false
 JFEL-S05-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S05-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -8368,15 +7717,7 @@ JFEL-S05-MAG-HVCOR-01:
   subelement: false
 JFEL-S05-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S05-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -8452,15 +7793,7 @@ JFEL-S05-MAG-QUAD-01:
   subelement: false
 JFEL-S05-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S05-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -8536,15 +7869,7 @@ JFEL-S05-MAG-QUAD-02:
   subelement: false
 JFEL-S05-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S05-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -9080,15 +8405,7 @@ JFEL-S06-DIA-SCR-02:
   subelement: false
 JFEL-S06-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S06-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -9152,15 +8469,7 @@ JFEL-S06-MAG-HCOR-01:
   subelement: false
 JFEL-S06-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S06-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -9352,15 +8661,7 @@ JFEL-S06-MAG-HVCOR-02:
   subelement: false
 JFEL-S06-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S06-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -9436,15 +8737,7 @@ JFEL-S06-MAG-QUAD-01:
   subelement: false
 JFEL-S06-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S06-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -9520,15 +8813,7 @@ JFEL-S06-MAG-QUAD-02:
   subelement: false
 JFEL-S06-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S06-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -9592,15 +8877,7 @@ JFEL-S06-MAG-VCOR-01:
   subelement: false
 JFEL-S06-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S06-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -10751,15 +10028,7 @@ JFEL-S07-DIA-TDC-01:
   subelement: false
 JFEL-S07-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -10823,15 +10092,7 @@ JFEL-S07-MAG-HCOR-01:
   subelement: false
 JFEL-S07-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -10895,15 +10156,7 @@ JFEL-S07-MAG-HCOR-02:
   subelement: false
 JFEL-S07-MAG-HCOR-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-HCOR-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -10967,15 +10220,7 @@ JFEL-S07-MAG-HCOR-03:
   subelement: false
 JFEL-S07-MAG-HCOR-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-HCOR-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -11039,15 +10284,7 @@ JFEL-S07-MAG-HCOR-04:
   subelement: false
 JFEL-S07-MAG-HCOR-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-HCOR-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -11111,15 +10348,7 @@ JFEL-S07-MAG-HCOR-05:
   subelement: false
 JFEL-S07-MAG-HCOR-06:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-HCOR-06:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -11183,15 +10412,7 @@ JFEL-S07-MAG-HCOR-06:
   subelement: false
 JFEL-S07-MAG-HCOR-07:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-HCOR-07:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S07
@@ -11667,15 +10888,7 @@ JFEL-S07-MAG-HVCOR-07:
   subelement: false
 JFEL-S07-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -11743,15 +10956,7 @@ JFEL-S07-MAG-QUAD-01:
   subelement: false
 JFEL-S07-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -11819,15 +11024,7 @@ JFEL-S07-MAG-QUAD-02:
   subelement: false
 JFEL-S07-MAG-QUAD-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -11895,15 +11092,7 @@ JFEL-S07-MAG-QUAD-03:
   subelement: false
 JFEL-S07-MAG-QUAD-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -11971,15 +11160,7 @@ JFEL-S07-MAG-QUAD-04:
   subelement: false
 JFEL-S07-MAG-QUAD-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -12047,15 +11228,7 @@ JFEL-S07-MAG-QUAD-05:
   subelement: false
 JFEL-S07-MAG-QUAD-06:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-06:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -12123,15 +11296,7 @@ JFEL-S07-MAG-QUAD-06:
   subelement: false
 JFEL-S07-MAG-QUAD-07:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-07:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -12199,15 +11364,7 @@ JFEL-S07-MAG-QUAD-07:
   subelement: false
 JFEL-S07-MAG-QUAD-08:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-08:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -12275,15 +11432,7 @@ JFEL-S07-MAG-QUAD-08:
   subelement: false
 JFEL-S07-MAG-QUAD-09:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-09:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -12351,15 +11500,7 @@ JFEL-S07-MAG-QUAD-09:
   subelement: false
 JFEL-S07-MAG-QUAD-10:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-10:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -12427,15 +11568,7 @@ JFEL-S07-MAG-QUAD-10:
   subelement: false
 JFEL-S07-MAG-QUAD-11:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-QUAD-11:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -12503,15 +11636,7 @@ JFEL-S07-MAG-QUAD-11:
   subelement: false
 JFEL-S07-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -12575,15 +11700,7 @@ JFEL-S07-MAG-VCOR-01:
   subelement: false
 JFEL-S07-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -12647,15 +11764,7 @@ JFEL-S07-MAG-VCOR-02:
   subelement: false
 JFEL-S07-MAG-VCOR-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-VCOR-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -12719,15 +11828,7 @@ JFEL-S07-MAG-VCOR-03:
   subelement: false
 JFEL-S07-MAG-VCOR-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-VCOR-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -12791,15 +11892,7 @@ JFEL-S07-MAG-VCOR-04:
   subelement: false
 JFEL-S07-MAG-VCOR-05:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-VCOR-05:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -12863,15 +11956,7 @@ JFEL-S07-MAG-VCOR-05:
   subelement: false
 JFEL-S07-MAG-VCOR-06:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-VCOR-06:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -12935,15 +12020,7 @@ JFEL-S07-MAG-VCOR-06:
   subelement: false
 JFEL-S07-MAG-VCOR-07:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S07-MAG-VCOR-07:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S07
@@ -13417,15 +12494,7 @@ JFEL-S08-DIA-SCR-02:
       z: 47.376278
 JFEL-S08-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S08-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S08
@@ -13439,15 +12508,7 @@ JFEL-S08-MAG-HCOR-01:
       z: 45.6078
 JFEL-S08-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S08-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S08
@@ -13489,15 +12550,7 @@ JFEL-S08-MAG-HVCOR-02:
       z: 47.234
 JFEL-S08-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S08-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S08
@@ -13522,15 +12575,7 @@ JFEL-S08-MAG-QUAD-01:
       z: 45.852988
 JFEL-S08-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S08-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S08
@@ -13555,15 +12600,7 @@ JFEL-S08-MAG-QUAD-02:
       z: 46.103988
 JFEL-S08-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S08-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S08
@@ -13577,15 +12614,7 @@ JFEL-S08-MAG-VCOR-01:
       z: 45.6078
 JFEL-S08-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S08-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S08
@@ -13680,15 +12709,7 @@ JFEL-S09-DIA-SCR-02:
       z: 54.376278
 JFEL-S09-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S09-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S09
@@ -13702,15 +12723,7 @@ JFEL-S09-MAG-HCOR-01:
       z: 52.6078
 JFEL-S09-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S09-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S09
@@ -13752,15 +12765,7 @@ JFEL-S09-MAG-HVCOR-02:
       z: 54.234
 JFEL-S09-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S09-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S09
@@ -13785,15 +12790,7 @@ JFEL-S09-MAG-QUAD-01:
       z: 52.852988
 JFEL-S09-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S09-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S09
@@ -13818,15 +12815,7 @@ JFEL-S09-MAG-QUAD-02:
       z: 53.103988
 JFEL-S09-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S09-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S09
@@ -13840,15 +12829,7 @@ JFEL-S09-MAG-VCOR-01:
       z: 52.6078
 JFEL-S09-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S09-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S09
@@ -13943,15 +12924,7 @@ JFEL-S10-DIA-SCR-02:
       z: 61.376278
 JFEL-S10-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S10-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S10
@@ -13965,15 +12938,7 @@ JFEL-S10-MAG-HCOR-01:
       z: 59.6078
 JFEL-S10-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S10-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S10
@@ -14015,15 +12980,7 @@ JFEL-S10-MAG-HVCOR-02:
       z: 61.234
 JFEL-S10-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S10-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S10
@@ -14048,15 +13005,7 @@ JFEL-S10-MAG-QUAD-01:
       z: 59.852988
 JFEL-S10-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S10-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S10
@@ -14081,15 +13030,7 @@ JFEL-S10-MAG-QUAD-02:
       z: 60.103988
 JFEL-S10-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S10-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S10
@@ -14103,15 +13044,7 @@ JFEL-S10-MAG-VCOR-01:
       z: 59.6078
 JFEL-S10-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S10-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S10
@@ -14206,15 +13139,7 @@ JFEL-S11-DIA-SCR-02:
       z: 68.376278
 JFEL-S11-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S11-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S11
@@ -14228,15 +13153,7 @@ JFEL-S11-MAG-HCOR-01:
       z: 66.6078
 JFEL-S11-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S11-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S11
@@ -14278,15 +13195,7 @@ JFEL-S11-MAG-HVCOR-02:
       z: 68.234
 JFEL-S11-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S11-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S11
@@ -14311,15 +13220,7 @@ JFEL-S11-MAG-QUAD-01:
       z: 66.852988
 JFEL-S11-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S11-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S11
@@ -14344,15 +13245,7 @@ JFEL-S11-MAG-QUAD-02:
       z: 67.103988
 JFEL-S11-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S11-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S11
@@ -14366,15 +13259,7 @@ JFEL-S11-MAG-VCOR-01:
       z: 66.6078
 JFEL-S11-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S11-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S11
@@ -14469,15 +13354,7 @@ JFEL-S12-DIA-SCR-02:
       z: 75.376278
 JFEL-S12-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S12-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S12
@@ -14491,15 +13368,7 @@ JFEL-S12-MAG-HCOR-01:
       z: 73.6078
 JFEL-S12-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S12-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Horizontal_Corrector
   machine_area: S12
@@ -14541,15 +13410,7 @@ JFEL-S12-MAG-HVCOR-02:
       z: 75.234
 JFEL-S12-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S12-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S12
@@ -14574,15 +13435,7 @@ JFEL-S12-MAG-QUAD-01:
       z: 73.852988
 JFEL-S12-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S12-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S12
@@ -14607,15 +13460,7 @@ JFEL-S12-MAG-QUAD-02:
       z: 74.103988
 JFEL-S12-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S12-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S12
@@ -14629,15 +13474,7 @@ JFEL-S12-MAG-VCOR-01:
       z: 73.6078
 JFEL-S12-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S12-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S12
@@ -14683,15 +13520,7 @@ JFEL-S12-VAC-VALV-01:
       z: 74.891
 JFEL-S13-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S13-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S13
@@ -14716,15 +13545,7 @@ JFEL-S13-MAG-QUAD-01:
       z: 80.852988
 JFEL-S13-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S13-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S13
@@ -14749,15 +13570,7 @@ JFEL-S13-MAG-QUAD-02:
       z: 81.103988
 JFEL-S13-MAG-QUAD-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S13-MAG-QUAD-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S13
@@ -14782,15 +13595,7 @@ JFEL-S13-MAG-QUAD-03:
       z: 82.952988
 JFEL-S13-MAG-QUAD-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S13-MAG-QUAD-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_type: Quadrupole
   machine_area: S13
@@ -14815,15 +13620,7 @@ JFEL-S13-MAG-QUAD-04:
       z: 83.603988
 JFEL-S13-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S13-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S13
@@ -14837,15 +13634,7 @@ JFEL-S13-MAG-VCOR-01:
       z: 80.6078
 JFEL-S13-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-S13-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_type: Vertical_Corrector
   machine_area: S13
@@ -15063,15 +13852,7 @@ JFEL-SP1-DIA-SCR-01:
   subelement: false
 JFEL-SP1-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP1-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -15199,15 +13980,7 @@ JFEL-SP1-MAG-HVCOR-01:
   subelement: false
 JFEL-SP1-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP1-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -15283,15 +14056,7 @@ JFEL-SP1-MAG-QUAD-01:
   subelement: false
 JFEL-SP1-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP1-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -15367,15 +14132,7 @@ JFEL-SP1-MAG-QUAD-02:
   subelement: false
 JFEL-SP1-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP1-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -15740,15 +14497,7 @@ JFEL-SP2-DIA-SCR-02:
   subelement: false
 JFEL-SP2-MAG-DIP-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP2-MAG-DIP-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Dipole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Dipole
@@ -15812,13 +14561,11 @@ JFEL-SP2-MAG-DIP-01:
   subelement: false
 JFEL-SP2-MAG-HCOR-01:
   controls:
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
     variables:
       READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP2-MAG-HCOR-01:CalcK
-        protocol: CA
+        read_only: true
+        type: statistical
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -15882,15 +14629,7 @@ JFEL-SP2-MAG-HCOR-01:
   subelement: false
 JFEL-SP2-MAG-HCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP2-MAG-HCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -16082,15 +14821,7 @@ JFEL-SP2-MAG-HVCOR-02:
   subelement: false
 JFEL-SP2-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP2-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -16166,15 +14897,7 @@ JFEL-SP2-MAG-QUAD-01:
   subelement: false
 JFEL-SP2-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP2-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -16250,15 +14973,7 @@ JFEL-SP2-MAG-QUAD-02:
   subelement: false
 JFEL-SP2-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP2-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -16322,15 +15037,7 @@ JFEL-SP2-MAG-VCOR-01:
   subelement: false
 JFEL-SP2-MAG-VCOR-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP2-MAG-VCOR-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -16738,15 +15445,7 @@ JFEL-SP3-DIA-SCR-02:
   subelement: false
 JFEL-SP3-MAG-DIP-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP3-MAG-DIP-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Dipole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Dipole
@@ -16810,15 +15509,7 @@ JFEL-SP3-MAG-DIP-01:
   subelement: false
 JFEL-SP3-MAG-HCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP3-MAG-HCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Horizontal_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Horizontal_Corrector
@@ -16946,15 +15637,7 @@ JFEL-SP3-MAG-HVCOR-01:
   subelement: false
 JFEL-SP3-MAG-QUAD-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP3-MAG-QUAD-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -17030,15 +15713,7 @@ JFEL-SP3-MAG-QUAD-01:
   subelement: false
 JFEL-SP3-MAG-QUAD-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP3-MAG-QUAD-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Quadrupole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Quadrupole
@@ -17114,15 +15789,7 @@ JFEL-SP3-MAG-QUAD-02:
   subelement: false
 JFEL-SP3-MAG-VCOR-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-SP3-MAG-VCOR-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Vertical_Corrector/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Vertical_Corrector
@@ -17405,15 +16072,7 @@ JFEL-VBC-DIA-SCR-01:
   subelement: false
 JFEL-VBC-MAG-DIP-01:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-VBC-MAG-DIP-01:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Dipole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Dipole
@@ -17492,15 +16151,7 @@ JFEL-VBC-MAG-DIP-01:
   subelement: false
 JFEL-VBC-MAG-DIP-02:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-VBC-MAG-DIP-02:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Dipole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Dipole
@@ -17579,15 +16230,7 @@ JFEL-VBC-MAG-DIP-02:
   subelement: false
 JFEL-VBC-MAG-DIP-03:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-VBC-MAG-DIP-03:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Dipole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Dipole
@@ -17666,15 +16309,7 @@ JFEL-VBC-MAG-DIP-03:
   subelement: false
 JFEL-VBC-MAG-DIP-04:
   controls:
-    variables:
-      READK:
-        description: Reads the calculated K value for a magnet based on momentum of
-          the section
-        dtype: float
-        identifier: JFEL-VBC-MAG-DIP-04:CalcK
-        protocol: CA
-        read_only: false
-        type: scalar
+    schema: Magnet/Dipole/_schema.yaml
   hardware_class: Magnet
   hardware_model: Generic
   hardware_type: Dipole
@@ -17913,3 +16548,74 @@ JFEL-VBC-SIM-MARK-01:
       - 0.0
       - 0.0
   subelement: false
+_schemas:
+  Magnet/Dipole/_schema.yaml:
+    READK:
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      dtype: float
+      identifier: '{name}:CalcK'
+      protocol: CA
+      read_only: false
+      type: scalar
+  Magnet/Horizontal_Corrector/_schema.yaml:
+    READK:
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      dtype: float
+      identifier: '{name}:CalcK'
+      protocol: CA
+      read_only: false
+      type: scalar
+  Magnet/Quadrupole/_schema.yaml:
+    READK:
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      dtype: float
+      identifier: '{name}:CalcK'
+      protocol: CA
+      read_only: false
+      type: scalar
+  Magnet/Solenoid/_schema.yaml:
+    READK:
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      dtype: float
+      identifier: '{name}:CalcK'
+      protocol: CA
+      read_only: false
+      type: scalar
+  Magnet/Vertical_Corrector/_schema.yaml:
+    READK:
+      description: Reads the calculated K value for a magnet based on momentum of
+        the section
+      dtype: float
+      identifier: '{name}:CalcK'
+      protocol: CA
+      read_only: false
+      type: scalar
+  Magnet/Wiggler/_schema.yaml:
+    READK:
+      description: Reads the calculated K value for the wiggler
+      dtype: float
+      identifier: '{name}:CalcK'
+      protocol: CA
+      read_only: false
+      type: scalar
+  RF/RFCavity/_schema.yaml:
+    OffCrestPhaseSet:
+      description: Set cavity off-crest phase
+      dtype: float
+      identifier: '{name}:PHASE_OFF'
+      protocol: CA
+      read_only: false
+      type: scalar
+      units: deg
+    PowerMWRead:
+      description: Read cavity forward power
+      dtype: float
+      identifier: '{name}:getPower'
+      protocol: CA
+      read_only: false
+      type: scalar
+      units: MW

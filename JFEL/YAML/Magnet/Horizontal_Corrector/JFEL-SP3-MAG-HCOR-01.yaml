@@ -1,24 +1,30 @@
-name: JFEL-SP3-MAG-HCOR-01
-machine_area: SP3
 controls:
-  variables:
-    READK:
-      identifier: JFEL-SP3-MAG-HCOR-01:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-  - -0.245001
-  - 0.0
-  - 45.91687518
-  global_rotation:
-  - 0.0
-  - 0.0
-  - 0.523599
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_model: Generic
+hardware_type: Horizontal_Corrector
+machine_area: SP3
+magnetic:
+  field_integral_coefficients:
+    coefficients:
+    - 0
   length: 0.1
+  linear_saturation_coefficients:
+    I0: 0
+    I_max: 0
+    L: 0
+    a: 0
+    d: 0
+    f: 0
+    m: 0
+  multipoles: {}
+  order: 0
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
+name: JFEL-SP3-MAG-HCOR-01
+physical:
   datum:
   - -0.270001
   - 0.0
@@ -32,6 +38,15 @@ physical:
     - 0.0
     - 0.0
     - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.523599
+  length: 0.1
+  middle:
+  - -0.245001
+  - 0.0
+  - 45.91687518
   rotation:
   - 0.0
   - 0.0
@@ -45,26 +60,4 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-magnetic:
-  length: 0.1
-  order: 0
-  field_integral_coefficients:
-    coefficients:
-    - 0
-  linear_saturation_coefficients:
-    I0: 0
-    I_max: 0
-    L: 0
-    a: 0
-    d: 0
-    f: 0
-    m: 0
-  multipoles: {}
-  random_multipoles: {}
-  settle_time: 45.0
-  skew: false
-  systematic_multipoles: {}
-hardware_type: Horizontal_Corrector
-hardware_class: Magnet
-hardware_model: Generic
 subelement: false

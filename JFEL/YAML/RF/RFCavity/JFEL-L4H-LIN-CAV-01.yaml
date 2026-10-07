@@ -1,38 +1,26 @@
-name: JFEL-L4H-LIN-CAV-01
-hardware_class: RF
-machine_area: L4H
-simulation:
-  field_definition: $master_lattice$Data_Files/TWS_X-DL.hdf5
-  wakefield_definition: $master_lattice$Data_Files/SzSx20um25mmxband.hdf5
-  field_amplitude: 24000000.0
-  t_column: t
-  wx_column: Wx
-  wy_column: Wy
-  wz_column: Wz
+cavity:
+  attenuation_constant: 0
+  cell_length: 0.00833333
+  coupling_cell_length: 0.012375
+  crest: 250.639
+  design_gamma: null
+  design_power: 25000000
+  frequency: 11994000000.0
+  mode_denominator: 6
+  mode_numerator: 2.5
+  n_cells: 89
+  phase: -184.0
+  shunt_impedance: null
+  structure_Type: TravellingWave
 controls:
-  variables:
-    OffCrestPhaseSet:
-      identifier: JFEL-4HC-RF-CTRL-01:PHASE_OFF
-      dtype: float
-      protocol: CA
-      units: deg
-      description: Set cavity off-crest phase
-      read_only: false
-      type: scalar
-    PowerMWRead:
-      identifier: JFEL-4HC-RF-CTRL-01:getPower
-      dtype: float
-      protocol: CA
-      units: MW
-      description: Read cavity forward power
-      read_only: false
-      type: scalar
+  identifier_pattern: JFEL-4HC-RF-CTRL-01
+  schema: _schema.yaml
+hardware_class: RF
+hardware_model: SBand
+hardware_type: RFCavity
+machine_area: L4H
+name: JFEL-L4H-LIN-CAV-01
 physical:
-  middle:
-  - 0.0
-  - 0.0
-  - 23.9397
-  length: 0.75
   datum:
   - 0.0
   - 0.0
@@ -50,6 +38,11 @@ physical:
   - 0.0
   - 0.0
   - 0.0
+  length: 0.75
+  middle:
+  - 0.0
+  - 0.0
+  - 23.9397
   rotation:
   - 0.0
   - 0.0
@@ -63,20 +56,12 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-cavity:
-  structure_Type: TravellingWave
-  cell_length: 0.00833333
-  coupling_cell_length: 0.012375
-  frequency: 11994000000.0
-  n_cells: 89
-  crest: 250.639
-  phase: -184.0
-  mode_numerator: 2.5
-  mode_denominator: 6
-  attenuation_constant: 0
-  design_gamma:
-  design_power: 25000000
-  shunt_impedance:
-hardware_type: RFCavity
-hardware_model: SBand
+simulation:
+  field_amplitude: 24000000.0
+  field_definition: $master_lattice$Data_Files/TWS_X-DL.hdf5
+  t_column: t
+  wakefield_definition: $master_lattice$Data_Files/SzSx20um25mmxband.hdf5
+  wx_column: Wx
+  wy_column: Wy
+  wz_column: Wz
 subelement: false
