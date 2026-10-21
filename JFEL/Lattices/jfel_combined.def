@@ -2,7 +2,7 @@ generator:
   code: astra
   default: jfel_400_3ps
 files:
-  injector400:
+  injector:
     code: astra
     charge:
       cathode: True
