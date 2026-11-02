@@ -1,0 +1,38 @@
+# Staging, stage 2: identical to stage 1, with its own (fresh) laser, 60 um
+# ahead of the witness the plasma lens has refocused into it.
+# Reference (Wake-T directly, witness re-centred at stage entry as SIMBA
+# does): gamma 577.1 -> 957.9, 1.17% spread, eps_nx 2.11 um (from 2.08 at
+# entry), no charge lost. Keeping instead the 0.5 um the witness slips behind
+# in stage 1 and the transport puts the laser 60.5 um ahead: gamma 966.8.
+#
+# Box positions are relative to the witness centroid.
+name: PLA-STG-PLASMA-02
+hardware_class: Plasma
+hardware_type: Plasma
+hardware_model: Plasma
+machine_area: STG
+physical:
+  middle:
+    z: 4.25
+  length: 0.02
+plasma:
+  density: 1.0e+23
+  density_profile: false
+laser:
+  role: driver
+  profile_type: gaussian
+  a0: 3.0
+  wavelength: 800.0e-9
+  waist: 40.0e-6
+  pulse_duration_fwhm: 30.0e-15
+  initial_position: 60.0e-6
+  focal_position: 0.01      # middle of the stage
+simulation:
+  wakefield_model: quasistatic_2d
+  n_out: 10
+  min_longitudinal_position: -40.0e-6
+  max_longitudinal_position: 90.0e-6
+  n_longitudinal: 260
+  n_radial: 200
+  r_max: 200.0e-6
+  particles_per_radial_cell: 4

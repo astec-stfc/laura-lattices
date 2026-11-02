@@ -1,0 +1,38 @@
+# Beam-driven (PWFA) stage with adiabatic matching ramps: PLA-PWFA-PLASMA-01's
+# 1 cm plateau at 1e23 m^-3 between 2 mm inverse-square ramps,
+# n = n0 / (1 + dz/0.5 mm)^2, i.e. n0/25 at either end. The matched beta
+# scales as n^-1/2, so the beams (Data_Files/pwfa_ramps_driver_witness,
+# matched at n0/25) enter with 5x the plateau's matched beta, are focused
+# down adiabatically by the up-ramp, and leave the down-ramp with it grown
+# 5x again, i.e. a 5x smaller divergence than without ramps.
+#
+# Box positions are relative to the incoming charge-weighted centroid, as for
+# PLA-PWFA-PLASMA-01 (driver at +7.3 um, witness at -72.7 um).
+name: PLA-PWFAR-PLASMA-01
+hardware_class: Plasma
+hardware_type: Plasma
+hardware_model: Plasma
+machine_area: PWFAR
+physical:
+  middle:
+    z: 5.007
+  length: 0.014
+plasma:
+  density: 1.0e+23
+  density_profile: true
+  density_profile_type: decaying
+  ramp_up: 0.002
+  plateau: 0.01
+  ramp_down: 0.002
+  ramp_decay_length: 0.0005
+simulation:
+  wakefield_model: quasistatic_2d
+  n_out: 50
+  min_longitudinal_position: -112.7e-6
+  max_longitudinal_position: 27.3e-6
+  n_longitudinal: 280
+  n_radial: 70
+  r_max: 70.0e-6
+  particles_per_radial_cell: 2
+  particles_per_longitudinal_cell: 2
+  particles_per_angular_cell: 4

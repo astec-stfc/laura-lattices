@@ -1,0 +1,48 @@
+# Laser-driven (LWFA) stage with external injection: Wake-T's tutorial 01,
+# part 3. An a0 = 3, 40 um-waist, 30 fs laser is guided through 1 mm
+# up-ramp + 1 cm plateau + 1 mm down-ramp at 1e23 m^-3, in a parabolic channel
+# matched to its waist; it drives a wake that accelerates a 30 pC, 100 MeV
+# witness (Data_Files/lwfa_witness) 60 um behind it.
+#
+# Reference (that tutorial run directly in Wake-T, same witness): witness
+# gamma 195.7 -> 520.5 (100 -> 266 MeV), 1.02% energy spread,
+# eps_nx 1.02 um.
+#
+# Box positions are relative to the witness centroid; the laser sits 60 um
+# ahead of it. parabolic_coefficient = 1/(pi r_e w0^4 n0), matched to w0.
+name: PLA-LWFA-PLASMA-01
+hardware_class: Plasma
+hardware_type: Plasma
+hardware_model: Plasma
+machine_area: LWFA
+physical:
+  middle:
+    z: 3.006
+  length: 0.012
+plasma:
+  density: 1.0e+23
+  density_profile: true
+  density_profile_type: decaying
+  ramp_up: 0.001
+  plateau: 0.01
+  ramp_down: 0.001
+  ramp_decay_length: 0.0005
+  parabolic_coefficient: 4.412e+8
+laser:
+  role: driver
+  profile_type: gaussian
+  a0: 3.0
+  wavelength: 800.0e-9
+  waist: 40.0e-6
+  pulse_duration_fwhm: 30.0e-15
+  initial_position: 60.0e-6
+  focal_position: 0.0
+simulation:
+  wakefield_model: quasistatic_2d
+  n_out: 10
+  min_longitudinal_position: -40.0e-6
+  max_longitudinal_position: 90.0e-6
+  n_longitudinal: 260
+  n_radial: 100
+  r_max: 100.0e-6
+  particles_per_radial_cell: 4

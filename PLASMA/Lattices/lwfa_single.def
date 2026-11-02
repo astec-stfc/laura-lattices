@@ -1,0 +1,31 @@
+# Single laser-driven (LWFA) stage with an externally injected witness, then a
+# 0.5 m drift to a screen (Ocelot).
+#
+# The stage runs in Wake-T by default; to run it in FBPIC instead:
+#     framework.change_Lattice_Code("LWFA", "fbpic")
+# The element's grid is Wake-T's (the laser is an envelope there). FBPIC
+# resolves the 800 nm laser itself and needs a much finer grid; see README.md.
+global:
+  FBPICsettings:
+    boost: True               # laser-driven, 1.2 cm: boosted frame
+    gamma_boost: 6            # below the efficiency limit sqrt(L/box) ~ 9.6
+    use_galilean: True        # Galilean solver against numerical Cherenkov
+    include_ions: True        # needed in a boosted frame
+    laser_injection_method: antenna
+    number_of_modes: 2
+files:
+  LWFA:
+    code: waket
+    input:
+      particle_definition: '$master_lattice$Data_Files/lwfa_witness'
+    output:
+      start_element: PLA-LWFA-SIM-START-01
+      end_element: PLA-LWFA-SIM-END-01
+  LWFA_DIAG:
+    code: ocelot
+    output:
+      start_element: PLA-LWFA-SIM-END-01
+      end_element: PLA-LWFA-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

@@ -11,6 +11,12 @@ ppc_driver
     The drive bunch for plasma_photocathode.def: 200 pC, 1 GeV, matched to
     1e23 m^-3. Its peak field (~20 GV/m) and that of its wake (~40 GV/m) stay
     well below the ~105 GV/m that ionizes helium, which is left to the laser.
+pwfa_ramps_driver_witness
+    As pwfa_driver_witness, but each bunch matched to the density at the
+    entrance of pwfa_ramps.def's up-ramp (1e23/25 m^-3) instead of the plateau.
+lwfa_witness
+    The externally injected witness of Wake-T's tutorial 01 (30 pC, 100 MeV,
+    sigma_x = 3 um, 3 fs), with the seed used for the lwfa_single reference.
 """
 
 import os
@@ -19,7 +25,7 @@ import numpy as np
 from simba.Modules import Beams as rbf
 from simba.Modules.Beams.wake_t import particle_bunch_to_beam
 from wake_t import ParticleBunch
-from wake_t.utilities.bunch_generation import get_matched_bunch
+from wake_t.utilities.bunch_generation import get_gaussian_bunch_from_size, get_matched_bunch
 
 N_P = 1e23
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "Data_Files")
@@ -52,3 +58,16 @@ np.random.seed(2)
 ppc = get_matched_bunch(en_x=20e-6, en_y=20e-6, ene=2000, ene_sp=1, s_t=33,
                         xi_c=0, q_tot=200, n_part=2e4, n_p=N_P)
 write("ppc_driver", [ppc], -200e-12)
+
+np.random.seed(1)
+lwfa = get_gaussian_bunch_from_size(1e-6, 1e-6, 3e-6, 3e-6, 100 / 0.511, 1.0, 3.0,
+                                    0.0, 30, 1e4)
+write("lwfa_witness", [lwfa], -30e-12)
+
+np.random.seed(1)
+N_ENTRY = N_P / 25  # decaying ramp: n0 / (1 + ramp_up/decay_length)^2
+driver = get_matched_bunch(en_x=10e-6, en_y=10e-6, ene=2000, ene_sp=1, s_t=10,
+                           xi_c=0, q_tot=500, n_part=1e4, n_p=N_ENTRY)
+witness = get_matched_bunch(en_x=1e-6, en_y=1e-6, ene=200, ene_sp=0.1, s_t=3,
+                            xi_c=-80e-6, q_tot=50, n_part=1e4, n_p=N_ENTRY)
+write("pwfa_ramps_driver_witness", [driver, witness], -550e-12)

@@ -1,0 +1,44 @@
+# Two laser-driven stages coupled by an active plasma lens, then a 0.5 m
+# drift to a screen (Ocelot). Stage 1 + capture is Wake-T's tutorial 02, with
+# the lens strengthened to refocus the beam into an identical second stage
+# that has its own laser.
+#
+# All Wake-T by default. Each stage is its own section, so either can be
+# switched to FBPIC (one plasma per FBPIC section), e.g.
+#     framework.change_Lattice_Code("STG2", "fbpic")
+# with the grid refined as for lwfa_single (README.md). The lens section has
+# no FBPIC equivalent.
+global:
+  FBPICsettings:
+    boost: True
+    gamma_boost: 8            # below sqrt(L/box) ~ 12 for a 2 cm stage
+    use_galilean: True
+    include_ions: True
+    laser_injection_method: antenna
+    number_of_modes: 2
+files:
+  STG1:
+    code: waket
+    input:
+      particle_definition: '$master_lattice$Data_Files/lwfa_witness'
+    output:
+      start_element: PLA-STG-SIM-START-01
+      end_element: PLA-STG-SIM-MARK-01
+  STG_LENS:
+    code: waket
+    output:
+      start_element: PLA-STG-SIM-MARK-01
+      end_element: PLA-STG-SIM-MARK-02
+  STG2:
+    code: waket
+    output:
+      start_element: PLA-STG-SIM-MARK-02
+      end_element: PLA-STG-SIM-END-01
+  STG_DIAG:
+    code: ocelot
+    output:
+      start_element: PLA-STG-SIM-END-01
+      end_element: PLA-STG-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

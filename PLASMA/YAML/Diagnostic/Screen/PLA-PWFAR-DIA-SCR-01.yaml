@@ -1,0 +1,9 @@
+name: PLA-PWFAR-DIA-SCR-01
+hardware_class: Diagnostic
+hardware_type: Screen
+hardware_model: YAG
+machine_area: PWFAR
+physical:
+  middle:
+    z: 5.514
+  length: 0.0

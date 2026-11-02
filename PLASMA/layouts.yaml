@@ -7,3 +7,7 @@ layouts:
   PLASMA:
     - "PWFA"
     - "PPC"
+    - "IONINJ"
+    - "LWFA"
+    - "STG"
+    - "PWFAR"

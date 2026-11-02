@@ -1,0 +1,7 @@
+name: PLA-STG-SIM-END-01
+hardware_class: Simulation
+hardware_type: Marker
+machine_area: STG
+physical:
+  middle:
+    z: 4.26

@@ -1,0 +1,28 @@
+# Laser-driven ionization injection (FBPIC only), then a 0.5 m drift to a
+# screen (Ocelot). FBPIC's ionization_script.py, run for 0.5 mm; small enough
+# for a laptop GPU (800 x 50 cells, ~10k steps).
+#
+# There is no incoming beam: the laser drives the wake, and the stage's output
+# is the electrons injected from nitrogen.
+global:
+  FBPICsettings:
+    boost: False            # 0.5 mm: the lab frame is cheap enough
+    number_of_modes: 2
+    diag_period: 1000
+    injected_uz_min: 20.0   # ~ the wake's gamma (omega0/omega_p ~ 14): trapped only; 2 also takes ~0.6 nC of sheath electrons
+files:
+  IONINJ:
+    code: fbpic
+    input:
+      particle_definition: null
+    output:
+      start_element: PLA-IONINJ-SIM-START-01
+      end_element: PLA-IONINJ-SIM-END-01
+  IONINJ_DIAG:
+    code: ocelot
+    output:
+      start_element: PLA-IONINJ-SIM-END-01
+      end_element: PLA-IONINJ-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"
