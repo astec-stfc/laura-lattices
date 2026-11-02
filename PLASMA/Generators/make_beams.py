@@ -11,8 +11,6 @@ ppc_driver
     The drive bunch for plasma_photocathode.def: 200 pC, 1 GeV, matched to
     1e23 m^-3. Its peak field (~20 GV/m) and that of its wake (~40 GV/m) stay
     well below the ~105 GV/m that ionizes helium, which is left to the laser.
-
-    ~/venv/bin/python3 PLASMA/Generators/make_beams.py
 """
 
 import os
