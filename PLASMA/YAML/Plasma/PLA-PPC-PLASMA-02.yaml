@@ -1,0 +1,28 @@
+# Acceleration stage after PLA-PPC-PLASMA-01: the same plasma, 2 cm long, run
+# in Wake-T (quasi-static), taking the drive bunch and the injected witness
+# from FBPIC. Helium plays no further part, so it is left out.
+#
+# The box origin is the incoming charge-weighted centroid, which the witness
+# pulls a few um behind the driver (by ~Q_witness/Q_total * 80 um), so the box
+# has margin either side.
+name: PLA-PPC-PLASMA-02
+hardware_class: Plasma
+hardware_type: Plasma
+hardware_model: Plasma
+machine_area: PPC
+physical:
+  middle:
+    z: 1.011
+  length: 0.02
+plasma:
+  density: 1.0e+23
+  density_profile: false
+simulation:
+  wakefield_model: quasistatic_2d
+  n_out: 20
+  min_longitudinal_position: -120.0e-6
+  max_longitudinal_position: 50.0e-6
+  n_longitudinal: 680
+  n_radial: 240
+  r_max: 60.0e-6
+  particles_per_radial_cell: 2

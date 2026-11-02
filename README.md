@@ -9,8 +9,11 @@ Each accelerator is stored in its own directory and can be installed as part of 
 |---|---|---|
 | `laura-lattices` (main) | All machines below | `pip install laura-lattices` |
 | `laura-lattices-jfel` | JANUS FEL | `pip install laura-lattices-jfel` |
+| `laura-lattices-plasma` | Example plasma-wakefield stages (Wake-T / FBPIC) | `pip install laura-lattices-plasma` |
 
 Note: JFEL (JANUS Free-Electron Laser) is not a real accelerator: it is primarily used as an example case for the [JANUS](https://github.com/astec-stfc/janus) digital shadow.
+
+PLASMA is not a real accelerator either: it collects example plasma-wakefield stages that run in both [Wake-T](https://github.com/Wake-T/Wake-T) and [FBPIC](https://github.com/fbpic/fbpic) through SIMBA. See [`PLASMA/README.md`](PLASMA/README.md).
 
 ---
 
@@ -289,6 +292,7 @@ This matters because a machine can load the cache rather than the directory:
 | Machine | `element_list` points at |
 |---------|--------------------------|
 | JFEL | `YAML/` (the directory — no summary to keep in sync) |
+| PLASMA | `YAML/` (the directory — no summary to keep in sync) |
 
 For any machine that points at a summary, **editing an element file has no
 effect until the summary is regenerated**. Editing a summary by hand is worse:
