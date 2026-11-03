@@ -1,0 +1,18 @@
+# Imaging doublet: point-to-point from the plasma exit to the spectrometer
+# screen in both planes (R12 = R34 = 0) at 575.6 MeV, with R11 = -1.74,
+# R33 = -15.5 and R16 = -0.44 m at the screen.
+name: JFEL-PWA-MAG-QUAD-01
+hardware_class: Magnet
+hardware_type: Quadrupole
+machine_area: PWA
+physical:
+  middle:
+    z: 84.6
+  length: 0.15
+magnetic:
+  length: 0.15
+  order: 1
+  multipoles:
+    K1L:
+      order: 1
+      normal: -5.85386

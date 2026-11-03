@@ -1,0 +1,17 @@
+# Spectrometer screen, 1.5 m after the dipole exit: dispersion
+# rho (1 - cos 15 deg) + 1.5 sin 15 deg = 0.44 m.
+name: JFEL-PWA-DIA-SCR-01
+hardware_class: Diagnostic
+hardware_type: Screen
+hardware_model: YAG
+machine_area: PWA
+physical:
+  middle:
+  - -0.4402911
+  - 0.0
+  - 87.0443396
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.2617994
+  length: 0.0

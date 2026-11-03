@@ -36,7 +36,9 @@ files:
       nbins: 4
       sample: 1               # one slice per wavelength: the cooperation length is
                               # only ~8 wavelengths, so coarser sampling misses the
-                              # SASE structure (~1 min here; raise for long bunches)
+                              # SASE structure (~4 min here; raise for long bunches)
+      slippage_window: True   # window = bunch + slippage (~0.57 mm), so the
+                              # radiation is followed to the undulator exit
       field_power: 0.0
       waist_size: 0.00007
     output:

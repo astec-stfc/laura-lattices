@@ -295,6 +295,16 @@ sections:
     - JFEL-S13-SIM-MARK-02
     - JFEL-S13-MAG-QUAD-03
     - JFEL-S13-MAG-QUAD-04
+  # Plasma end-station in place of the FEL: the plasma, an imaging quadrupole
+  # doublet, and a 15 deg spectrometer dipole onto a screen.
+  PWA:
+    - JFEL-PWA-SIM-START-01
+    - JFEL-PWA-PLASMA-01
+    - JFEL-PWA-SIM-END-01
+    - JFEL-PWA-MAG-QUAD-01
+    - JFEL-PWA-MAG-QUAD-02
+    - JFEL-PWA-MAG-DIP-01
+    - JFEL-PWA-DIA-SCR-01
   # S06 up to the SP2 spectrometer dipole, for the SP2 layout: the rest of S06
   # lies on the straight line beyond the branch point. (S07 already ends
   # before the SP3 dipole, where S08 begins.)

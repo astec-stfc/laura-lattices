@@ -1,0 +1,58 @@
+# Start-to-end plasma end-station (PWA layout): the linac from the saved
+# injector beam, a final focus into a single-bunch beam-driven plasma stage,
+# and a spectrometer. Used by Scripts/run_plasma.py.
+#
+#   Linac         saved injector beam -> start of S13       (elegant: wakes, CSR)
+#   FinalFocus    S13 quads matched to a round waist at the plasma entrance
+#                 (Ocelot's matcher). beta_y / beta_x = eps_x / eps_y makes
+#                 the spot round (~13 um rms) for the axisymmetric plasma model.
+#   Plasma        10 cm at 3e22 m^-3                         (Wake-T)
+#   Spectrometer  imaging doublet + 15 deg dipole -> screen  (elegant)
+#
+# To run the plasma in FBPIC instead:
+#     framework.change_Lattice_Code("Plasma", "fbpic")
+default_layout: PWA
+global:
+  FBPICsettings:
+    boost: False          # beam-driven: lab frame
+    number_of_modes: 2    # the bunch is not round away from the focus
+files:
+  Linac:
+    code: elegant
+    input:
+      particle_definition: '$master_lattice$Data_Files/jfel_injector_S02'
+      twiss:
+        beta_x: 20
+        alpha_x: 0
+        beta_y: 10
+        alpha_y: 0
+    output:
+      start_element: JFEL-S02-SIM-APER-01
+      end_element: JFEL-S13-SIM-MARK-01
+  FinalFocus:
+    code: ocelot
+    match:
+      enable: True
+      variables: [JFEL-S13-MAG-QUAD-01, JFEL-S13-MAG-QUAD-02, JFEL-S13-MAG-QUAD-03, JFEL-S13-MAG-QUAD-04]
+      targets:
+        JFEL-PWA-SIM-START-01: {beta_x: 0.05, alpha_x: 0.0, beta_y: 0.24, alpha_y: 0.0}
+    output:
+      start_element: JFEL-S13-SIM-MARK-01
+      end_element: JFEL-PWA-SIM-START-01
+  Plasma:
+    code: waket
+    output:
+      start_element: JFEL-PWA-SIM-START-01
+      end_element: JFEL-PWA-SIM-END-01
+  Spectrometer:
+    code: elegant
+    output:
+      start_element: JFEL-PWA-SIM-END-01
+      end_element: JFEL-PWA-DIA-SCR-01
+groups:
+  bunch_compressor:
+    type: chicane
+    elements: [JFEL-VBC-MAG-DIP-01, JFEL-VBC-MAG-DIP-02, JFEL-VBC-MAG-DIP-03, JFEL-VBC-MAG-DIP-04]
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

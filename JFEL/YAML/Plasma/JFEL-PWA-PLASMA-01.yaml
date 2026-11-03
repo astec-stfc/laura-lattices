@@ -1,0 +1,33 @@
+# Single-bunch beam-driven (PWFA) plasma end-station: a 10 cm uniform plasma
+# at 3e22 m^-3 (lambda_p = 193 um, about the length of the ~500 A flat-top the
+# linac delivers). The bunch head drives the wake and is decelerated; the tail
+# sits in the accelerating phase behind it and gains energy.
+#
+# No `laser` block: that is what makes the stage beam-driven.
+#
+# Box positions are relative to the incoming beam's charge-weighted centroid:
+# the bunch spans about -95..+120 um (head at +), and the box extends a plasma
+# wavelength behind it.
+name: JFEL-PWA-PLASMA-01
+hardware_class: Plasma
+hardware_type: Plasma
+hardware_model: Plasma
+machine_area: PWA
+physical:
+  middle:
+    z: 84.25
+  length: 0.1
+plasma:
+  density: 3.0e+22
+  density_profile: false
+simulation:
+  wakefield_model: quasistatic_2d
+  n_out: 20
+  min_longitudinal_position: -300.0e-6
+  max_longitudinal_position: 140.0e-6
+  n_longitudinal: 440
+  n_radial: 150
+  r_max: 150.0e-6
+  particles_per_radial_cell: 2
+  particles_per_longitudinal_cell: 2
+  particles_per_angular_cell: 4

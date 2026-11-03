@@ -15,6 +15,7 @@ four-dipole chicane, L04-L09 (~577 MeV), the S13 matching section and a
 | Layout | Path |
 |---|---|
 | `JFELFULL` (default) | gun -> linac -> VBC -> linac -> S13 -> FEL |
+| `PWA` | gun -> linac -> VBC -> linac -> S13 -> plasma end-station (PWFA + spectrometer) |
 | `SP2` | ... -> VBC -> S06 (to the 30 deg SP2 dipole) -> SP2 spectrometer |
 | `SP3` | ... -> L04 -> S07 (with the TDC) -> SP3 spectrometer |
 
@@ -30,13 +31,15 @@ A `.def` picks a layout other than the default with a top-level
 | `Lattices/jfel_compression.def` | From the saved injector beam to just after the VBC (S06) |
 | `Lattices/jfel_match_undulator.def` | Linac to S13, S13 matched into the undulator, and the undulator |
 | `Lattices/jfel_fel.def` | Start-to-end FEL: linac (elegant, wakes + CSR) from the saved injector beam, then Genesis 4 steady-state (`FEL_ST`) or time-dependent (`FEL_TD`) |
-| `Generators/make_injector_beam.py` | Runs the ASTRA injector (32768 particles) and saves `Data_Files/jfel_injector_S02.openpmd.hdf5`, the input to the two lattices above |
+| `Lattices/jfel_plasma.def` | Start-to-end plasma end-station (`PWA` layout): linac (elegant), S13 final focus (Ocelot matcher), plasma (Wake-T, or FBPIC), spectrometer (elegant) |
+| `Generators/make_injector_beam.py` | Runs the ASTRA injector (32768 particles) and saves `Data_Files/jfel_injector_S02.openpmd.hdf5`, the input to the lattices above |
 | `Scripts/run_example.py` | Runs any lattice; summarises the beam after each section (charge, energy, spread, emittance, size, length, peak current) |
 | `Scripts/compare_codes.py` | `jfel_linac_codes` in several codes from the same beam, compared at every common screen (SIMBA's `test_jfel_code_comparison` as a script) |
 | `Scripts/scan_compression.py` | Chicane angle x L4H phase scan of the compression |
 | `Scripts/optimise_compression.py` | Nelder-Mead for a target peak current with a flat profile, checked in elegant with CSR |
 | `Scripts/match_to_undulator.py` | Computes the undulator's periodic Twiss and matches S13 to it |
 | `Scripts/run_fel.py` | Runs `jfel_fel`; reports wavelength, gain length, saturation and pulse energy, with the Ming Xie estimate |
+| `Scripts/run_plasma.py` | Runs `jfel_plasma`; reports the focus, the energy change along the bunch, and the spectrum read off the spectrometer screen |
 
 ```bash
 python JFEL/Scripts/compare_codes.py --physics none --plot none.png
@@ -45,6 +48,7 @@ python JFEL/Scripts/scan_compression.py --plot scan.png
 python JFEL/Scripts/optimise_compression.py --target 1000
 python JFEL/Scripts/match_to_undulator.py
 python JFEL/Scripts/run_fel.py --mode both
+python JFEL/Scripts/run_plasma.py --plot
 python JFEL/Scripts/run_example.py jfel_linac_codes --code Linac=ocelot --bc-angle 0.12
 ```
 
@@ -62,6 +66,8 @@ follow the global geometry, such as Bmad -- sees the same chicane.
   `impactx.Config.have_fft`).
 - Xsuite runs on the GPU when cupy is installed; `SIMBA_XSUITE_CONTEXT=cpu`
   keeps it on the CPU.
+- The plasma end-station needs Wake-T (or FBPIC) and SIMBA/LAURA with plasma
+  support (as for the `PLASMA` examples).
 
 ## Code comparison
 
@@ -206,7 +212,7 @@ peak current, eps_nx 3.8 um (CSR in the chicane), eps_ny 0.79 um.
 |---|---|---|---|---|---|
 | Ming Xie estimate (beam at the undulator) | 2.380 | 0.50 | | rho = 0.018 | |
 | Genesis steady-state (1 kW seed) | 2.380 | 0.76 | 15.7 m | 1.3 GW (1.7 GW at the end) | seconds |
-| Genesis time-dependent (SASE) | 2.380 | 0.66 | 15.2 m | 1.6 GW mean, 4.5 GW peak, ~1 mJ | ~1 min |
+| Genesis time-dependent (SASE) | 2.380 | 0.72-0.82 | 15.5-17.0 m | 1.0-1.2 mJ (1.2-1.6 mJ at the end), 3.6-3.9 GW peak | ~4 min |
 
 - The wavelength follows from K = 8.52 (helical), the 82 mm period and
   gamma = 1126: lambda = lambda_u (1 + K^2) / (2 gamma^2).
@@ -216,18 +222,52 @@ peak current, eps_nx 3.8 um (CSR in the chicane), eps_ny 0.79 um.
   correlations.
 - The time-dependent run resolves every wavelength (`sample: 1`): the
   cooperation length, lambda / (4 pi sqrt(3) rho), is only ~8 wavelengths. The
-  SASE pulse energy changes from run to run with the shot noise (0.8-1.2 mJ).
+  ranges are from two runs: SASE starts from the shot noise and changes from
+  run to run. Gain length and saturation are fitted to the pulse energy.
+- With `slippage_window: True` (the default) the time-dependent window is the
+  bunch plus the slippage over the undulator (~0.57 mm, N_u lambda), so the
+  radiation that slips ahead of the bunch stays in the window to the exit.
 - Genesis settings are in the `fel:` block of each line (`steady_state`,
-  `beam_type`, `npart`, `nbins`, `sample`, seed `field_power` and
-  `waist_size`).
+  `beam_type`, `npart`, `nbins`, `sample`, `slippage_window`, seed
+  `field_power` and `waist_size`).
+
+## Plasma end-station
+
+The `PWA` layout replaces the undulator with a single-bunch, beam-driven
+plasma stage and a spectrometer. `run_plasma.py` tracks the saved injector
+beam through the linac (elegant), matches the S13 quadrupoles to a waist at
+the plasma entrance (Ocelot's matcher), runs the plasma in Wake-T and the
+spectrometer in elegant -- about 30 s in all.
+
+| Element | |
+|---|---|
+| Final focus | S13 matched to beta_x 0.05 m, beta_y 0.24 m (beta_y / beta_x = eps_x / eps_y): a round 13 um rms spot for the axisymmetric plasma model |
+| Plasma (`JFEL-PWA-PLASMA-01`) | 10 cm, uniform 3e22 m^-3: lambda_p = 193 um, about the length of the ~500 A flat-top the linac delivers |
+| Imaging doublet | Point-to-point from the plasma exit to the screen in both planes (R12 = R34 = 0), so x on the screen depends on energy alone |
+| Spectrometer | 15 deg dipole, screen 1.5 m beyond it: R16 = -0.44 m, i.e. 4.4 mm per 1% |
+
+With lambda_p about the bunch length, the bunch head drives the wake and the
+tail sits in its accelerating phase:
+
+| | entrance | exit |
+|---|---|---|
+| mean energy | 575.6 MeV | 544.8 MeV |
+| 1-99% energy range | 574-577 MeV | 467-665 MeV |
+| slice energy, head -> tail (8 equal-charge slices) [MeV] | 577 ... 574 | 538 489 483 502 533 569 605 640 |
+
+- The head loses up to ~90 MeV and the tail gains ~65 MeV over 10 cm (about
+  -0.9 / +0.65 GV/m), with the energy lost by the bunch as a whole (31 MeV
+  mean, ~8 mJ) left in the plasma wake. Particles further off axis see a
+  weaker wake, which spreads each slice in energy.
+- The screen spans about +-80 mm. Read as E = E_mean / (1 - x / R16) (the
+  dipole deflects as 1 / (1 + delta)), it reproduces the tracked energies to
+  2.4 MeV rms (0.4%); the rest is the chromatic aberration of the doublet.
+- `--bc-angle` changes the compression, and so the current profile that
+  drives the wake; `--plasma-code fbpic` runs the plasma in FBPIC (2
+  azimuthal modes, as the bunch is round only at the focus).
 
 ## Open items
 
 - A reference CSR calculation (e.g. CSRTrack) for the chicane, to set against
   the spread between codes above.
 - RF-structure wakefields in ImpactX (not modelled at present).
-- Time-dependent Genesis: the simulation window is set by the imported bunch
-  (~0.2 mm), shorter than the slippage over the undulator (~0.57 mm), so the
-  radiation leaves the window ahead of the bunch after saturation. A window
-  extended ahead of the bunch (Genesis' `settimewindow = false` with a longer
-  `&time` window) would follow the pulse to the undulator exit.

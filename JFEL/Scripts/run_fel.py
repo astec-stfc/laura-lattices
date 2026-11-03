@@ -4,7 +4,7 @@ injector beam (elegant, with structure wakes and CSR), then Genesis 4 through
 the undulator, steady-state and/or time-dependent.
 
     python JFEL/Scripts/run_fel.py                 # linac + steady-state (seconds)
-    python JFEL/Scripts/run_fel.py --mode td       # linac + time-dependent SASE (~1 min)
+    python JFEL/Scripts/run_fel.py --mode td       # linac + time-dependent SASE (~4 min)
     python JFEL/Scripts/run_fel.py --mode both --bc-angle 0.125
 
 Reports the radiation wavelength, power gain length (fitted to the exponential
@@ -60,7 +60,13 @@ def ming_xie(beam_file, period, K, helical=True):
 
 
 def genesis_summary(out_file, time_dependent):
-    """Gain length, saturation and (time-dependent) pulse energy from Genesis' output."""
+    """
+    Gain length, saturation and (time-dependent) pulse energy from Genesis' output.
+
+    Steady-state: fitted to the power. Time-dependent: fitted to the pulse
+    energy, as the window extends ahead of the bunch to hold the slipping
+    radiation, so a mean over its slices would be diluted by empty ones.
+    """
     import h5py
 
     with h5py.File(out_file) as h:
@@ -68,7 +74,10 @@ def genesis_summary(out_file, time_dependent):
         power = h["Field/power"][()]
         lam = float(h["Global/lambdaref"][()][0])
         slen = float(h["Global/slen"][()][0])
-    p = power.mean(axis=1) if power.ndim == 2 and power.shape[1] > 1 else power.reshape(len(z))
+    if time_dependent:
+        p = power.sum(axis=1) * (slen / power.shape[1]) / 2.99792458e8  # pulse energy [J]
+    else:
+        p = power.reshape(len(z), -1)[:, 0]
     i_max = int(np.argmax(p))
     # exponential regime: between 1e-4 and 1e-2 of the maximum power
     window = (p > 1e-4 * p[i_max]) & (p < 1e-2 * p[i_max]) & (np.arange(len(z)) < i_max)
@@ -82,12 +91,11 @@ def genesis_summary(out_file, time_dependent):
         after = np.where((np.arange(len(z)) > np.where(window)[0][-1]) & (rate < 1 / (5 * lg)))[0]
         if after.size:
             i_sat = int(after[0])
-    out = {"lambda_m": lam, "Lg_m": lg, "z_sat_m": float(z[i_sat]), "P_sat_W": float(p[i_sat]),
-           "P_end_W": float(p[-1])}
+    out = {"lambda_m": lam, "Lg_m": lg, "z_sat_m": float(z[i_sat])}
     if time_dependent:
-        energy = power.sum(axis=1) * (slen / power.shape[1]) / 2.99792458e8
-        out.update(E_pulse_max_J=float(energy.max()), z_Emax_m=float(z[np.argmax(energy)]),
-                   P_peak_W=float(power[i_sat].max()))
+        out.update(E_sat_J=float(p[i_sat]), E_end_J=float(p[-1]), P_peak_W=float(power[i_sat].max()))
+    else:
+        out.update(P_sat_W=float(p[i_sat]), P_end_W=float(p[-1]))
     return out
 
 
@@ -123,10 +131,12 @@ def main():
         f.track(files=[line], check_lattice=False)
         s = genesis_summary(os.path.join(directory, f"{line}.out.h5"), mode == "td")
         print(f"\nGenesis {line}: lambda {s['lambda_m'] * 1e6:.3f} um, L_g {s['Lg_m']:.3f} m, "
-              f"saturation at z = {s['z_sat_m']:.2f} m, <P> {s['P_sat_W']:.3e} W")
+              f"saturation at z = {s['z_sat_m']:.2f} m")
         if mode == "td":
-            print(f"  peak slice power {s['P_peak_W']:.3e} W; pulse energy {s['E_pulse_max_J'] * 1e3:.3f} mJ "
-                  f"at z = {s['z_Emax_m']:.2f} m")
+            print(f"  pulse energy {s['E_sat_J'] * 1e3:.3f} mJ at saturation, {s['E_end_J'] * 1e3:.3f} mJ "
+                  f"at the exit; peak slice power at saturation {s['P_peak_W']:.3e} W")
+        else:
+            print(f"  power {s['P_sat_W']:.3e} W at saturation, {s['P_end_W']:.3e} W at the exit")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,7 @@
+name: JFEL-PWA-SIM-END-01
+hardware_class: Simulation
+hardware_type: Marker
+machine_area: PWA
+physical:
+  middle:
+    z: 84.3
