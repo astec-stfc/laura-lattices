@@ -11,7 +11,8 @@ Each accelerator is stored in its own directory and can be installed as part of 
 | `laura-lattices-jfel` | JANUS FEL | `pip install laura-lattices-jfel` |
 | `laura-lattices-plasma` | Example plasma-wakefield stages (Wake-T / FBPIC) | `pip install laura-lattices-plasma` |
 
-Note: JFEL (JANUS Free-Electron Laser) is not a real accelerator: it is primarily used as an example case for the [JANUS](https://github.com/astec-stfc/janus) digital shadow.
+Note: JFEL (JANUS Free-Electron Laser) is not a real accelerator: it is primarily used as an example case for the [JANUS](https://github.com/astec-stfc/janus) digital shadow,
+and for code comparisons and compression studies through SIMBA. See [`JFEL/README.md`](JFEL/README.md).
 
 PLASMA is not a real accelerator either: it collects example plasma-wakefield stages that run in both [Wake-T](https://github.com/Wake-T/Wake-T) and [FBPIC](https://github.com/fbpic/fbpic) through SIMBA. See [`PLASMA/README.md`](PLASMA/README.md).
 

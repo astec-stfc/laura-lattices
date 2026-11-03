@@ -1,0 +1,42 @@
+# Matching from the linac into the undulator. Used by
+# Scripts/match_to_undulator.py, which computes the undulator's periodic Twiss
+# (including the natural focusing of its helical segments), fills in the Match
+# line's targets, and checks the beam stays periodic through the undulator.
+#
+#   Linac      saved injector beam -> start of S13, after L09   (Ocelot)
+#   Match      S13 -> undulator entrance, S13 quads matched (Ocelot's matcher)
+#   Undulator  the 10 undulator cells               (Ocelot)
+files:
+  Linac:
+    code: ocelot
+    input:
+      particle_definition: '$master_lattice$Data_Files/jfel_injector_S02'
+      twiss:
+        beta_x: 20
+        alpha_x: 0
+        beta_y: 10
+        alpha_y: 0
+    output:
+      start_element: JFEL-S02-SIM-APER-01
+      end_element: JFEL-S13-SIM-MARK-01
+  Match:
+    code: ocelot
+    match:
+      enable: True
+      variables: [JFEL-S13-MAG-QUAD-01, JFEL-S13-MAG-QUAD-02, JFEL-S13-MAG-QUAD-03, JFEL-S13-MAG-QUAD-04]
+      targets: {}
+    output:
+      start_element: JFEL-S13-SIM-MARK-01
+      end_element: JFEL-FEL-SIM-MARK-01
+  Undulator:
+    code: ocelot
+    output:
+      start_element: JFEL-FEL-SIM-MARK-01
+      end_element: JFEL-FEL-SIM-MARK-02
+groups:
+  bunch_compressor:
+    type: chicane
+    elements: [JFEL-VBC-MAG-DIP-01, JFEL-VBC-MAG-DIP-02, JFEL-VBC-MAG-DIP-03, JFEL-VBC-MAG-DIP-04]
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

@@ -17,6 +17,27 @@ definition.
 
 ## Running
 
+`Scripts/run_example.py` runs any of the lattices and summarises the beam at
+the end of each section (charge, energy, spread, εn,x, σx; split into driver
+and witness where there are two bunches):
+
+```bash
+python PLASMA/Scripts/run_example.py pwfa_single
+python PLASMA/Scripts/run_example.py pwfa_single --code PWFA=fbpic
+python PLASMA/Scripts/run_example.py lwfa_single --code LWFA=fbpic \
+    --set PLA-LWFA-PLASMA-01.n_longitudinal=3250 --set PLA-LWFA-PLASMA-01.n_radial=200
+python PLASMA/Scripts/run_example.py plasma_photocathode \
+    --set PLA-PPC-PLASMA-01.n_longitudinal=1500 --set PLA-PPC-PLASMA-01.n_radial=100
+python PLASMA/Scripts/run_example.py pwfa_single --dir pwfa_single --summary-only
+```
+
+`--code SECTION=CODE` switches a section's code, `--set ELEMENT.PARAM=VALUE`
+overrides an element parameter, `--dir` sets the output directory (default
+`./<lattice>`), `--split MEV` separates two bunches by energy in the summary.
+The scripts are run from a checkout; they are not installed with the package.
+
+Or directly from Python:
+
 ```python
 import simba.Framework as fw
 from laura_lattices import PLASMA

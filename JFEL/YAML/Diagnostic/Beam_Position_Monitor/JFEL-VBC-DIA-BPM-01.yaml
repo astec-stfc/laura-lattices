@@ -2,11 +2,11 @@ name: JFEL-VBC-DIA-BPM-01
 machine_area: VBC
 physical:
   middle:
-  - 0.161944
+  - 0.222083
   - 0.0
   - 28.353848
   datum:
-  - 0.161944
+  - 0.222083
   - 0.0
   - 28.369448
   error:

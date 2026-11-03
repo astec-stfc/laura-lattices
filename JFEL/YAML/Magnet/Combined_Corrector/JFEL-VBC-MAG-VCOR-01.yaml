@@ -11,12 +11,12 @@ controls:
       type: scalar
 physical:
   middle:
-  - 0.161944
+  - 0.222083
   - 0.0
   - 28.2881
   length: 0.05
   datum:
-  - 0.161944
+  - 0.222083
   - 0.0
   - 28.3131
   error:

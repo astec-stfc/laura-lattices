@@ -11,19 +11,19 @@ controls:
       type: scalar
 physical:
   middle:
-  - 0.161944
+  - 0.218809
   - 0.0
-  - 27.865382
+  - 27.865169
   global_rotation:
   - 0.0
   - 0.0
-  - -0.095
-  length: 0.200981
+  - -0.13
+  length: 0.201548
   physical_angle: -0.13
   datum:
-  - 0.161944
+  - 0.222083
   - 0.0
-  - 27.965948
+  - 27.965872
   error:
     position:
     - 0.0
@@ -47,7 +47,7 @@ physical:
     - 0.0
     - 0.0
 magnetic:
-  length: 0.200981
+  length: 0.201548
   multipoles:
     K0L:
       normal: -0.13

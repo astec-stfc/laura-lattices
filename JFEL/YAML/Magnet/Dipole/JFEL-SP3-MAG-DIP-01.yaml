@@ -59,7 +59,9 @@ magnetic:
     d: 598.7346914311352
     f: 0.0
     m: 1.3966746927879516
-  multipoles: {}
+  multipoles:
+    K0L:
+      normal: -0.5235988  # 30 deg to -x, matching the SP3 element positions and datum
   random_multipoles: {}
   settle_time: 45.0
   skew: false

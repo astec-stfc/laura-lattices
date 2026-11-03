@@ -20,7 +20,7 @@ magnetic:
     K0L: {}
     K1L:
       order: 1
-      normal: -0.5
+      normal: -1.48347
     K2L:
       order: 2
     K3L:
