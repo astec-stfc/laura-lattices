@@ -18,6 +18,8 @@ physical:
 magnetic:
   length: 0.4
   order: 0
+  edge_field_integral: 0.5   # stated, as the codes' own defaults differ
+  gap: 0.032
   multipoles:
     K0L:
       normal: -0.2617994

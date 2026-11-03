@@ -40,6 +40,7 @@ A `.def` picks a layout other than the default with a top-level
 | `Scripts/match_to_undulator.py` | Computes the undulator's periodic Twiss and matches S13 to it |
 | `Scripts/run_fel.py` | Runs `jfel_fel`; reports wavelength, gain length, saturation and pulse energy, with the Ming Xie estimate |
 | `Scripts/run_plasma.py` | Runs `jfel_plasma`; reports the focus, the energy change along the bunch, and the spectrum read off the spectrometer screen |
+| `Scripts/measure_spectrum.py` | A simulated spectrometer measurement: camera image (sensor, resolution, noise) of `run_plasma`'s beam, analysed into a spectrum and compared with the tracked one |
 
 ```bash
 python JFEL/Scripts/compare_codes.py --physics none --plot none.png
@@ -49,6 +50,7 @@ python JFEL/Scripts/optimise_compression.py --target 1000
 python JFEL/Scripts/match_to_undulator.py
 python JFEL/Scripts/run_fel.py --mode both
 python JFEL/Scripts/run_plasma.py --plot
+python JFEL/Scripts/measure_spectrum.py --plot
 python JFEL/Scripts/run_example.py jfel_linac_codes --code Linac=ocelot --bc-angle 0.12
 ```
 
@@ -265,6 +267,36 @@ tail sits in its accelerating phase:
 - `--bc-angle` changes the compression, and so the current profile that
   drives the wake; `--plasma-code fbpic` runs the plasma in FBPIC (2
   azimuthal modes, as the bunch is round only at the focus).
+
+### Simulated spectrometer measurement
+
+`measure_spectrum.py` turns the tracked beam on the screen into a camera frame
+and analyses it as one would real data. The camera, `JFEL-PWA-DIA-CAM-01`, is
+a LAURA `Camera` element whose sensor (2560 x 2160 pixels, 0.075 mm per pixel
+on the screen, 12 bit) sets the image:
+
+- image: charge on the screen, blurred by the screen + optics resolution
+  (0.1 mm rms), exposed to 80% of full scale, with photo-electron shot noise
+  (2 e-/count), a 100-count dark offset and 3 counts rms read noise; a dark
+  frame is taken the same way;
+- analysis: dark-frame subtraction, a region of interest about the beam in y,
+  projection onto x, then E = E_set / (1 - x / R16) with the dipole's set
+  energy, and a calibrated charge per count.
+
+| | measured | tracked |
+|---|---|---|
+| charge [pC] | 249.9 | 250.0 |
+| mean energy [MeV] | 543.9 | 544.8 |
+| rms spread [MeV] | 55.3 | 55.7 |
+| 1% / 99% points [MeV] | 466.6 / 664.6 | 467.2 / 664.8 |
+| charge accelerated above 576 MeV [pC] | 73.5 | 74.4 |
+
+The energy per pixel is 0.06-0.15 MeV, so the resolution is set by the
+imaging rather than the camera: the doublet images the plasma exit exactly
+only at the set energy, and its chromatic aberration shifts features far from
+it by a few MeV. The camera and noise settings are command-line options
+(`--resolution`, `--exposure`, `--electrons-per-count`, `--offset`,
+`--read-noise`, `--seed`).
 
 ## Open items
 

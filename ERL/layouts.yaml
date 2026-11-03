@@ -1,0 +1,57 @@
+# ERL beam path: the linac is entered twice (`multipass: 1, 2`) -- one set of
+# cavities, two traversals. Elements on the linac are addressed per pass as
+# NAME#1 / NAME#2 (e.g. ERL-LIN-SIM-START-01#2).
+#
+# `momentum` is the reference momentum at the start of each pass [eV/c]. The
+# linac holds no magnets, so it only labels the pass (SIMBA checks the tracked
+# beam against it); the return pass's cavity phase is the difference that
+# matters. Phase 180 off crest stands for a recirculation path of
+# (n + 1/2) RF wavelengths: the bunch comes back half a period late.
+default_layout: ERL
+layouts:
+  ERL:
+    - INJ
+    # Pass 1: accelerating on crest, 10 -> 100 MeV/c
+    - LIN:
+        multipass: 1
+        momentum: 10.0e+6
+    - ARC1
+    - RET
+    - ARC2
+    # Pass 2: the same cavities, decelerating, 100 -> 10 MeV/c
+    - LIN:
+        multipass: 2
+        momentum: 100.0e+6
+        overrides:
+          ERL-LIN-RF-CAV-01: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-02: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-03: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-04: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-05: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-06: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-07: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-08: {cavity.phase: 180.0}
+    - DMP
+  # The same ERL with an infrared FEL in the return straight: the decelerating
+  # pass then recovers the energy of the spent, spread-out FEL beam.
+  ERL_FEL:
+    - INJ
+    - LIN:
+        multipass: 1
+        momentum: 10.0e+6
+    - ARC1
+    - RETF
+    - ARC2
+    - LIN:
+        multipass: 2
+        momentum: 100.0e+6
+        overrides:
+          ERL-LIN-RF-CAV-01: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-02: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-03: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-04: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-05: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-06: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-07: {cavity.phase: 180.0}
+          ERL-LIN-RF-CAV-08: {cavity.phase: 180.0}
+    - DMP

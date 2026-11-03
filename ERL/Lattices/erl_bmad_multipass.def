@@ -1,0 +1,16 @@
+# The whole ERL in Bmad, written as Bmad multipass: the linac's cavities
+# defined once (a multipass lord), entered twice (slaves NAME\1, NAME\2), with
+# the second pass's phase set per slave (phi0_multipass). Native multipass
+# writes the whole beam path, so this is one line, injector to dump screen.
+files:
+  ERL:
+    code: bmad
+    multipass: native
+    input:
+      particle_definition: '$master_lattice$Data_Files/erl_injector'
+    output:
+      start_element: ERL-INJ-SIM-START-01
+      end_element: ERL-DMP-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./elements.yaml"

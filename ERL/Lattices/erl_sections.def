@@ -1,0 +1,44 @@
+# The ERL as one line per section (Ocelot by default), so each section can be
+# run, matched or switched to another code on its own. Used by
+# Scripts/match_erl.py. The linac lines address their pass: NAME#1, NAME#2.
+files:
+  INJ:
+    code: ocelot
+    input:
+      particle_definition: '$master_lattice$Data_Files/erl_injector'
+    output:
+      start_element: ERL-INJ-SIM-START-01
+      end_element: ERL-LIN-SIM-START-01#1
+  LIN1:
+    code: ocelot
+    output:
+      start_element: ERL-LIN-SIM-START-01#1
+      end_element: ERL-LIN-SIM-END-01#1
+  ARC1:
+    code: ocelot
+    output:
+      start_element: ERL-ARC1-SIM-START-01
+      end_element: ERL-ARC1-SIM-END-01
+  RET:
+    code: ocelot
+    output:
+      start_element: ERL-RET-SIM-START-01
+      end_element: ERL-RET-SIM-END-01
+  ARC2:
+    code: ocelot
+    output:
+      start_element: ERL-ARC2-SIM-START-01
+      end_element: ERL-ARC2-SIM-END-01
+  LIN2:
+    code: ocelot
+    output:
+      start_element: ERL-LIN-SIM-START-01#2
+      end_element: ERL-LIN-SIM-END-01#2
+  DMP:
+    code: ocelot
+    output:
+      start_element: ERL-DMP-SIM-START-01
+      end_element: ERL-DMP-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./elements.yaml"

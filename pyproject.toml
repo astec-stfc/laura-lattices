@@ -20,12 +20,14 @@ classifiers = [
 [project.optional-dependencies]
 jfel = ["laura-lattices-jfel"]
 plasma = ["laura-lattices-plasma"]
+erl = ["laura-lattices-erl"]
 
 [tool.setuptools]
 packages = [
     "laura_lattices",
     "laura_lattices.JFEL",
     "laura_lattices.PLASMA",
+    "laura_lattices.ERL",
 ]
 
 [tool.setuptools.package-dir]
@@ -34,6 +36,7 @@ packages = [
 "laura_lattices" = "laura_lattices"
 "laura_lattices.JFEL" = "JFEL"
 "laura_lattices.PLASMA" = "PLASMA"
+"laura_lattices.ERL" = "ERL"
 
 [tool.setuptools.package-data]
 "*" = [

@@ -16,7 +16,7 @@ Usage::
     # Or pass the module directly (requires laura >= 2.0)
     lattice = LAURA(lattice=JFEL)
 
-Available machines: JFEL, PLASMA
+Available machines: JFEL, PLASMA, ERL
 
 Each machine module exposes:
     - layout: str       — path to layouts.yaml
@@ -30,7 +30,7 @@ Each machine module exposes:
 from typing import List
 import importlib
 
-MACHINES: List[str] = ["JFEL", "PLASMA"]
+MACHINES: List[str] = ["JFEL", "PLASMA", "ERL"]
 
 
 def _lazy_import_machine(name: str):
@@ -78,4 +78,4 @@ def get_machine(name: str):
     return _lazy_import_machine(name)
 
 
-__all__ = ["JFEL", "PLASMA", "get_machine", "MACHINES"]
+__all__ = ["JFEL", "PLASMA", "ERL", "get_machine", "MACHINES"]

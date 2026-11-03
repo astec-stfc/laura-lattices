@@ -1,0 +1,220 @@
+# ERL: a single-turn energy-recovery linac.
+#
+# One 1.3 GHz SRF cryomodule (8 x 9-cell cavities, 11.25 MV each) is crossed
+# twice. The 10 MeV/c injected beam is accelerated on crest to 100 MeV/c, goes
+# round a racetrack (180 deg arc, return straight, 180 deg arc) and comes back
+# through the same cavities half an RF period late, decelerating back to
+# 10 MeV/c before the dump. The second pass's phase is set on the pass, in
+# layouts.yaml: there is only one of each cavity.
+#
+# Every element is placed sequentially -- by the section order and the lengths
+# below, with no stated positions -- since the linac is entered twice and its
+# second pass starts wherever the racetrack leaves the beam. The return
+# straight is exactly as long as the linac, so the racetrack closes: the second
+# pass enters the linac where the first did.
+#
+# Merger and splitter are idealised: the injector and the second arc both end
+# on the linac axis, and the first arc and the dump line both start at the
+# linac exit (they separate by bending opposite ways). All quadrupoles sit in
+# sections traversed once; the shared linac holds only cavities, so no magnet
+# sees two energies.
+
+_templates:
+
+  QUAD:
+    name: QUAD
+    hardware_class: Magnet
+    hardware_type: Quadrupole
+    machine_area: TEMPLATE
+    physical:
+      length: 0.15
+    magnetic:
+      length: 0.15
+      magnet_type: quadrupole
+      k1l: 0.0
+
+  MARKER:
+    name: MARKER
+    hardware_class: Simulation
+    hardware_type: Marker
+    machine_area: TEMPLATE
+    physical:
+      length: 0.0
+
+  # TESLA 9-cell cavity: 1.038 m active length, 11.25 MV on crest
+  # (10.8 MV/m). `phase` is off crest: 0 accelerates, 180 decelerates.
+  CAVITY:
+    name: CAVITY
+    hardware_class: RF
+    hardware_type: RFCavity
+    hardware_model: LBand
+    machine_area: TEMPLATE
+    physical:
+      length: 1.038
+    simulation:
+      field_amplitude: 11.25e+6
+    cavity:
+      structure_type: StandingWave
+      frequency: 1.3e+9
+      phase: 0.0
+      n_cells: 9
+      cell_length: 0.1153
+
+  # Arc dipole: 45 deg sector bend, 0.5 m (rho = 0.637 m, 0.52 T at 100 MeV/c),
+  # 32 mm gap. The fringe-field integral is stated, as codes left to their own
+  # defaults differ (elegant 0.5, Ocelot 0).
+  ARC_DIPOLE:
+    name: ARC_DIPOLE
+    hardware_class: Magnet
+    hardware_type: Dipole
+    machine_area: TEMPLATE
+    physical:
+      length: 0.5
+    magnetic:
+      length: 0.5
+      magnet_type: dipole
+      angle: 0.7853981633974483   # pi / 4, in full: the racetrack has to close
+      gap: 0.032
+      edge_field_integral: 0.5
+
+# ---------------------------------------------------------------- injector
+# 10 MeV/c. The beam is defined at ERL-INJ-SIM-START-01; four quadrupoles
+# match it into the linac.
+
+ERL-INJ-SIM-START-01: {name: ERL-INJ-SIM-START-01, inherits_from: MARKER, machine_area: INJ}
+ERL-INJ-DRIFT-01: {name: ERL-INJ-DRIFT-01, hardware_class: Drift, hardware_type: Drift, machine_area: INJ, physical: {length: 0.4}}
+ERL-INJ-DRIFT-02: {name: ERL-INJ-DRIFT-02, hardware_class: Drift, hardware_type: Drift, machine_area: INJ, physical: {length: 0.3}}
+ERL-INJ-MAG-QUAD-01: {name: ERL-INJ-MAG-QUAD-01, inherits_from: QUAD, machine_area: INJ, magnetic: {k1l: -0.34360}}
+ERL-INJ-MAG-QUAD-02: {name: ERL-INJ-MAG-QUAD-02, inherits_from: QUAD, machine_area: INJ, magnetic: {k1l: 2.57106}}
+ERL-INJ-MAG-QUAD-03: {name: ERL-INJ-MAG-QUAD-03, inherits_from: QUAD, machine_area: INJ, magnetic: {k1l: -2.29499}}
+ERL-INJ-MAG-QUAD-04: {name: ERL-INJ-MAG-QUAD-04, inherits_from: QUAD, machine_area: INJ, magnetic: {k1l: 2.08841}}
+
+# ---------------------------------------------------------------- linac
+# Shared by both passes. Cavities on a 1.3836 m pitch (11.069 m in all).
+
+ERL-LIN-SIM-START-01: {name: ERL-LIN-SIM-START-01, inherits_from: MARKER, machine_area: LIN}
+ERL-LIN-SIM-END-01: {name: ERL-LIN-SIM-END-01, inherits_from: MARKER, machine_area: LIN}
+ERL-LIN-DRIFT-01: {name: ERL-LIN-DRIFT-01, hardware_class: Drift, hardware_type: Drift, machine_area: LIN, physical: {length: 0.1728}}
+ERL-LIN-DRIFT-02: {name: ERL-LIN-DRIFT-02, hardware_class: Drift, hardware_type: Drift, machine_area: LIN, physical: {length: 0.3456}}
+ERL-LIN-RF-CAV-01: {name: ERL-LIN-RF-CAV-01, inherits_from: CAVITY, machine_area: LIN}
+ERL-LIN-RF-CAV-02: {name: ERL-LIN-RF-CAV-02, inherits_from: CAVITY, machine_area: LIN}
+ERL-LIN-RF-CAV-03: {name: ERL-LIN-RF-CAV-03, inherits_from: CAVITY, machine_area: LIN}
+ERL-LIN-RF-CAV-04: {name: ERL-LIN-RF-CAV-04, inherits_from: CAVITY, machine_area: LIN}
+ERL-LIN-RF-CAV-05: {name: ERL-LIN-RF-CAV-05, inherits_from: CAVITY, machine_area: LIN}
+ERL-LIN-RF-CAV-06: {name: ERL-LIN-RF-CAV-06, inherits_from: CAVITY, machine_area: LIN}
+ERL-LIN-RF-CAV-07: {name: ERL-LIN-RF-CAV-07, inherits_from: CAVITY, machine_area: LIN}
+ERL-LIN-RF-CAV-08: {name: ERL-LIN-RF-CAV-08, inherits_from: CAVITY, machine_area: LIN}
+
+# ---------------------------------------------------------------- arcs
+# 100 MeV/c, 7.1 m, mirror-symmetric about its centre:
+#   QA1 QA2 B QB QD B QC | QC B QD QB B QA2 QA1
+# QB and QC make the arc achromatic (D' = 0 at its centre, so D = D' = 0 at
+# its exit) and isochronous (R56 = 0); QD focuses vertically against QB; the
+# QA doublet matches the beam the linac delivers to alpha = 0 at the centre,
+# so the arc hands it on as the mirror image. Scripts/match_erl.py sets them
+# all. ARC2 is the same arc, its quadrupoles inheriting ARC1's.
+
+ERL-ARC1-SIM-START-01: {name: ERL-ARC1-SIM-START-01, inherits_from: MARKER, machine_area: ARC1}
+ERL-ARC1-SIM-MID-01: {name: ERL-ARC1-SIM-MID-01, inherits_from: MARKER, machine_area: ARC1}
+ERL-ARC1-SIM-END-01: {name: ERL-ARC1-SIM-END-01, inherits_from: MARKER, machine_area: ARC1}
+ERL-ARC1-DRIFT-01: {name: ERL-ARC1-DRIFT-01, hardware_class: Drift, hardware_type: Drift, machine_area: ARC1, physical: {length: 0.3}}
+ERL-ARC1-DRIFT-02: {name: ERL-ARC1-DRIFT-02, hardware_class: Drift, hardware_type: Drift, machine_area: ARC1, physical: {length: 0.2}}
+ERL-ARC1-DRIFT-03: {name: ERL-ARC1-DRIFT-03, hardware_class: Drift, hardware_type: Drift, machine_area: ARC1, physical: {length: 0.15}}
+ERL-ARC1-MAG-DIP-01: {name: ERL-ARC1-MAG-DIP-01, inherits_from: ARC_DIPOLE, machine_area: ARC1}
+ERL-ARC1-MAG-QUAD-01: {name: ERL-ARC1-MAG-QUAD-01, inherits_from: QUAD, machine_area: ARC1, magnetic: {k1l: -1.88241}}  # QA1
+ERL-ARC1-MAG-QUAD-02: {name: ERL-ARC1-MAG-QUAD-02, inherits_from: QUAD, machine_area: ARC1, magnetic: {k1l: 2.50482}}   # QA2
+ERL-ARC1-MAG-QUAD-03: {name: ERL-ARC1-MAG-QUAD-03, inherits_from: QUAD, machine_area: ARC1, magnetic: {k1l: 4.68543}}   # QB
+ERL-ARC1-MAG-QUAD-04: {name: ERL-ARC1-MAG-QUAD-04, inherits_from: QUAD, machine_area: ARC1, magnetic: {k1l: -3.27425}}  # QD
+ERL-ARC1-MAG-QUAD-05: {name: ERL-ARC1-MAG-QUAD-05, inherits_from: QUAD, machine_area: ARC1, magnetic: {k1l: 4.00577}}   # QC
+# Sextupoles, for a second-order achromat: SA between each dipole and QB
+# (D = 0.2-0.3 m), SB beside the centre (D = 0.11 m). They make T566 = 0 and
+# close the second-order dispersion (Scripts/match_erl.py).
+ERL-ARC1-DRIFT-04: {name: ERL-ARC1-DRIFT-04, hardware_class: Drift, hardware_type: Drift, machine_area: ARC1, physical: {length: 0.05}}
+ERL-ARC1-MAG-SEXT-01: {name: ERL-ARC1-MAG-SEXT-01, hardware_class: Magnet, hardware_type: Sextupole, machine_area: ARC1, physical: {length: 0.1}, magnetic: {length: 0.1, magnet_type: sextupole, k2l: 69.26592}}   # SA
+ERL-ARC1-MAG-SEXT-02: {name: ERL-ARC1-MAG-SEXT-02, inherits_from: ERL-ARC1-MAG-SEXT-01, machine_area: ARC1, magnetic: {k2l: 317.94143}}   # SB
+
+ERL-ARC2-SIM-START-01: {name: ERL-ARC2-SIM-START-01, inherits_from: MARKER, machine_area: ARC2}
+ERL-ARC2-SIM-MID-01: {name: ERL-ARC2-SIM-MID-01, inherits_from: MARKER, machine_area: ARC2}
+ERL-ARC2-SIM-END-01: {name: ERL-ARC2-SIM-END-01, inherits_from: MARKER, machine_area: ARC2}
+ERL-ARC2-DRIFT-01: {name: ERL-ARC2-DRIFT-01, inherits_from: ERL-ARC1-DRIFT-01, machine_area: ARC2}
+ERL-ARC2-DRIFT-02: {name: ERL-ARC2-DRIFT-02, inherits_from: ERL-ARC1-DRIFT-02, machine_area: ARC2}
+ERL-ARC2-DRIFT-03: {name: ERL-ARC2-DRIFT-03, inherits_from: ERL-ARC1-DRIFT-03, machine_area: ARC2}
+ERL-ARC2-MAG-DIP-01: {name: ERL-ARC2-MAG-DIP-01, inherits_from: ARC_DIPOLE, machine_area: ARC2}
+ERL-ARC2-MAG-QUAD-01: {name: ERL-ARC2-MAG-QUAD-01, inherits_from: ERL-ARC1-MAG-QUAD-01, machine_area: ARC2}
+ERL-ARC2-MAG-QUAD-02: {name: ERL-ARC2-MAG-QUAD-02, inherits_from: ERL-ARC1-MAG-QUAD-02, machine_area: ARC2}
+ERL-ARC2-MAG-QUAD-03: {name: ERL-ARC2-MAG-QUAD-03, inherits_from: ERL-ARC1-MAG-QUAD-03, machine_area: ARC2}
+ERL-ARC2-MAG-QUAD-04: {name: ERL-ARC2-MAG-QUAD-04, inherits_from: ERL-ARC1-MAG-QUAD-04, machine_area: ARC2}
+ERL-ARC2-MAG-QUAD-05: {name: ERL-ARC2-MAG-QUAD-05, inherits_from: ERL-ARC1-MAG-QUAD-05, machine_area: ARC2}
+ERL-ARC2-DRIFT-04: {name: ERL-ARC2-DRIFT-04, inherits_from: ERL-ARC1-DRIFT-04, machine_area: ARC2}
+ERL-ARC2-MAG-SEXT-01: {name: ERL-ARC2-MAG-SEXT-01, inherits_from: ERL-ARC1-MAG-SEXT-01, machine_area: ARC2}
+ERL-ARC2-MAG-SEXT-02: {name: ERL-ARC2-MAG-SEXT-02, inherits_from: ERL-ARC1-MAG-SEXT-02, machine_area: ARC2}
+
+# ---------------------------------------------------------------- return straight
+# 100 MeV/c, 11.069 m (= the linac), mirror-symmetric Q1 Q2 Q3 | Q3 Q2 Q1:
+# matched for alpha_x = alpha_y = 0 at its centre (the third family keeps the
+# peak beta down), which makes the whole racetrack mirror-symmetric, so the
+# beam re-enters the linac with the mirror image of the Twiss it left with.
+
+ERL-RET-SIM-START-01: {name: ERL-RET-SIM-START-01, inherits_from: MARKER, machine_area: RET}
+ERL-RET-SIM-MID-01: {name: ERL-RET-SIM-MID-01, inherits_from: MARKER, machine_area: RET}
+ERL-RET-SIM-END-01: {name: ERL-RET-SIM-END-01, inherits_from: MARKER, machine_area: RET}
+ERL-RET-DRIFT-01: {name: ERL-RET-DRIFT-01, hardware_class: Drift, hardware_type: Drift, machine_area: RET, physical: {length: 1.0}}
+ERL-RET-DRIFT-02: {name: ERL-RET-DRIFT-02, hardware_class: Drift, hardware_type: Drift, machine_area: RET, physical: {length: 1.5}}
+ERL-RET-DRIFT-03: {name: ERL-RET-DRIFT-03, hardware_class: Drift, hardware_type: Drift, machine_area: RET, physical: {length: 1.0844}}
+ERL-RET-MAG-QUAD-01: {name: ERL-RET-MAG-QUAD-01, inherits_from: QUAD, machine_area: RET, magnetic: {k1l: 0.0880}}
+ERL-RET-MAG-QUAD-02: {name: ERL-RET-MAG-QUAD-02, inherits_from: QUAD, machine_area: RET, magnetic: {k1l: -0.2439}}
+ERL-RET-MAG-QUAD-03: {name: ERL-RET-MAG-QUAD-03, inherits_from: QUAD, machine_area: RET, magnetic: {k1l: 0.1574}}
+
+# ---------------------------------------------------------------- FEL return straight
+# For the ERL_FEL layout: the return straight with an infrared SASE FEL in its
+# middle, 11.069 m like RET so that the racetrack still closes.
+#   Q1 Q2 Q3 Q4 | undulator (2 x 3.6 m) | Q4 Q3 Q2 Q1
+# Helical undulator, 40 mm period, K = 4.26: lambda = 10.0 um at 100 MeV/c.
+# Its natural focusing (k_beta = K k_u / (sqrt(2) gamma) = 2.4 /m, both
+# planes) gives a matched beta of 0.41 m; the quadrupoles match the arc's
+# beta = 10 m waist into it (Scripts/match_erl.py --fel), mirror-symmetric.
+
+ERL-RETF-SIM-START-01: {name: ERL-RETF-SIM-START-01, inherits_from: MARKER, machine_area: RETF}
+ERL-RETF-SIM-MARK-01: {name: ERL-RETF-SIM-MARK-01, inherits_from: MARKER, machine_area: RETF}   # undulator entrance
+ERL-RETF-SIM-MID-01: {name: ERL-RETF-SIM-MID-01, inherits_from: MARKER, machine_area: RETF}
+ERL-RETF-SIM-MARK-02: {name: ERL-RETF-SIM-MARK-02, inherits_from: MARKER, machine_area: RETF}   # undulator exit
+ERL-RETF-SIM-END-01: {name: ERL-RETF-SIM-END-01, inherits_from: MARKER, machine_area: RETF}
+ERL-RETF-DRIFT-01: {name: ERL-RETF-DRIFT-01, hardware_class: Drift, hardware_type: Drift, machine_area: RETF, physical: {length: 0.2344}}
+ERL-RETF-DRIFT-02: {name: ERL-RETF-DRIFT-02, hardware_class: Drift, hardware_type: Drift, machine_area: RETF, physical: {length: 0.3}}
+ERL-RETF-DRIFT-03: {name: ERL-RETF-DRIFT-03, hardware_class: Drift, hardware_type: Drift, machine_area: RETF, physical: {length: 0.2}}
+ERL-RETF-MAG-QUAD-01: {name: ERL-RETF-MAG-QUAD-01, inherits_from: QUAD, machine_area: RETF, magnetic: {k1l: -0.64276}}
+ERL-RETF-MAG-QUAD-02: {name: ERL-RETF-MAG-QUAD-02, inherits_from: QUAD, machine_area: RETF, magnetic: {k1l: 2.31993}}
+ERL-RETF-MAG-QUAD-03: {name: ERL-RETF-MAG-QUAD-03, inherits_from: QUAD, machine_area: RETF, magnetic: {k1l: -2.94491}}
+ERL-RETF-MAG-QUAD-04: {name: ERL-RETF-MAG-QUAD-04, inherits_from: QUAD, machine_area: RETF, magnetic: {k1l: 6.73977}}
+ERL-RETF-MAG-WIGG-01:
+  name: ERL-RETF-MAG-WIGG-01
+  hardware_class: Magnet
+  hardware_type: Wiggler
+  machine_area: RETF
+  simulation: {field_reference_position: middle}
+  physical: {length: 3.6}
+  magnetic: {length: 3.6, strength: 4.26, period: 0.04, num_periods: 90, helical: true,
+             quadratic_roll_off_x: 0.5, quadratic_roll_off_y: 0.5}
+ERL-RETF-MAG-WIGG-02: {name: ERL-RETF-MAG-WIGG-02, inherits_from: ERL-RETF-MAG-WIGG-01, machine_area: RETF}
+
+# ---------------------------------------------------------------- dump
+# 10 MeV/c after deceleration: a 30 deg dipole, bending away from the arcs,
+# to a screen in front of the dump.
+
+ERL-DMP-SIM-START-01: {name: ERL-DMP-SIM-START-01, inherits_from: MARKER, machine_area: DMP}
+ERL-DMP-DRIFT-01: {name: ERL-DMP-DRIFT-01, hardware_class: Drift, hardware_type: Drift, machine_area: DMP, physical: {length: 0.3}}
+ERL-DMP-DRIFT-02: {name: ERL-DMP-DRIFT-02, hardware_class: Drift, hardware_type: Drift, machine_area: DMP, physical: {length: 1.0}}
+ERL-DMP-MAG-DIP-01:
+  name: ERL-DMP-MAG-DIP-01
+  hardware_class: Magnet
+  hardware_type: Dipole
+  machine_area: DMP
+  physical:
+    length: 0.3
+  magnetic:
+    length: 0.3
+    magnet_type: dipole
+    angle: -0.523598776
+    gap: 0.032
+    edge_field_integral: 0.5
+ERL-DMP-DIA-SCR-01: {name: ERL-DMP-DIA-SCR-01, hardware_class: Diagnostic, hardware_type: Screen, machine_area: DMP, physical: {length: 0.0}}

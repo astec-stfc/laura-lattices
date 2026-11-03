@@ -1,0 +1,31 @@
+# Camera viewing the plasma spectrometer screen (JFEL-PWA-DIA-SCR-01): a PCO
+# sensor behind demagnifying optics, 0.075 mm per pixel on the screen, so the
+# 2560 x 2160 pixels see 192 x 162 mm -- the dispersed beam spans ~ +-80 mm.
+# Scripts/measure_spectrum.py forms the image from the tracked beam.
+name: JFEL-PWA-DIA-CAM-01
+hardware_class: Diagnostic
+hardware_type: Camera
+hardware_model: PCO
+machine_area: PWA
+physical:
+  middle:
+  - -0.4402911
+  - 0.0
+  - 87.0443396
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.2617994
+  length: 0.0
+diagnostic:
+  type: PCO
+  screen_name: JFEL-PWA-DIA-SCR-01
+  flipped_horizontally: false
+  sensor:
+    x_pixels: 2560
+    y_pixels: 2160
+    x_scale_factor: 1
+    y_scale_factor: 1
+    x_pixels_to_mm: 0.075
+    y_pixels_to_mm: 0.075
+    bit_depth: 12

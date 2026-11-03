@@ -12,4 +12,4 @@ magnetic:
   multipoles:
     K1L:
       order: 1
-      normal: 3.10177   # imaging doublet, see JFEL-PWA-MAG-QUAD-01
+      normal: 3.10202   # imaging doublet, see JFEL-PWA-MAG-QUAD-01

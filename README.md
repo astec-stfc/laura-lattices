@@ -10,11 +10,14 @@ Each accelerator is stored in its own directory and can be installed as part of 
 | `laura-lattices` (main) | All machines below | `pip install laura-lattices` |
 | `laura-lattices-jfel` | JANUS FEL | `pip install laura-lattices-jfel` |
 | `laura-lattices-plasma` | Example plasma-wakefield stages (Wake-T / FBPIC) | `pip install laura-lattices-plasma` |
+| `laura-lattices-erl` | Example single-turn energy-recovery linac | `pip install laura-lattices-erl` |
 
 Note: JFEL (JANUS Free-Electron Laser) is not a real accelerator: it is primarily used as an example case for the [JANUS](https://github.com/astec-stfc/janus) digital shadow,
 and for code comparisons and compression studies through SIMBA. See [`JFEL/README.md`](JFEL/README.md).
 
 PLASMA is not a real accelerator either: it collects example plasma-wakefield stages that run in both [Wake-T](https://github.com/Wake-T/Wake-T) and [FBPIC](https://github.com/fbpic/fbpic) through SIMBA. See [`PLASMA/README.md`](PLASMA/README.md).
+
+ERL is an example single-turn energy-recovery linac: one SRF linac crossed twice, accelerating and then decelerating, defined with LAURA's multipass layouts. See [`ERL/README.md`](ERL/README.md).
 
 ---
 
@@ -294,6 +297,7 @@ This matters because a machine can load the cache rather than the directory:
 |---------|--------------------------|
 | JFEL | `YAML/` (the directory — no summary to keep in sync) |
 | PLASMA | `YAML/` (the directory — no summary to keep in sync) |
+| ERL | `elements.yaml` (one combined file, with templates — no summary) |
 
 For any machine that points at a summary, **editing an element file has no
 effect until the summary is regenerated**. Editing a summary by hand is worse:
