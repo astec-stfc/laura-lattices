@@ -1,0 +1,9 @@
+name: SEC-CRY-DIA-SCR-01
+hardware_class: Diagnostic
+hardware_type: Screen
+hardware_model: YAG
+machine_area: CRY
+physical:
+  middle:
+    z: 21.0
+  length: 0.0

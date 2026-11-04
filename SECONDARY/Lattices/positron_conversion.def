@@ -1,0 +1,28 @@
+# Positron production: 1 GeV electrons shower in one radiation length of
+# tungsten (BDSIM). The positrons alone go on to the screen in Xsuite
+# (`input: species: positron`); the electrons are dropped there, with a
+# warning, and the photons are carried through untracked.
+files:
+  CONV_TARGET:
+    code: bdsim
+    input:
+      particle_definition: '$master_lattice$Data_Files/conv_electrons'
+    tracking:
+      physics_list: em
+      secondaries: [photon, positron]
+      options: {beampipeMaterial: vacuum}   # else the default steel pipe showers the wide-angle particles too
+    output:
+      start_element: SEC-CONV-SIM-START-01
+      end_element: SEC-CONV-SIM-END-01
+  CONV_TRANSPORT:
+    code: xsuite
+    input:
+      species: positron
+    tracking:
+      context: cpu   # Xsuite's GPU path fails element by element on feature/bdsim
+    output:
+      start_element: SEC-CONV-SIM-END-01
+      end_element: SEC-CONV-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

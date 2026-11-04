@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laura-lattices-secondary"
+version = "1.0.0"
+description = "SECONDARY (example targets, converters and crystals in BDSIM) lattice data for the LAURA accelerator modelling framework"
+requires-python = ">= 3.10"
+authors = [
+    {name = "James Jones", email = "james.jones@stfc.ac.uk"},
+    {name = "Alex Brynes", email = "alexander.brynes@stfc.ac.uk"},
+]
+
+[tool.setuptools]
+packages = ["laura_lattices.SECONDARY"]
+
+[tool.setuptools.package-dir]
+"laura_lattices.SECONDARY" = "."
+
+[tool.setuptools.package-data]
+"laura_lattices.SECONDARY" = [
+    "**/*.yaml", "**/*.json", "**/*.hdf5", "**/*.gdf",
+    "**/*.txt", "**/*.csv", "**/*.sdds", "**/*.dat",
+    "**/*.opal", "**/*.astra", "**/*.T7", "**/*.def",
+]

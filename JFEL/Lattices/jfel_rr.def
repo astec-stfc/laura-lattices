@@ -1,0 +1,56 @@
+# Start-to-end radiation-reaction end-station (RRX layout): the linac from the
+# saved injector beam, a final focus onto a laser IP, the laser-electron
+# collision, and the PWA spectrometer. Used by Scripts/run_rr.py.
+#
+#   Linac         saved injector beam -> start of S13       (elegant: wakes, CSR)
+#   FinalFocus    S13 quads matched to a round waist at the laser focus, 5 cm
+#                 past JFEL-PWA-SIM-START-01 (Ocelot's matcher): the waist
+#                 beta_x = 0.05, beta_y = 0.24 m, propagated back 5 cm.
+#   IP            JFEL-RRX-LASER-01, a0 = 6.8 head-on              (Ptarmigan)
+#   Spectrometer  imaging doublet + 15 deg dipole -> screen  (elegant); the
+#                 photons are carried through to the screen file untracked.
+files:
+  Linac:
+    code: elegant
+    input:
+      particle_definition: '$master_lattice$Data_Files/jfel_injector_S02'
+      twiss:
+        beta_x: 20
+        alpha_x: 0
+        beta_y: 10
+        alpha_y: 0
+    output:
+      start_element: JFEL-S02-SIM-APER-01
+      end_element: JFEL-S13-SIM-MARK-01
+  FinalFocus:
+    code: ocelot
+    match:
+      enable: True
+      variables: [JFEL-S13-MAG-QUAD-01, JFEL-S13-MAG-QUAD-02, JFEL-S13-MAG-QUAD-03, JFEL-S13-MAG-QUAD-04]
+      targets:
+        JFEL-PWA-SIM-START-01: {beta_x: 0.1, alpha_x: 1.0, beta_y: 0.2504, alpha_y: 0.2083}
+    output:
+      start_element: JFEL-S13-SIM-MARK-01
+      end_element: JFEL-PWA-SIM-START-01
+  IP:
+    code: ptarmigan
+    tracking:
+      radiation_reaction: True
+      pair_creation: False   # chi ~ 0.05: no pairs
+      rng_seed: 1
+      # timing_offset: 0.0   # laser delay [s]; misalign via the laser's physical.error
+    output:
+      start_element: JFEL-PWA-SIM-START-01
+      end_element: JFEL-RRX-SIM-END-01
+  Spectrometer:
+    code: elegant
+    output:
+      start_element: JFEL-RRX-SIM-END-01
+      end_element: JFEL-RRX-DIA-SCR-01
+groups:
+  bunch_compressor:
+    type: chicane
+    elements: [JFEL-VBC-MAG-DIP-01, JFEL-VBC-MAG-DIP-02, JFEL-VBC-MAG-DIP-03, JFEL-VBC-MAG-DIP-04]
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

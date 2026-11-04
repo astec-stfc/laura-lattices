@@ -16,6 +16,7 @@ four-dipole chicane, L04-L09 (~577 MeV), the S13 matching section and a
 |---|---|
 | `JFELFULL` (default) | gun -> linac -> VBC -> linac -> S13 -> FEL |
 | `PWA` | gun -> linac -> VBC -> linac -> S13 -> plasma end-station (PWFA + spectrometer) |
+| `RRX` | gun -> linac -> VBC -> linac -> S13 -> radiation-reaction end-station (laser IP + the `PWA` spectrometer) |
 | `SP2` | ... -> VBC -> S06 (to the 30 deg SP2 dipole) -> SP2 spectrometer |
 | `SP3` | ... -> L04 -> S07 (with the TDC) -> SP3 spectrometer |
 
@@ -32,6 +33,7 @@ A `.def` picks a layout other than the default with a top-level
 | `Lattices/jfel_match_undulator.def` | Linac to S13, S13 matched into the undulator, and the undulator |
 | `Lattices/jfel_fel.def` | Start-to-end FEL: linac (elegant, wakes + CSR) from the saved injector beam, then Genesis 4 steady-state (`FEL_ST`) or time-dependent (`FEL_TD`) |
 | `Lattices/jfel_plasma.def` | Start-to-end plasma end-station (`PWA` layout): linac (elegant), S13 final focus (Ocelot matcher), plasma (Wake-T, or FBPIC), spectrometer (elegant) |
+| `Lattices/jfel_rr.def` | Start-to-end radiation reaction (`RRX` layout): linac (elegant), S13 final focus (Ocelot matcher), head-on collision with an a0 = 6.8 laser pulse (Ptarmigan), spectrometer (elegant; photons carried through) |
 | `Generators/make_injector_beam.py` | Runs the ASTRA injector (32768 particles) and saves `Data_Files/jfel_injector_S02.openpmd.hdf5`, the input to the lattices above |
 | `Scripts/run_example.py` | Runs any lattice; summarises the beam after each section (charge, energy, spread, emittance, size, length, peak current) |
 | `Scripts/compare_codes.py` | `jfel_linac_codes` in several codes from the same beam, compared at every common screen (SIMBA's `test_jfel_code_comparison` as a script) |
@@ -40,6 +42,7 @@ A `.def` picks a layout other than the default with a top-level
 | `Scripts/match_to_undulator.py` | Computes the undulator's periodic Twiss and matches S13 to it |
 | `Scripts/run_fel.py` | Runs `jfel_fel`; reports wavelength, gain length, saturation and pulse energy, with the Ming Xie estimate |
 | `Scripts/run_plasma.py` | Runs `jfel_plasma`; reports the focus, the energy change along the bunch, and the spectrum read off the spectrometer screen |
+| `Scripts/run_rr.py` | Runs `jfel_rr`; reports the electrons' energy loss, the photons emitted, and the spectrum read off the screen (`--no-rr` for the same without radiation reaction) |
 | `Scripts/measure_spectrum.py` | A simulated spectrometer measurement: camera image (sensor, resolution, noise) of `run_plasma`'s beam, analysed into a spectrum and compared with the tracked one |
 
 ```bash
@@ -51,6 +54,7 @@ python JFEL/Scripts/match_to_undulator.py
 python JFEL/Scripts/run_fel.py --mode both
 python JFEL/Scripts/run_plasma.py --plot
 python JFEL/Scripts/measure_spectrum.py --plot
+python JFEL/Scripts/run_rr.py --ptarmigan ~/ptarmigan/target/release/ptarmigan
 python JFEL/Scripts/run_example.py jfel_linac_codes --code Linac=ocelot --bc-angle 0.12
 ```
 
@@ -70,6 +74,13 @@ follow the global geometry, such as Bmad -- sees the same chicane.
   keeps it on the CPU.
 - The plasma end-station needs Wake-T (or FBPIC) and SIMBA/LAURA with plasma
   support (as for the `PLASMA` examples).
+- The radiation-reaction end-station needs Ptarmigan
+  (https://github.com/tgblackburn/ptarmigan, built with `--features hdf5-output`)
+  and SIMBA with its Ptarmigan support. At the default 250 pC it gives a mean
+  loss of 3.3 MeV per electron, all of it carried by 0.47 photons per electron
+  (mean 6.9 MeV); the beam (~15 um) is wider than the laser focus (5 um rms),
+  so the spread grows from 0.9 to 10 MeV. `--no-rr` gives the same photons and
+  no loss.
 
 ## Code comparison
 

@@ -1,0 +1,18 @@
+# Bent-crystal channelling: an 855 MeV electron pencil beam on 30 um of Si(220)
+# bent by 0.9 mrad (BDSIM, Geant4 channelling physics), then 0.5 m to a screen.
+# The channelled electrons leave at the bend angle; to see volume reflection or
+# amorphous scattering instead, misalign the crystal:
+#     --set SEC-CRY-CRY-01.entrance_angle=-0.0005
+files:
+  CRY:
+    code: bdsim
+    input:
+      particle_definition: '$master_lattice$Data_Files/crystal_electrons'
+    tracking:
+      physics_list: completechannelling
+    output:
+      start_element: SEC-CRY-SIM-START-01
+      end_element: SEC-CRY-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

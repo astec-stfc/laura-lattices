@@ -1,0 +1,12 @@
+# Positron converter: 3.5 mm of tungsten (one radiation length), 2 cm square.
+name: SEC-CONV-TGT-01
+hardware_class: Target
+hardware_type: Target
+machine_area: CONV
+material: tungsten
+physical:
+  middle:
+    z: 10.5
+  length: 3.5e-3
+target:
+  transverse_size: 0.02

@@ -1,0 +1,7 @@
+name: SEC-CRY-SIM-START-01
+hardware_class: Simulation
+hardware_type: Marker
+machine_area: CRY
+physical:
+  middle:
+    z: 20.0

@@ -1,0 +1,12 @@
+# Bremsstrahlung radiator: 1 mm of tungsten (0.29 radiation lengths), 2 cm square.
+name: SEC-BREMS-TGT-01
+hardware_class: Target
+hardware_type: Target
+machine_area: BREMS
+material: tungsten
+physical:
+  middle:
+    z: 0.5
+  length: 1.0e-3
+target:
+  transverse_size: 0.02
