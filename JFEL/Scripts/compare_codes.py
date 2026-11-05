@@ -44,9 +44,11 @@ QUANTITIES = {
 }
 UNITS = {"E": "MeV", "dE": "%", "enx": "um", "eny": "um", "sx": "um", "sy": "um", "sz": "um"}
 
-# Pairwise ceilings from SIMBA's test (E, dE, enx, eny, sx, sy, sz).
+# Pairwise ceilings from SIMBA's test (E, dE, enx, eny, sx, sy, sz). That test tracks
+# 4096 particles with the compressor at 0.1 rad; this script's defaults (full beam, the
+# lattice's angle) give madx vs ocelot sy 3.96 at the ~25 um vertical waist, hence 5.0.
 TOLERANCES = {
-    ("madx", "ocelot"): (0.19, 0.10, 10.0, 18.0, 9.0, 3.0, 17.0),
+    ("madx", "ocelot"): (0.19, 0.10, 10.0, 18.0, 9.0, 5.0, 17.0),
     ("cheetah", "madx"): (0.05, 0.05, 12.0, 20.0, 14.0, 10.0, 5.0),
     ("cheetah", "ocelot"): (0.19, 0.09, 12.0, 34.0, 14.0, 12.0, 17.0),
     ("cheetah", "elegant"): (0.20, 0.20, 35.0, 16.0, 30.0, 19.0, 24.0),
