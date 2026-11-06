@@ -1,25 +1,42 @@
-name: JFEL-L01-MAG-SOL-01
-machine_area: L01
-subelement: true
-simulation:
-  field_definition: $master_lattice$Data_Files/SwissFEL_linac_sols.hdf5
-  field_reference_position: start
-  field_amplitude: 0.025
 controls:
-  variables:
-    READK:
-      identifier: JFEL-L01-MAG-SOL-01:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-  - 0.0
-  - 0.0
-  - 1.95
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_model: Generic
+hardware_type: Solenoid
+machine_area: L01
+magnetic:
+  field_integral_coefficients:
+    coefficients:
+    - 0
+  fields:
+    S0L: 0.025
+    S10L: 0.0
+    S11L: 0.0
+    S12L: 0.0
+    S1L: 0.0
+    S2L: 0.0
+    S3L: 0.0
+    S4L: 0.0
+    S5L: 0.0
+    S6L: 0.0
+    S7L: 0.0
+    S8L: 0.0
+    S9L: 0.0
   length: 0.5
+  linear_saturation_coefficients:
+    I0: 0.0
+    I_max: 0.0
+    L: 73.66423064820637
+    a: 0.0
+    d: 0.0
+    f: 0.0
+    m: 0.037469902465863035
+  order: 0
+  random_fields: {}
+  settle_time: 45.0
+  systematic_fields: {}
+name: JFEL-L01-MAG-SOL-01
+physical:
   datum:
   - 0.0
   - 0.0
@@ -37,6 +54,11 @@ physical:
   - 0.0
   - 0.0
   - 0.0
+  length: 0.5
+  middle:
+  - 0.0
+  - 0.0
+  - 1.95
   rotation:
   - 0.0
   - 0.0
@@ -50,37 +72,8 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-magnetic:
-  length: 0.5
-  fields:
-    S0L: 0.025
-    S1L: 0.0
-    S2L: 0.0
-    S3L: 0.0
-    S4L: 0.0
-    S5L: 0.0
-    S6L: 0.0
-    S7L: 0.0
-    S8L: 0.0
-    S9L: 0.0
-    S10L: 0.0
-    S11L: 0.0
-    S12L: 0.0
-  field_integral_coefficients:
-    coefficients:
-    - 0
-  linear_saturation_coefficients:
-    I0: 0.0
-    I_max: 0.0
-    L: 73.66423064820637
-    a: 0.0
-    d: 0.0
-    f: 0.0
-    m: 0.037469902465863035
-  order: 0
-  random_fields: {}
-  settle_time: 45.0
-  systematic_fields: {}
-hardware_type: Solenoid
-hardware_class: Magnet
-hardware_model: Generic
+simulation:
+  field_amplitude: 0.025
+  field_definition: $master_lattice$Data_Files/SwissFEL_linac_sols.hdf5
+  field_reference_position: start
+subelement: true

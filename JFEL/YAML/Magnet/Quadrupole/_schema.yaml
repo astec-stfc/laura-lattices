@@ -1,0 +1,9 @@
+variables:
+  READK:
+    description: Reads the calculated K value for a magnet based on momentum of the
+      section
+    dtype: float
+    identifier: '{name}:CalcK'
+    protocol: CA
+    read_only: false
+    type: scalar

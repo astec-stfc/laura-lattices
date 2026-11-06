@@ -1,24 +1,42 @@
-name: JFEL-SP2-MAG-QUAD-01
-machine_area: SP2
 controls:
-  variables:
-    READK:
-      identifier: JFEL-SP2-MAG-QUAD-01:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-  - -0.4918485
-  - 0.0
-  - 34.1643976
-  global_rotation:
-  - 0.0
-  - 0.0
-  - 0.523599
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_model: Generic
+hardware_type: Quadrupole
+machine_area: SP2
+magnetic:
+  field_integral_coefficients:
+    coefficients:
+    - 0
   length: 0.162
+  linear_saturation_coefficients:
+    I0: 734.4028149650652
+    I_max: 39.036002915065524
+    L: 177.72209948572734
+    a: -2.37301706953276e-05
+    d: 12.76264785153246
+    f: 0.0
+    m: 0.03300234629162469
+  multipoles:
+    K0L: {}
+    K1L:
+      normal: 1.59249
+      order: 1
+      radius: 0.0
+      skew: 0.0
+    K2L:
+      order: 2
+    K3L:
+      order: 3
+    K4L:
+      order: 4
+  order: 1
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
+name: JFEL-SP2-MAG-QUAD-01
+physical:
   datum:
   - -0.5323485
   - 0.0
@@ -32,6 +50,15 @@ physical:
     - 0.0
     - 0.0
     - 0.0
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.523599
+  length: 0.162
+  middle:
+  - -0.4918485
+  - 0.0
+  - 34.1643976
   rotation:
   - 0.0
   - 0.0
@@ -45,38 +72,4 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-magnetic:
-  length: 0.162
-  multipoles:
-    K0L: {}
-    K1L:
-      order: 1
-      normal: 1.59249
-      radius: 0.0
-      skew: 0.0
-    K2L:
-      order: 2
-    K3L:
-      order: 3
-    K4L:
-      order: 4
-  order: 1
-  field_integral_coefficients:
-    coefficients:
-    - 0
-  linear_saturation_coefficients:
-    I0: 734.4028149650652
-    I_max: 39.036002915065524
-    L: 177.72209948572734
-    a: -2.37301706953276e-05
-    d: 12.76264785153246
-    f: 0.0
-    m: 0.03300234629162469
-  random_multipoles: {}
-  settle_time: 45.0
-  skew: false
-  systematic_multipoles: {}
-hardware_type: Quadrupole
-hardware_class: Magnet
-hardware_model: Generic
 subelement: false

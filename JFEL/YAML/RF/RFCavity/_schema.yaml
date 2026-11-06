@@ -1,0 +1,17 @@
+variables:
+  OffCrestPhaseSet:
+    description: Set cavity off-crest phase
+    dtype: float
+    identifier: '{name}:PHASE_OFF'
+    protocol: CA
+    read_only: false
+    type: scalar
+    units: deg
+  PowerMWRead:
+    description: Read cavity forward power
+    dtype: float
+    identifier: '{name}:getPower'
+    protocol: CA
+    read_only: false
+    type: scalar
+    units: MW

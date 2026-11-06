@@ -1,20 +1,42 @@
-name: JFEL-S04-MAG-QUAD-02
-machine_area: S04
 controls:
-  variables:
-    READK:
-      identifier: JFEL-S04-MAG-QUAD-02:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-  - 0.0
-  - 0.0
-  - 17.019268
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_model: Generic
+hardware_type: Quadrupole
+machine_area: S04
+magnetic:
+  field_integral_coefficients:
+    coefficients:
+    - 0
   length: 0.162
+  linear_saturation_coefficients:
+    I0: 724.2670444198216
+    I_max: 36.25626336735337
+    L: 178.2118044564119
+    a: -2.4008566592634895e-05
+    d: 12.562440094458427
+    f: 0.0
+    m: 0.033036305306697863
+  multipoles:
+    K0L: {}
+    K1L:
+      normal: -0.2
+      order: 1
+      radius: 0.0
+      skew: 0.0
+    K2L:
+      order: 2
+    K3L:
+      order: 3
+    K4L:
+      order: 4
+  order: 1
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
+name: JFEL-S04-MAG-QUAD-02
+physical:
   datum:
   - 0.0
   - 0.0
@@ -32,6 +54,11 @@ physical:
   - 0.0
   - 0.0
   - 0.0
+  length: 0.162
+  middle:
+  - 0.0
+  - 0.0
+  - 17.019268
   rotation:
   - 0.0
   - 0.0
@@ -45,38 +72,4 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-magnetic:
-  length: 0.162
-  multipoles:
-    K0L: {}
-    K1L:
-      order: 1
-      normal: -0.2
-      radius: 0.0
-      skew: 0.0
-    K2L:
-      order: 2
-    K3L:
-      order: 3
-    K4L:
-      order: 4
-  order: 1
-  field_integral_coefficients:
-    coefficients:
-    - 0
-  linear_saturation_coefficients:
-    I0: 724.2670444198216
-    I_max: 36.25626336735337
-    L: 178.2118044564119
-    a: -2.4008566592634895e-05
-    d: 12.562440094458427
-    f: 0.0
-    m: 0.033036305306697863
-  random_multipoles: {}
-  settle_time: 45.0
-  skew: false
-  systematic_multipoles: {}
-hardware_type: Quadrupole
-hardware_class: Magnet
-hardware_model: Generic
 subelement: false

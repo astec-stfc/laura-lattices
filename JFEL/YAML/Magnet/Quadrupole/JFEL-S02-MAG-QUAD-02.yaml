@@ -1,20 +1,47 @@
-name: JFEL-S02-MAG-QUAD-02
-machine_area: S02
 controls:
-  variables:
-    READK:
-      identifier: JFEL-S02-MAG-QUAD-02:CalcK
-      dtype: float
-      protocol: CA
-      description: Reads the calculated K value for a magnet based on momentum of the section
-      read_only: false
-      type: scalar
-physical:
-  middle:
-  - 0.0
-  - 0.0
-  - 3.92715
+  schema: _schema.yaml
+hardware_class: Magnet
+hardware_model: Generic
+hardware_type: Quadrupole
+machine_area: S02
+magnetic:
+  field_integral_coefficients:
+    coefficients:
+    - -4.69068497199892e-10
+    - 7.81236692669881e-08
+    - -4.99557108021749e-06
+    - 0.000139687166906618
+    - 0.0232819099224878
+    - 0.00977695097574923
   length: 0.126817
+  linear_saturation_coefficients:
+    I0: 1016.3280413917056
+    I_max: 12.998349154251741
+    L: 126.81728724881934
+    a: -1.2528113625923465e-05
+    d: 12.938456085033785
+    f: 0.0
+    m: 0.025139656777227282
+  multipoles:
+    K0L: {}
+    K1L:
+      normal: -1.1
+      order: 1
+      radius: 0.0
+      skew: 0.0
+    K2L:
+      order: 2
+    K3L:
+      order: 3
+    K4L:
+      order: 4
+  order: 1
+  random_multipoles: {}
+  settle_time: 45.0
+  skew: false
+  systematic_multipoles: {}
+name: JFEL-S02-MAG-QUAD-02
+physical:
   datum:
   - 0.0
   - 0.0
@@ -32,6 +59,11 @@ physical:
   - 0.0
   - 0.0
   - 0.0
+  length: 0.126817
+  middle:
+  - 0.0
+  - 0.0
+  - 3.92715
   rotation:
   - 0.0
   - 0.0
@@ -45,43 +77,4 @@ physical:
     - 0.0
     - 0.0
     - 0.0
-magnetic:
-  length: 0.126817
-  multipoles:
-    K0L: {}
-    K1L:
-      order: 1
-      normal: -1.1
-      radius: 0.0
-      skew: 0.0
-    K2L:
-      order: 2
-    K3L:
-      order: 3
-    K4L:
-      order: 4
-  order: 1
-  field_integral_coefficients:
-    coefficients:
-    - -4.69068497199892e-10
-    - 7.81236692669881e-08
-    - -4.99557108021749e-06
-    - 0.000139687166906618
-    - 0.0232819099224878
-    - 0.00977695097574923
-  linear_saturation_coefficients:
-    I0: 1016.3280413917056
-    I_max: 12.998349154251741
-    L: 126.81728724881934
-    a: -1.2528113625923465e-05
-    d: 12.938456085033785
-    f: 0.0
-    m: 0.025139656777227282
-  random_multipoles: {}
-  settle_time: 45.0
-  skew: false
-  systematic_multipoles: {}
-hardware_type: Quadrupole
-hardware_class: Magnet
-hardware_model: Generic
 subelement: false

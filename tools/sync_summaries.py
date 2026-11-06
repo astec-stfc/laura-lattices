@@ -25,6 +25,13 @@ Design notes
   straight to ``interpret_YAML_Element``, exactly as ``read_YAML_Element_File``
   does for a single file, so a verbatim union loads identically to loading the
   directory.
+* The one exception to "verbatim": an element whose ``controls.schema`` names
+  a schema file (see ``tools/collapse_schemas.py``) has that reference
+  rewritten to its path relative to ``YAML/`` (e.g.
+  ``Magnet/Quadrupole/_schema.yaml``), and the schema itself is embedded under
+  the reserved ``_schemas`` key, which ``read_yaml_combined_file`` resolves in
+  memory. Otherwise the reference would be looked up relative to the
+  summary's directory, not the hardware-type directory it belongs to.
 * Output is sorted and formatted deterministically, so ``--check`` can simply
   compare against a regenerated copy.
 """
@@ -43,6 +50,24 @@ except ImportError:  # pragma: no cover - dependency guard
 
 REPO = Path(__file__).resolve().parent.parent
 SUMMARY_NAMES = ("summary.yaml", "summary.json")
+# Must match laura.importers.yaml_loader.COMBINED_SCHEMAS_KEY.
+SCHEMAS_KEY = "_schemas"
+
+
+def embed_schema(doc: dict, path: Path, yaml_dir: Path, schemas: dict) -> None:
+    """Point *doc*'s ``controls.schema`` (relative to *path*) at an entry in
+    *schemas* keyed by its path relative to *yaml_dir*, loading it if new."""
+    controls = doc.get("controls")
+    if not isinstance(controls, dict) or not controls.get("schema"):
+        return
+    schema_path = (path.parent / controls["schema"]).resolve()
+    if not schema_path.is_file():
+        raise SystemExit(f"{path}: controls schema {controls['schema']!r} not found")
+    key = schema_path.relative_to(yaml_dir.resolve()).as_posix()
+    if key not in schemas:
+        data = yaml.safe_load(schema_path.read_text()) or {}
+        schemas[key] = data.get("variables", data)
+    controls["schema"] = key
 
 
 def element_files(yaml_dir: Path) -> list[Path]:
@@ -61,6 +86,7 @@ def build_summary(yaml_dir: Path) -> tuple[dict, list[str]]:
     duplicate ``name:`` values.
     """
     summary: dict[str, dict] = {}
+    schemas: dict[str, dict] = {}
     duplicates: list[str] = []
     for path in element_files(yaml_dir):
         try:
@@ -69,10 +95,13 @@ def build_summary(yaml_dir: Path) -> tuple[dict, list[str]]:
             raise SystemExit(f"{path}: could not parse: {exc}") from exc
         if not isinstance(doc, dict) or "name" not in doc:
             continue
+        embed_schema(doc, path, yaml_dir, schemas)
         name = doc["name"]
         if name in summary:
             duplicates.append(name)
         summary[name] = doc
+    if schemas:
+        summary[SCHEMAS_KEY] = schemas
     return summary, duplicates
 
 
@@ -114,22 +143,9 @@ def main() -> int:
                     help="do not write; exit non-zero if any summary is stale")
     args = ap.parse_args()
 
-    machines = machine_dirs(args.machines)
-    if not machines:
-        # Without this, --check exits 0 having checked nothing, so CI reports a
-        # green tick for a job that never ran. Every machine here loads its
-        # YAML directory directly, which is the state that needs saying out
-        # loud rather than passing quietly.
-        print(
-            "No machine carries a summary file, so there is nothing to check. "
-            "Every machine loads its YAML/ directory directly (see element_list "
-            "in each <MACHINE>/__init__.py)."
-        )
-        return 0
-
     stale: list[str] = []
     written: list[str] = []
-    for machine in machines:
+    for machine in machine_dirs(args.machines):
         yaml_dir = machine / "YAML"
         summary, duplicates = build_summary(yaml_dir)
         n_files = len(element_files(yaml_dir))
@@ -137,7 +153,8 @@ def main() -> int:
         if duplicates:
             note = (f"  [!] {len(duplicates)} duplicate name(s) collapsed, "
                     f"e.g. {min(set(duplicates))}")
-        print(f"{machine.name:10} {n_files:4} files -> {len(summary):4} elements{note}")
+        n_elements = len(summary) - (SCHEMAS_KEY in summary)
+        print(f"{machine.name:10} {n_files:4} files -> {n_elements:4} elements{note}")
 
         for name in SUMMARY_NAMES:
             target = yaml_dir / name
