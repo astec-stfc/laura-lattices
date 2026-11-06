@@ -1,0 +1,24 @@
+# JFEL linac, bunch compressor and main linac, from the saved injector beam
+# (Data_Files/jfel_injector_S02, written by Generators/make_injector_beam.py)
+# to the undulator entrance. Used by Scripts/compare_codes.py, which runs the
+# Linac line in each code in turn; elegant by default.
+files:
+  Linac:
+    code: elegant
+    input:
+      particle_definition: '$master_lattice$Data_Files/jfel_injector_S02'
+      twiss:
+        beta_x: 20
+        alpha_x: 0
+        beta_y: 10
+        alpha_y: 0
+    output:
+      start_element: JFEL-S02-SIM-APER-01
+      end_element: JFEL-FEL-SIM-MARK-01
+groups:
+  bunch_compressor:
+    type: chicane
+    elements: [JFEL-VBC-MAG-DIP-01, JFEL-VBC-MAG-DIP-02, JFEL-VBC-MAG-DIP-03, JFEL-VBC-MAG-DIP-04]
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

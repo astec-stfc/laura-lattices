@@ -1,0 +1,20 @@
+# Bremsstrahlung: 100 MeV electrons through 1 mm of tungsten, then 0.5 m to a
+# screen, all in BDSIM with Geant4's electromagnetic physics. The photons and
+# positrons made come out as their own species, at the target's exit (its
+# sampler) and at the screen.
+files:
+  BREMS:
+    code: bdsim
+    input:
+      particle_definition: '$master_lattice$Data_Files/brems_electrons'
+    tracking:
+      physics_list: em
+      secondaries: [photon, positron]
+      options: {beampipeMaterial: vacuum}   # else the default steel pipe showers the wide-angle particles too
+      samplers: [SEC-BREMS-TGT-01]
+    output:
+      start_element: SEC-BREMS-SIM-START-01
+      end_element: SEC-BREMS-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

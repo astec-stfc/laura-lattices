@@ -8,8 +8,8 @@ magnetic:
   multipoles:
     K0L: {}
     K1L:
-      normal: 0.5
       order: 1
+      normal: 1.16829
     K2L:
       order: 2
     K3L:

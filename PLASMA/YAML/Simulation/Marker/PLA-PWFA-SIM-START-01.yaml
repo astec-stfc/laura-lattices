@@ -1,0 +1,7 @@
+name: PLA-PWFA-SIM-START-01
+hardware_class: Simulation
+hardware_type: Marker
+machine_area: PWFA
+physical:
+  middle:
+    z: 0.0

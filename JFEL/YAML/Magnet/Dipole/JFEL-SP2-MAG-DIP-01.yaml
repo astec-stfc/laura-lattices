@@ -5,9 +5,11 @@ hardware_model: Generic
 hardware_type: Dipole
 machine_area: SP2
 magnetic:
+  edge_field_integral: 0.5  # stated, as the codes' own defaults differ (cf. the VBC dipoles)
   field_integral_coefficients:
     coefficients:
     - 0
+  gap: 0.032
   length: 0.4
   linear_saturation_coefficients:
     I0: 600.7483518642364
@@ -17,7 +19,9 @@ magnetic:
     d: 601.1839314402813
     f: 0.0
     m: 1.3963693845296439
-  multipoles: {}
+  multipoles:
+    K0L:
+      normal: -0.5235988  # 30 deg to -x, matching the SP2 element positions and datum
   order: 0
   random_multipoles: {}
   settle_time: 45.0

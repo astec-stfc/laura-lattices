@@ -12,7 +12,7 @@ magnetic:
     coefficients:
     - 0
   gap: 0.032
-  length: 0.200981
+  length: 0.201548
   linear_saturation_coefficients:
     I0: 286.6994811486062
     I_max: 124.48754536264167
@@ -42,7 +42,7 @@ physical:
   datum:
   - 0.0
   - 0.0
-  - 31.165948
+  - 31.165872
   error:
     position:
     - 0.0
@@ -55,12 +55,12 @@ physical:
   global_rotation:
   - 0.0
   - 0.0
-  - 0.095
-  length: 0.200981
+  - 0.13
+  length: 0.201548
   middle:
+  - 0.003274
   - 0.0
-  - 0.0
-  - 31.065382
+  - 31.065169
   physical_angle: 0.13
   rotation:
   - 0.0

@@ -1,0 +1,13 @@
+# Example plasma-acceleration lattices. Not a real machine.
+#
+# Every example lives on the one default beam path, at its own z, and each
+# Lattices/*.def picks out its stretch by start/end element.
+default_layout: PLASMA
+layouts:
+  PLASMA:
+    - "PWFA"
+    - "PPC"
+    - "IONINJ"
+    - "LWFA"
+    - "STG"
+    - "PWFAR"

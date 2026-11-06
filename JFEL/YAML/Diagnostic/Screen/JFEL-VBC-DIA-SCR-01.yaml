@@ -2,11 +2,11 @@ name: JFEL-VBC-DIA-SCR-01
 machine_area: VBC
 physical:
   middle:
-  - 0.161944
+  - 0.222083
   - 0.0
   - 28.9048
   datum:
-  - 0.161944
+  - 0.222083
   - 0.0
   - 28.9048
   error:

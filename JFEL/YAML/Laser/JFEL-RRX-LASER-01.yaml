@@ -1,0 +1,21 @@
+# Radiation-reaction interaction point: a 5 J, 30 fs, 800 nm pulse focused to
+# a 10 um waist (a0 = 6.8, ~150 TW), colliding head-on with the 575 MeV beam
+# where the PWA plasma would sit. Quantum parameter chi ~ 2 gamma a0 hbar omega
+# / m c^2 ~ 0.05: radiation reaction is strong, pair creation is negligible.
+# Run by Ptarmigan (Lattices/jfel_rr.def); the PWA spectrometer measures the
+# electrons' energy loss.
+name: JFEL-RRX-LASER-01
+hardware_class: Laser
+hardware_type: Laser
+machine_area: RRX
+physical:
+  middle:
+    z: 84.25
+  length: 0.001
+laser:
+  wavelength: 800.0e-9
+  pulse_energy: 5.0
+  pulse_duration_fwhm: 30.0e-15
+  waist: 10.0e-6
+  polarization: linear
+  collision_angle: 0.0

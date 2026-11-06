@@ -1,0 +1,25 @@
+# JFEL bunch compression: from the saved injector beam through L02, L03, the
+# X-band linearizer (L4H) and the VBC chicane to just after it (S06). Used by
+# Scripts/scan_compression.py and Scripts/optimise_compression.py, which vary
+# the chicane angle and the L4H phase/amplitude; Cheetah by default, as it is
+# fast, with elegant (CSR) to check the result.
+files:
+  Compressor:
+    code: cheetah
+    input:
+      particle_definition: '$master_lattice$Data_Files/jfel_injector_S02'
+      twiss:
+        beta_x: 20
+        alpha_x: 0
+        beta_y: 10
+        alpha_y: 0
+    output:
+      start_element: JFEL-S02-SIM-APER-01
+      end_element: JFEL-S06-SIM-MARK-01
+groups:
+  bunch_compressor:
+    type: chicane
+    elements: [JFEL-VBC-MAG-DIP-01, JFEL-VBC-MAG-DIP-02, JFEL-VBC-MAG-DIP-03, JFEL-VBC-MAG-DIP-04]
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

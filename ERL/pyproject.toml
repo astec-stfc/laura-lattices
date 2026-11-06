@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laura-lattices-erl"
+version = "1.0.0"
+description = "ERL (example energy-recovery linac) lattice data for the LAURA accelerator modelling framework"
+requires-python = ">= 3.10"
+authors = [
+    {name = "James Jones", email = "james.jones@stfc.ac.uk"},
+    {name = "Alex Brynes", email = "alexander.brynes@stfc.ac.uk"},
+]
+
+[tool.setuptools]
+packages = ["laura_lattices.ERL"]
+
+[tool.setuptools.package-dir]
+"laura_lattices.ERL" = "."
+
+[tool.setuptools.package-data]
+"laura_lattices.ERL" = [
+    "**/*.yaml", "**/*.json", "**/*.hdf5", "**/*.def",
+]

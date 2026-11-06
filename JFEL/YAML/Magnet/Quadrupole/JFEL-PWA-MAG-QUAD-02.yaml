@@ -1,0 +1,15 @@
+name: JFEL-PWA-MAG-QUAD-02
+hardware_class: Magnet
+hardware_type: Quadrupole
+machine_area: PWA
+physical:
+  middle:
+    z: 84.9
+  length: 0.15
+magnetic:
+  length: 0.15
+  order: 1
+  multipoles:
+    K1L:
+      order: 1
+      normal: 3.10202   # imaging doublet, see JFEL-PWA-MAG-QUAD-01

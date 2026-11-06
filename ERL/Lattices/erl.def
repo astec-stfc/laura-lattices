@@ -1,0 +1,21 @@
+# The ERL in two lines: the racetrack, injector -> linac (pass 1,
+# accelerating) -> arc -> return straight -> arc -> linac (pass 2,
+# decelerating); then the dump line.
+files:
+  ERL:
+    code: elegant
+    input:
+      particle_definition: '$master_lattice$Data_Files/erl_injector'
+    output:
+      start_element: ERL-INJ-SIM-START-01
+      end_element: ERL-LIN-SIM-END-01#2
+  DUMP:
+    code: elegant
+    input:
+      particle_definition: 'ERL-LIN-SIM-END-01.2'   # the beam leaving the linac's second pass
+    output:
+      start_element: ERL-DMP-SIM-START-01
+      end_element: ERL-DMP-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./elements.yaml"

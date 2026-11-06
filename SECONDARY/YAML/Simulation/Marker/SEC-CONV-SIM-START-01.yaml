@@ -1,0 +1,7 @@
+name: SEC-CONV-SIM-START-01
+hardware_class: Simulation
+hardware_type: Marker
+machine_area: CONV
+physical:
+  middle:
+    z: 10.0

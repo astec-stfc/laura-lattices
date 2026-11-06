@@ -2037,6 +2037,185 @@ JFEL-PI-LSR-SHUT-01:
       - 0.0
       - 0.0
   subelement: false
+JFEL-PWA-DIA-CAM-01:
+  diagnostic:
+    flipped_horizontally: false
+    screen_name: JFEL-PWA-DIA-SCR-01
+    sensor:
+      bit_depth: 12
+      x_pixels: 2560
+      x_pixels_to_mm: 0.075
+      x_scale_factor: 1
+      y_pixels: 2160
+      y_pixels_to_mm: 0.075
+      y_scale_factor: 1
+    type: PCO
+  hardware_class: Diagnostic
+  hardware_model: PCO
+  hardware_type: Camera
+  machine_area: PWA
+  name: JFEL-PWA-DIA-CAM-01
+  physical:
+    global_rotation:
+    - 0.0
+    - 0.0
+    - 0.2617994
+    length: 0.0
+    middle:
+    - -0.4402911
+    - 0.0
+    - 87.0443396
+JFEL-PWA-DIA-SCR-01:
+  hardware_class: Diagnostic
+  hardware_model: YAG
+  hardware_type: Screen
+  machine_area: PWA
+  name: JFEL-PWA-DIA-SCR-01
+  physical:
+    global_rotation:
+    - 0.0
+    - 0.0
+    - 0.2617994
+    length: 0.0
+    middle:
+    - -0.4402911
+    - 0.0
+    - 87.0443396
+JFEL-PWA-MAG-DIP-01:
+  hardware_class: Magnet
+  hardware_type: Dipole
+  machine_area: PWA
+  magnetic:
+    edge_field_integral: 0.5
+    gap: 0.032
+    length: 0.4
+    multipoles:
+      K0L:
+        normal: -0.2617994
+    order: 0
+  name: JFEL-PWA-MAG-DIP-01
+  physical:
+    global_rotation:
+    - 0.0
+    - 0.0
+    - 0.0
+    length: 0.4
+    middle:
+    - -0.0130715
+    - 0.0
+    - 85.3994254
+JFEL-PWA-MAG-QUAD-01:
+  hardware_class: Magnet
+  hardware_type: Quadrupole
+  machine_area: PWA
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        normal: -5.85636
+        order: 1
+    order: 1
+  name: JFEL-PWA-MAG-QUAD-01
+  physical:
+    length: 0.15
+    middle:
+      z: 84.6
+JFEL-PWA-MAG-QUAD-02:
+  hardware_class: Magnet
+  hardware_type: Quadrupole
+  machine_area: PWA
+  magnetic:
+    length: 0.15
+    multipoles:
+      K1L:
+        normal: 3.10202
+        order: 1
+    order: 1
+  name: JFEL-PWA-MAG-QUAD-02
+  physical:
+    length: 0.15
+    middle:
+      z: 84.9
+JFEL-PWA-PLASMA-01:
+  hardware_class: Plasma
+  hardware_model: Plasma
+  hardware_type: Plasma
+  machine_area: PWA
+  name: JFEL-PWA-PLASMA-01
+  physical:
+    length: 0.1
+    middle:
+      z: 84.25
+  plasma:
+    density: 3.0e+22
+    density_profile: false
+  simulation:
+    max_longitudinal_position: 0.00014
+    min_longitudinal_position: -0.0003
+    n_longitudinal: 440
+    n_out: 20
+    n_radial: 150
+    particles_per_angular_cell: 4
+    particles_per_longitudinal_cell: 2
+    particles_per_radial_cell: 2
+    r_max: 0.00015
+    wakefield_model: quasistatic_2d
+JFEL-PWA-SIM-END-01:
+  hardware_class: Simulation
+  hardware_type: Marker
+  machine_area: PWA
+  name: JFEL-PWA-SIM-END-01
+  physical:
+    middle:
+      z: 84.3
+JFEL-PWA-SIM-START-01:
+  hardware_class: Simulation
+  hardware_type: Marker
+  machine_area: PWA
+  name: JFEL-PWA-SIM-START-01
+  physical:
+    middle:
+      z: 84.2
+JFEL-RRX-DIA-SCR-01:
+  hardware_class: Diagnostic
+  hardware_model: YAG
+  hardware_type: Screen
+  machine_area: RRX
+  name: JFEL-RRX-DIA-SCR-01
+  physical:
+    global_rotation:
+    - 0.0
+    - 0.0
+    - 0.2617994
+    length: 0.0
+    middle:
+    - -0.4402911
+    - 0.0
+    - 87.0443396
+JFEL-RRX-LASER-01:
+  hardware_class: Laser
+  hardware_type: Laser
+  laser:
+    collision_angle: 0.0
+    polarization: linear
+    pulse_duration_fwhm: 3.0e-14
+    pulse_energy: 5.0
+    waist: 1.0e-05
+    wavelength: 8.0e-07
+  machine_area: RRX
+  name: JFEL-RRX-LASER-01
+  physical:
+    length: 0.001
+    middle:
+      z: 84.25
+JFEL-RRX-SIM-END-01:
+  hardware_class: Simulation
+  hardware_type: Marker
+  machine_area: RRX
+  name: JFEL-RRX-SIM-END-01
+  physical:
+    middle:
+      z: 84.3
 JFEL-S01-DIA-BPM-01:
   hardware_class: Diagnostic
   hardware_model: Stripline
@@ -13529,7 +13708,7 @@ JFEL-S13-MAG-QUAD-01:
     multipoles:
       K0L: {}
       K1L:
-        normal: 0.5
+        normal: 1.16829
         order: 1
       K2L:
         order: 2
@@ -13554,7 +13733,7 @@ JFEL-S13-MAG-QUAD-02:
     multipoles:
       K0L: {}
       K1L:
-        normal: -0.5
+        normal: -1.47066
         order: 1
       K2L:
         order: 2
@@ -13579,7 +13758,7 @@ JFEL-S13-MAG-QUAD-03:
     multipoles:
       K0L: {}
       K1L:
-        normal: 0.5
+        normal: 0.73238
         order: 1
       K2L:
         order: 2
@@ -13604,7 +13783,7 @@ JFEL-S13-MAG-QUAD-04:
     multipoles:
       K0L: {}
       K1L:
-        normal: -0.5
+        normal: -1.48347
         order: 1
       K2L:
         order: 2
@@ -14503,9 +14682,11 @@ JFEL-SP2-MAG-DIP-01:
   hardware_type: Dipole
   machine_area: SP2
   magnetic:
+    edge_field_integral: 0.5
     field_integral_coefficients:
       coefficients:
       - 0
+    gap: 0.032
     length: 0.4
     linear_saturation_coefficients:
       I0: 600.7483518642364
@@ -14515,7 +14696,9 @@ JFEL-SP2-MAG-DIP-01:
       d: 601.1839314402813
       f: 0.0
       m: 1.3963693845296439
-    multipoles: {}
+    multipoles:
+      K0L:
+        normal: -0.5235988
     order: 0
     random_multipoles: {}
     settle_time: 45.0
@@ -15451,9 +15634,11 @@ JFEL-SP3-MAG-DIP-01:
   hardware_type: Dipole
   machine_area: SP3
   magnetic:
+    edge_field_integral: 0.5
     field_integral_coefficients:
       coefficients:
       - 0
+    gap: 0.032
     length: 0.4
     linear_saturation_coefficients:
       I0: 596.1589358551605
@@ -15463,7 +15648,9 @@ JFEL-SP3-MAG-DIP-01:
       d: 598.7346914311352
       f: 0.0
       m: 1.3966746927879516
-    multipoles: {}
+    multipoles:
+      K0L:
+        normal: -0.5235988
     order: 0
     random_multipoles: {}
     settle_time: 45.0
@@ -15902,7 +16089,7 @@ JFEL-VBC-DIA-BPM-01:
   name: JFEL-VBC-DIA-BPM-01
   physical:
     datum:
-    - 0.161944
+    - 0.222083
     - 0.0
     - 28.369448
     error:
@@ -15920,7 +16107,7 @@ JFEL-VBC-DIA-BPM-01:
     - 0.0
     length: 0.0312
     middle:
-    - 0.161944
+    - 0.222083
     - 0.0
     - 28.353848
     rotation:
@@ -15992,7 +16179,7 @@ JFEL-VBC-DIA-RCOL-01:
   name: JFEL-VBC-DIA-RCOL-01
   physical:
     datum:
-    - 0.161944
+    - 0.222083
     - 0.0
     - 28.8793
     error:
@@ -16010,7 +16197,7 @@ JFEL-VBC-DIA-RCOL-01:
     - 0.0
     length: 0.48
     middle:
-    - 0.161944
+    - 0.222083
     - 0.0
     - 28.6393
     rotation:
@@ -16035,7 +16222,7 @@ JFEL-VBC-DIA-SCR-01:
   name: JFEL-VBC-DIA-SCR-01
   physical:
     datum:
-    - 0.161944
+    - 0.222083
     - 0.0
     - 28.9048
     error:
@@ -16053,7 +16240,7 @@ JFEL-VBC-DIA-SCR-01:
     - 0.0
     length: 0.0
     middle:
-    - 0.161944
+    - 0.222083
     - 0.0
     - 28.9048
     rotation:
@@ -16085,7 +16272,7 @@ JFEL-VBC-MAG-DIP-01:
       coefficients:
       - 0
     gap: 0.032
-    length: 0.200981
+    length: 0.201548
     linear_saturation_coefficients:
       I0: 286.4265908551807
       I_max: 123.70403990282664
@@ -16113,9 +16300,9 @@ JFEL-VBC-MAG-DIP-01:
   name: JFEL-VBC-MAG-DIP-01
   physical:
     datum:
-    - 0.00953942
+    - 0.013082
     - 0.0
-    - 26.265948
+    - 26.266326
     error:
       position:
       - 0.0
@@ -16129,11 +16316,11 @@ JFEL-VBC-MAG-DIP-01:
     - 0.0
     - 0.0
     - 0.0
-    length: 0.200981
+    length: 0.201548
     middle:
+    - 0.003274
     - 0.0
-    - 0.0
-    - 26.165835
+    - 26.166048
     physical_angle: 0.13
     rotation:
     - 0.0
@@ -16164,7 +16351,7 @@ JFEL-VBC-MAG-DIP-02:
       coefficients:
       - 0
     gap: 0.032
-    length: 0.200981
+    length: 0.201548
     linear_saturation_coefficients:
       I0: 286.7828124391902
       I_max: 123.42716301418135
@@ -16192,9 +16379,9 @@ JFEL-VBC-MAG-DIP-02:
   name: JFEL-VBC-MAG-DIP-02
   physical:
     datum:
-    - 0.161944
+    - 0.222083
     - 0.0
-    - 27.965948
+    - 27.965872
     error:
       position:
       - 0.0
@@ -16207,12 +16394,12 @@ JFEL-VBC-MAG-DIP-02:
     global_rotation:
     - 0.0
     - 0.0
-    - -0.095
-    length: 0.200981
+    - -0.13
+    length: 0.201548
     middle:
-    - 0.161944
+    - 0.218809
     - 0.0
-    - 27.865382
+    - 27.865169
     physical_angle: -0.13
     rotation:
     - 0.0
@@ -16243,7 +16430,7 @@ JFEL-VBC-MAG-DIP-03:
       coefficients:
       - 0
     gap: 0.032
-    length: 0.200981
+    length: 0.201548
     linear_saturation_coefficients:
       I0: 286.8322332515053
       I_max: 123.29614877422443
@@ -16271,9 +16458,9 @@ JFEL-VBC-MAG-DIP-03:
   name: JFEL-VBC-MAG-DIP-03
   physical:
     datum:
-    - 0.152405
+    - 0.209001
     - 0.0
-    - 29.465948
+    - 29.466325
     error:
       position:
       - 0.0
@@ -16287,11 +16474,11 @@ JFEL-VBC-MAG-DIP-03:
     - 0.0
     - 0.0
     - 0.0
-    length: 0.200981
+    length: 0.201548
     middle:
-    - 0.161944
+    - 0.218809
     - 0.0
-    - 29.365835
+    - 29.366048
     physical_angle: -0.13
     rotation:
     - 0.0
@@ -16322,7 +16509,7 @@ JFEL-VBC-MAG-DIP-04:
       coefficients:
       - 0
     gap: 0.032
-    length: 0.200981
+    length: 0.201548
     linear_saturation_coefficients:
       I0: 286.6994811486062
       I_max: 124.48754536264167
@@ -16352,7 +16539,7 @@ JFEL-VBC-MAG-DIP-04:
     datum:
     - 0.0
     - 0.0
-    - 31.165948
+    - 31.165872
     error:
       position:
       - 0.0
@@ -16365,12 +16552,12 @@ JFEL-VBC-MAG-DIP-04:
     global_rotation:
     - 0.0
     - 0.0
-    - 0.095
-    length: 0.200981
+    - 0.13
+    length: 0.201548
     middle:
+    - 0.003274
     - 0.0
-    - 0.0
-    - 31.065382
+    - 31.065169
     physical_angle: 0.13
     rotation:
     - 0.0
@@ -16470,7 +16657,7 @@ JFEL-VBC-MAG-VCOR-01:
   name: JFEL-VBC-MAG-VCOR-01
   physical:
     datum:
-    - 0.161944
+    - 0.222083
     - 0.0
     - 28.3131
     error:
@@ -16488,7 +16675,7 @@ JFEL-VBC-MAG-VCOR-01:
     - 0.0
     length: 0.05
     middle:
-    - 0.161944
+    - 0.222083
     - 0.0
     - 28.2881
     rotation:

@@ -12,7 +12,7 @@ magnetic:
     coefficients:
     - 0
   gap: 0.032
-  length: 0.200981
+  length: 0.201548
   linear_saturation_coefficients:
     I0: 286.4265908551807
     I_max: 123.70403990282664
@@ -40,9 +40,9 @@ magnetic:
 name: JFEL-VBC-MAG-DIP-01
 physical:
   datum:
-  - 0.00953942
+  - 0.013082
   - 0.0
-  - 26.265948
+  - 26.266326
   error:
     position:
     - 0.0
@@ -56,11 +56,11 @@ physical:
   - 0.0
   - 0.0
   - 0.0
-  length: 0.200981
+  length: 0.201548
   middle:
+  - 0.003274
   - 0.0
-  - 0.0
-  - 26.165835
+  - 26.166048
   physical_angle: 0.13
   rotation:
   - 0.0

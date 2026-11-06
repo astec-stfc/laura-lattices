@@ -1,0 +1,53 @@
+# Start-to-end FEL: the linac from the saved injector beam to the undulator
+# entrance (elegant, with its structure wakes and CSR), then the undulator in
+# Genesis 4, either steady-state (FEL_ST) or time-dependent (FEL_TD).
+# Used by Scripts/run_fel.py, which runs the linac once and then the FEL line(s).
+files:
+  Linac:
+    code: elegant
+    input:
+      particle_definition: '$master_lattice$Data_Files/jfel_injector_S02'
+      twiss:
+        beta_x: 20
+        alpha_x: 0
+        beta_y: 10
+        alpha_y: 0
+    output:
+      start_element: JFEL-S02-SIM-APER-01
+      end_element: JFEL-FEL-SIM-MARK-01
+  FEL_ST:
+    code: genesis
+    fel:
+      steady_state: True      # a seeded amplifier on the beam's slice parameters
+      beam_type: beam
+      npart: 8192
+      nbins: 4
+      field_power: 1000.0     # seed power [W]
+      waist_size: 0.00007     # seed waist [m]
+    output:
+      start_element: JFEL-FEL-SIM-MARK-01
+      end_element: JFEL-FEL-SIM-MARK-02
+  FEL_TD:
+    code: genesis
+    fel:
+      steady_state: False     # SASE from the bunch's own shot noise
+      beam_type: distribution
+      npart: 2048             # macroparticles per slice
+      nbins: 4
+      sample: 1               # one slice per wavelength: the cooperation length is
+                              # only ~8 wavelengths, so coarser sampling misses the
+                              # SASE structure (~4 min here; raise for long bunches)
+      slippage_window: True   # window = bunch + slippage (~0.57 mm), so the
+                              # radiation is followed to the undulator exit
+      field_power: 0.0
+      waist_size: 0.00007
+    output:
+      start_element: JFEL-FEL-SIM-MARK-01
+      end_element: JFEL-FEL-SIM-MARK-02
+groups:
+  bunch_compressor:
+    type: chicane
+    elements: [JFEL-VBC-MAG-DIP-01, JFEL-VBC-MAG-DIP-02, JFEL-VBC-MAG-DIP-03, JFEL-VBC-MAG-DIP-04]
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

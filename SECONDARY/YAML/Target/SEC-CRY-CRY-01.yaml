@@ -1,0 +1,15 @@
+# Bent Si(220) crystal: 30 um long, bent by 0.9 mrad, aligned with the beam
+# (the critical angle for 855 MeV electrons is ~0.2 mrad). As at MAMI, whose
+# crystal was Si(111). Channelling data from BDSIM's examples (Data_Files/Si220pl_*).
+name: SEC-CRY-CRY-01
+hardware_class: Target
+hardware_type: Crystal
+machine_area: CRY
+material: G4_Si
+physical:
+  middle:
+    z: 20.5
+  length: 30.0e-6
+crystal:
+  data_file: '$master_lattice$Data_Files/Si220pl'
+  bending_angle: 900.0e-6

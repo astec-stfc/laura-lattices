@@ -1,0 +1,10 @@
+# Example lattices for secondary-particle production in BDSIM. Not a real machine.
+#
+# Every example lives on the one default beam path, at its own z, and each
+# Lattices/*.def picks out its stretch by start/end element.
+default_layout: SECONDARY
+layouts:
+  SECONDARY:
+    - "BREMS"
+    - "CONV"
+    - "CRY"

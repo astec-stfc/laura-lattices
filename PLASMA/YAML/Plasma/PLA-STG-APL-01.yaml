@@ -1,0 +1,18 @@
+# Active plasma lens between the stages: 0.1 m drift, this 2 cm lens, 0.1 m
+# drift. Wake-T's tutorial 02 uses 400 T/m to capture the beam; 950 T/m
+# instead images stage 1's exit into stage 2 (point-to-point, f ~ 5 cm at
+# 295 MeV), giving beta = 2.75 mm, alpha = -0.18 at stage 2. Chromatic
+# aberration from the 1.24% energy spread doubles the emittance
+# (1.14 -> 2.08 um): the familiar staging problem.
+name: PLA-STG-APL-01
+hardware_class: Plasma
+hardware_type: PlasmaLens
+machine_area: STG
+physical:
+  middle:
+    z: 4.13
+  length: 0.02
+focusing_strength: 950.0
+wakefields: false
+simulation:
+  n_out: 5

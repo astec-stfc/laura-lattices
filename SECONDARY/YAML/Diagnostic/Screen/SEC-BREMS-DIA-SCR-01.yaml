@@ -1,0 +1,9 @@
+name: SEC-BREMS-DIA-SCR-01
+hardware_class: Diagnostic
+hardware_type: Screen
+hardware_model: YAG
+machine_area: BREMS
+physical:
+  middle:
+    z: 1.0
+  length: 0.0

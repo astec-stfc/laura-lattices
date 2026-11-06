@@ -1,0 +1,54 @@
+# Laser-driven ionization injection, FBPIC only: FBPIC's own example
+# (docs/source/example_input/ionization_script.py), run for 0.5 mm instead of
+# 50 um so the injected electrons are trapped and accelerated.
+#
+# An a0 = 4, 5 um-waist laser drives a wake in a He/N mixture. Nitrogen starts
+# at N5+; the two K-shell electrons are freed only near the laser peak, inside
+# the wake, and are trapped there. They are written out (if uz > 2) as this
+# stage's beam; there is no incoming beam (`particle_definition: null`).
+#
+# Background: He fully ionized (the laser front strips He+ -> He2+ far ahead of
+# the wake, so it is treated as pre-ionized) and N to 5+, i.e.
+# n_e = 2*2e24 + 5*1e24 = 9e24 m^-3. FBPIC's script ionizes He+ explicitly,
+# giving 7e24 ahead of the laser and 9e24 behind its front.
+#
+# Box positions are relative to the stage entrance (no incoming beam). The
+# density ramps up as sin^2 over the first 20 um, as in FBPIC's script.
+name: PLA-IONINJ-PLASMA-01
+hardware_class: Plasma
+hardware_type: Plasma
+hardware_model: Plasma
+machine_area: IONINJ
+physical:
+  middle:
+    z: 2.00025
+  length: 0.0005
+plasma:
+  density: 9.0e+24
+  density_profile: true
+  density_profile_type: tabulated
+  density_profile_positions: [0, 4e-06, 8e-06, 1.2e-05, 1.6e-05, 2e-05]
+  density_profile_values: [0, 0.09549, 0.3455, 0.6545, 0.9045, 1]
+  ionizable: true
+  ionization_element: N
+  ionization_density: 1.0e+24
+  ionization_initial_level: 5
+laser:
+  role: driver
+  profile_type: gaussian
+  a0: 4.0
+  wavelength: 800.0e-9
+  waist: 5.0e-6
+  pulse_duration_fwhm: 18.84e-15   # FBPIC tau = 16 fs (1/e field half-width)
+  initial_position: -5.0e-6
+  focal_position: 20.0e-6
+simulation:
+  wakefield_model: quasistatic_2d
+  min_longitudinal_position: -30.0e-6
+  max_longitudinal_position: 10.0e-6
+  n_longitudinal: 800
+  n_radial: 50
+  r_max: 20.0e-6
+  particles_per_radial_cell: 2
+  particles_per_longitudinal_cell: 1
+  particles_per_angular_cell: 4

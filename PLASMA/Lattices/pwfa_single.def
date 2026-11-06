@@ -1,0 +1,27 @@
+# Single beam-driven (PWFA) plasma stage, then a 0.5 m drift to a screen.
+#
+# The stage runs in Wake-T by default; to run it in FBPIC instead:
+#     framework.change_Lattice_Code("PWFA", "fbpic")
+# Both read the same element (YAML/Plasma/PLA-PWFA-PLASMA-01.yaml) and the
+# same drive + witness beam (Generators/make_beams.py).
+global:
+  FBPICsettings:
+    boost: False          # beam-driven: lab frame (the boost is laser-based)
+    number_of_modes: 1    # the stage is axisymmetric
+    diag_period: 5000     # ~4 snapshots over the ~20k steps
+files:
+  PWFA:
+    code: waket
+    input:
+      particle_definition: '$master_lattice$Data_Files/pwfa_driver_witness'
+    output:
+      start_element: PLA-PWFA-SIM-START-01
+      end_element: PLA-PWFA-SIM-END-01
+  PWFA_DIAG:
+    code: ocelot
+    output:
+      start_element: PLA-PWFA-SIM-END-01
+      end_element: PLA-PWFA-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

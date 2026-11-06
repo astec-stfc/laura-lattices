@@ -1,0 +1,49 @@
+# The full ERL (ERL_FEL layout): the injected beam is accelerated, lases in an
+# infrared SASE FEL in the return straight, and the spent beam is decelerated
+# and dumped.
+#
+#   ERL1   injector -> linac (pass 1) -> arc -> undulator entrance   (elegant)
+#   FEL    the undulator, time-dependent SASE                       (Genesis 4)
+#   ERL2   undulator exit -> arc -> linac (pass 2, decelerating)    (elegant)
+#   DUMP   the dump line                                            (elegant)
+default_layout: ERL_FEL
+files:
+  ERL1:
+    code: elegant
+    input:
+      particle_definition: '$master_lattice$Data_Files/erl_injector_fel'   # 0.75 ps, 53 A
+    output:
+      start_element: ERL-INJ-SIM-START-01
+      end_element: ERL-RETF-SIM-MARK-01
+  FEL:
+    code: genesis
+    fel:
+      steady_state: False     # SASE from the bunch's own shot noise
+      beam_type: distribution
+      npart: 1024             # macroparticles per slice
+      nbins: 4
+      sample: 1               # one slice per wavelength (cooperation length ~10)
+      slippage_window: True   # window = bunch + slippage (180 periods x 10 um)
+      field_power: 0.0
+      waist_size: 0.0001
+      dgrid: 0.0025           # +-2.5 mm field grid, 501 points: the 10 um radiation
+      ngrid: 501              # diffracts beyond the default +-1 mm, which then
+                              # loses ~20% of the field energy
+    output:
+      start_element: ERL-RETF-SIM-MARK-01
+      end_element: ERL-RETF-SIM-MARK-02
+  ERL2:
+    code: elegant
+    output:
+      start_element: ERL-RETF-SIM-MARK-02
+      end_element: ERL-LIN-SIM-END-01#2
+  DUMP:
+    code: elegant
+    input:
+      particle_definition: 'ERL-LIN-SIM-END-01.2'   # the beam leaving the linac's second pass
+    output:
+      start_element: ERL-DMP-SIM-START-01
+      end_element: ERL-DMP-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./elements.yaml"

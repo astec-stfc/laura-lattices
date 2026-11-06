@@ -1,0 +1,10 @@
+# End of the RRX laser IP (Ptarmigan) line. Its own marker, not
+# JFEL-PWA-SIM-END-01, because LAURA builds a line on the layout named by its
+# end element's machine_area.
+name: JFEL-RRX-SIM-END-01
+hardware_class: Simulation
+hardware_type: Marker
+machine_area: RRX
+physical:
+  middle:
+    z: 84.3

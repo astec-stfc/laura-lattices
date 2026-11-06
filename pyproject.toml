@@ -19,11 +19,17 @@ classifiers = [
 
 [project.optional-dependencies]
 jfel = ["laura-lattices-jfel"]
+plasma = ["laura-lattices-plasma"]
+erl = ["laura-lattices-erl"]
+secondary = ["laura-lattices-secondary"]
 
 [tool.setuptools]
 packages = [
     "laura_lattices",
     "laura_lattices.JFEL",
+    "laura_lattices.PLASMA",
+    "laura_lattices.ERL",
+    "laura_lattices.SECONDARY",
 ]
 
 [tool.setuptools.package-dir]
@@ -31,6 +37,9 @@ packages = [
 # laura_lattices.__file__ was None and MACHINES/get_machine did not exist.
 "laura_lattices" = "laura_lattices"
 "laura_lattices.JFEL" = "JFEL"
+"laura_lattices.PLASMA" = "PLASMA"
+"laura_lattices.ERL" = "ERL"
+"laura_lattices.SECONDARY" = "SECONDARY"
 
 [tool.setuptools.package-data]
 "*" = [

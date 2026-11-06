@@ -1,0 +1,56 @@
+# Plasma photocathode (collinear "Trojan horse") injection stage, FBPIC only.
+#
+# A 200 pC, 1 GeV drive bunch (Data_Files/ppc_driver) blows out a pre-ionized
+# hydrogen plasma (1e23 m^-3 electrons) doped with neutral helium. Neither the
+# bunch (~20 GV/m) nor its wake (~40 GV/m) reaches the ~105 GV/m that ionizes
+# helium. A weak, tightly focused laser co-propagating at the wake's
+# zero-field point (xi = -34 um, where the potential peaks) ionizes the helium
+# around its focus, 0.4 mm into the stage; the electrons freed there are
+# trapped and accelerated, giving a low-emittance witness.
+#
+# `role: injector` marks the laser as an injector rather than a wake driver:
+# FBPIC stays in the lab frame with the window at c, and Wake-T (which cannot
+# model the ionization) leaves both the laser and the helium out.
+#
+# Box positions are relative to the incoming beam's charge-weighted centroid,
+# i.e. the drive bunch centre. The grid resolves the 800 nm laser at lambda/16
+# (dz = 50 nm) and the injected bunch radially (dr = 0.2 um); see
+# README.md for a coarser setting that runs on a small GPU.
+name: PLA-PPC-PLASMA-01
+hardware_class: Plasma
+hardware_type: Plasma
+hardware_model: Plasma
+machine_area: PPC
+physical:
+  middle:
+    z: 1.0005
+  length: 0.001
+plasma:
+  density: 1.0e+23          # pre-ionized hydrogen (electrons)
+  density_profile: false
+  ionizable: true
+  ionization_element: He
+  ionization_density: 3.0e+22
+  ionization_initial_level: 0
+  ionization_max_level: 1   # He -> He+ only
+laser:
+  role: injector
+  profile_type: gaussian
+  a0: 0.025                 # ~100 GV/m peak field
+  wavelength: 800.0e-9
+  waist: 5.0e-6
+  pulse_duration_fwhm: 30.0e-15
+  initial_position: -34.0e-6
+  focal_position: 0.4e-3
+simulation:
+  wakefield_model: quasistatic_2d
+  n_out: 10
+  min_longitudinal_position: -110.0e-6
+  max_longitudinal_position: 40.0e-6
+  n_longitudinal: 3000
+  n_radial: 250
+  r_max: 50.0e-6
+  r_max_ionizable: 10.0e-6  # helium only where the laser can ionize it
+  particles_per_radial_cell: 2
+  particles_per_longitudinal_cell: 2
+  particles_per_angular_cell: 4

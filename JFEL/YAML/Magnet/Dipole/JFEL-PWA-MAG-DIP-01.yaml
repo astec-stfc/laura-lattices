@@ -1,0 +1,25 @@
+# Spectrometer dipole: 15 deg to -x (LAURA's convention: negative K0L bends to
+# -x), entrance on the beam axis at z = 85.2. The middle is the arc midpoint:
+# rho = 0.4 / 0.261799 = 1.527887 m.
+name: JFEL-PWA-MAG-DIP-01
+hardware_class: Magnet
+hardware_type: Dipole
+machine_area: PWA
+physical:
+  middle:
+  - -0.0130715
+  - 0.0
+  - 85.3994254
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.0
+  length: 0.4
+magnetic:
+  length: 0.4
+  order: 0
+  edge_field_integral: 0.5   # stated, as the codes' own defaults differ
+  gap: 0.032
+  multipoles:
+    K0L:
+      normal: -0.2617994

@@ -1,0 +1,34 @@
+# Plasma photocathode: ionization injection by a laser inside a beam-driven
+# wake (PPC_INJ, FBPIC), acceleration of the injected witness (PPC_ACC,
+# Wake-T), then a 0.5 m drift to a screen (Ocelot).
+#
+# PPC_INJ needs a PIC code: Wake-T models neither the ionization nor the
+# injection laser. At the element's resolution it wants a large GPU; see
+# README.md for a coarse setting that runs on a small one.
+global:
+  FBPICsettings:
+    boost: False            # beam-driven, injector laser: lab frame
+    number_of_modes: 2      # m = 1 for the linearly polarized laser
+    diag_period: 2000
+    injected_uz_min: 2.0    # write out only trapped injected electrons
+files:
+  PPC_INJ:
+    code: fbpic
+    input:
+      particle_definition: '$master_lattice$Data_Files/ppc_driver'
+    output:
+      start_element: PLA-PPC-SIM-START-01
+      end_element: PLA-PPC-SIM-MID-01
+  PPC_ACC:
+    code: waket
+    output:
+      start_element: PLA-PPC-SIM-MID-01
+      end_element: PLA-PPC-SIM-END-01
+  PPC_DIAG:
+    code: ocelot
+    output:
+      start_element: PLA-PPC-SIM-END-01
+      end_element: PLA-PPC-DIA-SCR-01
+layout: "./layouts.yaml"
+section: "./sections.yaml"
+element_list: "./YAML/"

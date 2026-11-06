@@ -1,0 +1,35 @@
+# Beam-driven (PWFA) stage: a 1 cm uniform plasma at 1e23 m^-3, driven by the
+# 500 pC drive bunch in Data_Files/pwfa_driver_witness.openpmd.hdf5, which also
+# holds the 50 pC witness 80 um behind it. Port of Wake-T's
+# tests/test_multibunch.py, whose results (driver gamma 2000 -> 1702.1,
+# witness 200 -> 636.8) this should reproduce.
+#
+# No `laser` block: that is what makes the stage beam-driven.
+#
+# Box positions are relative to the incoming beam's charge-weighted centroid
+# (it has no reference particle): 7.3 um behind the driver, so the driver sits
+# at +7.3 um and the witness at -72.7 um. The box is Wake-T's -120..+20 um
+# about the driver.
+name: PLA-PWFA-PLASMA-01
+hardware_class: Plasma
+hardware_type: Plasma
+hardware_model: Plasma
+machine_area: PWFA
+physical:
+  middle:
+    z: 0.005
+  length: 0.01
+plasma:
+  density: 1.0e+23
+  density_profile: false
+simulation:
+  wakefield_model: quasistatic_2d
+  n_out: 50
+  min_longitudinal_position: -112.7e-6
+  max_longitudinal_position: 27.3e-6
+  n_longitudinal: 280
+  n_radial: 70
+  r_max: 70.0e-6
+  particles_per_radial_cell: 2
+  particles_per_longitudinal_cell: 2
+  particles_per_angular_cell: 4

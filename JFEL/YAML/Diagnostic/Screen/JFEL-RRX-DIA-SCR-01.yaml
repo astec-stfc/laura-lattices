@@ -1,0 +1,18 @@
+# The PWA spectrometer screen (JFEL-PWA-DIA-SCR-01) as seen from the RRX
+# layout: LAURA builds a line on the layout named by its end element's
+# machine_area, so the RRX spectrometer line needs an RRX end element.
+name: JFEL-RRX-DIA-SCR-01
+hardware_class: Diagnostic
+hardware_type: Screen
+hardware_model: YAG
+machine_area: RRX
+physical:
+  middle:
+  - -0.4402911
+  - 0.0
+  - 87.0443396
+  global_rotation:
+  - 0.0
+  - 0.0
+  - 0.2617994
+  length: 0.0
