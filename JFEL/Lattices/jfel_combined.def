@@ -27,12 +27,11 @@ files:
   FEL_ST:
     code: genesis
     npart: 1000
-    fel:
-      nbins: 10
     output:
       start_element: JFEL-FEL-SIM-MARK-01
       end_element: JFEL-FEL-SIM-MARK-02
     fel:
+      nbins: 10
       steady_state: True
       beam_type: beam
       waist_size: 0.00007
