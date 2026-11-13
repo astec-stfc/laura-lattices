@@ -1,8 +1,8 @@
 # CI for laura-lattices.
 #
 # The per-element YAML files under <MACHINE>/YAML/ are the source of truth.
-# summary.yaml / summary.json beside them are a derived cache, and several
-# machines load from that cache rather than from the directory (see the
+# summary.yaml / summary.json beside them are a derived cache, and a
+# machine can load from that cache rather than from the directory (see the
 # element_list line in each <MACHINE>/__init__.py). A stale cache therefore
 # means edits to the element files silently have no effect, which is exactly
 # what this pipeline exists to prevent.

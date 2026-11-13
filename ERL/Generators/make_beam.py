@@ -29,10 +29,9 @@ gamma = energy / 0.51099895e6
 tws = Twiss(beta_x=5.0, beta_y=5.0, alpha_x=0.0, alpha_y=0.0,
             emit_x=EMIT_N / gamma, emit_y=EMIT_N / gamma, E=energy * 1e-9)
 for name, sigma_t in (("erl_injector", 2e-12), ("erl_injector_fel", 0.75e-12)):
-    np.random.seed(1)   # generate_parray also draws from numpy's global generator
+    np.random.seed(1)   # generate_parray draws from numpy's global generator
     parray = generate_parray(sigma_tau=sigma_t * constants.speed_of_light, sigma_p=1e-3, chirp=0.0,
-                             charge=CHARGE, nparticles=N, energy=energy * 1e-9, tws=tws,
-                             rng=np.random.default_rng(1))
+                             charge=CHARGE, nparticles=N, energy=energy * 1e-9, tws=tws)
     beam = rbf.beam()
     particle_array_to_beam(beam, parray)
     beam.set_mass_and_charge(constants.m_e, -constants.elementary_charge, N)  # the species, per particle

@@ -55,7 +55,7 @@ which SIMBA + Wake-T matches to every printed digit):
 
 | | ⟨γ⟩ | spread | εn,x at exit | β at exit | εn,x at screen |
 |---|---|---|---|---|---|
-| `pwfa_single` (no ramps) | 636.7 | 0.71% | 0.987 µm | 0.59 mm | 2.000 µm |
+| `pwfa_single` (no ramps) | 636.7 | 0.71% | 0.987 µm | 0.59 mm | 1.994 µm |
 | `pwfa_ramps` | 648.4 | 0.79% | 0.991 µm | 3.01 mm | 1.829 µm |
 
 The down-ramp grows β 5x as designed, cutting the exit divergence and the
@@ -67,7 +67,7 @@ guided stage run directly in Wake-T with the same witness):
 | | ⟨γ⟩ | energy spread | εn,x |
 |---|---|---|---|
 | Wake-T reference | 520.5 | 1.02% | 1.021 µm |
-| SIMBA + Wake-T | 520.4 | 1.02% | 1.019 µm |
+| SIMBA + Wake-T | 520.4 | 1.02% | 1.021 µm |
 
 `lwfa_staging`, witness (reference: the same line run directly in Wake-T):
 
@@ -76,7 +76,7 @@ guided stage run directly in Wake-T with the same witness):
 | Wake-T reference ⟨γ⟩ | 577.1 | 577.1 | 957.9* |
 | SIMBA + Wake-T ⟨γ⟩ | 577.0 | 577.0 | 957.8 |
 | Wake-T reference εn,x | 1.139 µm | 2.076 µm (β 2.75 mm) | 2.115 µm |
-| SIMBA + Wake-T εn,x | 1.141 µm | 2.075 µm (β 2.74 mm) | 2.097 µm |
+| SIMBA + Wake-T εn,x | 1.139 µm | 2.075 µm (β 2.74 mm) | 2.105 µm |
 
 \* With the witness re-centred at stage 2 entry, as SIMBA does: each stage's
 laser is timed to the arriving witness. Keeping the 0.5 µm the witness slips

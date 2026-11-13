@@ -33,7 +33,7 @@ the package.
 
 - BDSIM with its ROOT Python bindings and pybdsim. Source ROOT's `thisroot.sh` and BDSIM's
   `bdsim.sh` first.
-- SIMBA and LAURA `feature/bdsim` or later: `Target`, `Crystal`, `tracking: {physics_list,
+- SIMBA >= 0.7.1 and LAURA >= 1.1.3: `Target`, `Crystal`, `tracking: {physics_list,
   secondaries, samplers, options}`, and weighted `userfile` beams.
 - Xsuite for `positron_conversion`. Its line is pinned to the CPU (`tracking: {context: cpu}`).
 

@@ -13,7 +13,7 @@ Usage::
         element_list=JFEL.element_list,
     )
 
-    # Or pass the module directly (requires laura >= 2.0)
+    # Or pass the module directly
     lattice = LAURA(lattice=JFEL)
 
 Available machines: JFEL, PLASMA, ERL, SECONDARY

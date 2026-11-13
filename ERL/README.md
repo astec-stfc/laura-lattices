@@ -76,16 +76,18 @@ again.
 python ERL/Scripts/match_erl.py                             # add --fel for the FEL return straight
 python ERL/Scripts/run_erl_fel.py --plot erl_fel.png         # the full ERL, with the FEL
 python ERL/Scripts/run_erl.py --plot erl.png                 # elegant and Ocelot
-python ERL/Scripts/run_erl.py --codes elegant ocelot bmad impactx madx
+python ERL/Scripts/run_erl.py --codes elegant ocelot bmad impactx madx xsuite
 python ERL/Scripts/run_erl.py --codes bmad bmad_native            # flattened vs Bmad multipass
 python ERL/Scripts/run_erl.py --physics csr --codes elegant ocelot bmad impactx
 python ERL/Scripts/run_erl.py --physics all                  # CSR and synchrotron radiation
 python ERL/Scripts/run_erl.py --codes elegant --scan-phase -10 -5 0 5 10
 ```
 
-Requirements: LAURA and SIMBA with multipass layouts; elegant through a
+Requirements: LAURA >= 1.1.2 and SIMBA >= 0.7.0 (multipass layouts); elegant through a
 container runtime (`--runtime docker`, the default, or `apptainer`); Ocelot;
-for Bmad, `export ACC_ROOT_DIR=<bmad-ecosystem>` (or `--libtao`); ImpactX
+for Bmad, `export ACC_ROOT_DIR=<bmad-ecosystem>` (or `--libtao`), and
+`export LD_LIBRARY_PATH=$ACC_ROOT_DIR/production/lib` if libtao fails to load
+with `undefined symbol: gsl_...` (see `JFEL/README.md`); ImpactX
 (built with FFT for CSR); MAD-X through cpymad.
 
 ## Results
@@ -95,17 +97,19 @@ for Bmad, `export ACC_ROOT_DIR=<bmad-ecosystem>` (or `--libtao`); ImpactX
 Momentum [MeV/c] and rms relative momentum spread; at the dump also the
 normalised emittances, rms sizes and bunch length:
 
-| | elegant | Ocelot | Bmad | ImpactX | MAD-X |
-|---|---|---|---|---|---|
-| injected | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 |
-| top (linac exit, pass 1) | 99.999, 2.00e-4 | 100.000, 1.98e-4 | 100.000, 1.98e-4 | 100.000, 1.98e-4 | 100.000, 1.98e-4 |
-| dump (linac exit, pass 2) | 10.000, 1.01e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 |
-| energy taken back by the RF | 100.000% | 100.000% | 100.000% | 100.000% | 100.000% |
-| dump eps_nx / eps_ny [um] | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 |
-| dump sigma_x / sigma_y [mm] | 0.581 / 0.581 | 0.580 / 0.581 | 0.579 / 0.580 | 0.579 / 0.580 | 0.579 / 0.582 |
-| dump sigma_t [ps] | 2.01 | 2.01 | 2.01 | 2.01 | 2.01 |
+| | elegant | Ocelot | Bmad | ImpactX | MAD-X | Xsuite |
+|---|---|---|---|---|---|---|
+| injected | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 |
+| top (linac exit, pass 1) | 99.999, 2.00e-4 | 100.000, 1.98e-4 | 100.000, 1.98e-4 | 100.000, 1.98e-4 | 100.000, 1.98e-4 | 99.999, 1.99e-4 |
+| dump (linac exit, pass 2) | 10.000, 1.01e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.000, 1.00e-3 | 10.001, 1.10e-3 |
+| energy taken back by the RF | 100.000% | 100.000% | 100.000% | 100.000% | 100.000% | 99.999% |
+| dump eps_nx / eps_ny [um] | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 |
+| dump sigma_x / sigma_y [mm] | 0.581 / 0.581 | 0.580 / 0.581 | 0.579 / 0.580 | 0.579 / 0.580 | 0.579 / 0.582 | 0.580 / 0.580 |
+| dump sigma_t [ps] | 2.01 | 2.01 | 2.01 | 2.01 | 2.01 | 2.01 |
 
-The five codes agree to 0.5% or better at every point along the path. The
+elegant, Ocelot, Bmad, ImpactX and MAD-X agree to 0.5% or better at every
+point along the path. Xsuite agrees on both passes but leaves 10% more
+momentum spread at the dump. The
 other codes track a flattened lattice, with a copy of each cavity per pass.
 Bmad can hold the shared hardware itself: in a SIMBA line, `multipass:
 native` writes LAURA's Bmad multipass export, with one lord per cavity and
@@ -119,16 +123,17 @@ linac.
 
 | | elegant | Ocelot | Bmad | ImpactX |
 |---|---|---|---|---|
-| energy lost round the racetrack [keV] | 47 | 44 | 45 | 33 |
-| eps_nx after the arcs [um] | 1.50 | 1.34 | 1.39 | 1.47 |
-| dump momentum [MeV/c], rms spread | 9.951, 3.15e-3 | 9.955, 2.60e-3 | 9.954, 2.74e-3 | 9.967, 2.45e-3 |
+| energy lost round the racetrack [keV] | 47 | 46 | 47 | 34 |
+| eps_nx after the arcs [um] | 1.49 | 1.50 | 1.50 | 1.39 |
+| dump momentum [MeV/c], rms spread | 9.951, 3.15e-3 | 9.954, 3.05e-3 | 9.952, 3.07e-3 | 9.967, 2.53e-3 |
 
 The RF still takes back the full 90 MeV/c, and the energy lost in the arcs
-reaches the dump. CSR raises the horizontal emittance by 35-50%. The energy
+reaches the dump. CSR raises the horizontal emittance by 40-50%. The energy
 spread it adds at 100 MeV/c is magnified tenfold, relative to the energy, by
-the deceleration to 10 MeV/c. The codes' CSR models spread by about as much
-as they do in JFEL's chicane. Adding synchrotron radiation (`--physics all`,
-elegant and Ocelot) changes these by less than 1 keV.
+the deceleration to 10 MeV/c. elegant, Ocelot and Bmad agree to within 1 keV
+and 1% in emittance; ImpactX's CSR model takes about 30% less energy.
+Adding synchrotron radiation (`--physics all`, elegant and Ocelot) changes
+these by less than 1 keV.
 
 ### Return-pass phase (`--scan-phase`, elegant, no CSR/SR)
 
@@ -165,7 +170,7 @@ the ERL's 2 ps one (`erl_injector_fel`).
 |---|---|
 | wavelength | 10.01 um |
 | gain length | 0.31 m (Ming Xie 0.27 m, rho = 0.023) |
-| saturation | at 6.8 m: 23 uJ, 28 uJ at the undulator exit, 18 MW peak. SASE starts from shot noise, so these vary from run to run (25-35 uJ at the exit over several) |
+| saturation | at 6.8 m: 23 uJ, 28 uJ at the undulator exit, 18 MW peak. SASE starts from shot noise, so these vary from run to run (25-40 uJ at the exit over several) |
 | energy balance | the beam loses 27.7 uJ in Genesis, the field holds 27.8 uJ |
 
 | | p [MeV/c] | rms spread | range [MeV/c] | eps_nx / eps_ny [um] | sigma_t [ps] |

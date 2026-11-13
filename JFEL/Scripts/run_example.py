@@ -82,7 +82,8 @@ def main():
 
     directory = os.path.abspath(args.dir or args.lattice)
     runtime = None if args.runtime.lower() == "none" else args.runtime
-    f = fw.Framework(master_lattice=JFEL + "/", directory=directory,
+    # generator_defaults: the jfel_400_3ps photoinjector beam that jfel_combined starts from
+    f = fw.Framework(master_lattice=JFEL + "/", directory=directory, generator_defaults="jfel.yaml",
                      clean=not args.summary_only, verbose=True, container_runtime=runtime)
     f.loadSettings(f"Lattices/{args.lattice}.def")
     if args.bc_angle is not None:

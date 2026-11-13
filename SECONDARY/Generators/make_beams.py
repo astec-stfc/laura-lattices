@@ -10,6 +10,7 @@ Make the input beams for the SECONDARY lattices, in Data_Files/:
 
 import os
 
+import numpy as np
 from simba.Codes.Generators import frameworkGenerator
 
 DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Data_Files")
@@ -22,6 +23,7 @@ BEAMS = {
 
 if __name__ == "__main__":
     for name, (p, size, angle, n) in BEAMS.items():
+        np.random.seed(1)   # the generator draws from numpy's global generator
         frameworkGenerator(
             global_parameters={"master_subdir": DATA}, filename=f"{name}.openpmd.hdf5",
             initial_momentum=p, sigma_x=size, sigma_y=size, sigma_px=angle * p, sigma_py=angle * p,

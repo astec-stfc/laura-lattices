@@ -21,7 +21,7 @@ four-dipole chicane, L04-L09 (~577 MeV), the S13 matching section and a
 | `SP3` | ... -> L04 -> S07 (with the TDC) -> SP3 spectrometer |
 
 A `.def` picks a layout other than the default with a top-level
-`default_layout: SP2` (SIMBA `feature/impactx` or later).
+`default_layout: SP2` (SIMBA >= 0.7.0).
 
 ## Lattices and scripts
 
@@ -68,16 +68,19 @@ follow the global geometry, such as Bmad -- sees the same chicane.
   `--runtime docker` (default) or `apptainer`.
 - Bmad: `export ACC_ROOT_DIR=<bmad-ecosystem>` so that
   `$ACC_ROOT_DIR/production/lib/libtao.so` is found (or `--libtao`).
+  If loading it fails with `undefined symbol: gsl_...`, the GSL bundled with
+  the `sdds` package was loaded first: also
+  `export LD_LIBRARY_PATH=$ACC_ROOT_DIR/production/lib`.
 - ImpactX CSR needs ImpactX built with FFT (`-DImpactX_FFT=ON`;
   `impactx.Config.have_fft`).
 - Xsuite runs on the GPU when cupy is installed; `SIMBA_XSUITE_CONTEXT=cpu`
   keeps it on the CPU.
-- The plasma end-station needs Wake-T (or FBPIC) and SIMBA/LAURA with plasma
-  support (as for the `PLASMA` examples).
+- The plasma end-station needs Wake-T, or FBPIC with SIMBA >= 0.7.0 and LAURA
+  >= 1.1.1.
 - The radiation-reaction end-station needs Ptarmigan
   (https://github.com/tgblackburn/ptarmigan, built with `--features hdf5-output`)
-  and SIMBA with its Ptarmigan support. At the default 250 pC it gives a mean
-  loss of 3.3 MeV per electron, all of it carried by 0.47 photons per electron
+  and SIMBA >= 0.7.2 with LAURA >= 1.1.6. At the default 250 pC it gives a
+  mean loss of 3.3 MeV per electron, all of it carried by 0.47 photons per electron
   (mean 6.9 MeV); the beam (~15 um) is wider than the laser focus (5 um rms),
   so the spread grows from 0.9 to 10 MeV. `--no-rr` gives the same photons and
   no loss.
@@ -97,7 +100,7 @@ anywhere along the line.
 | Ocelot | 576.8 | 0.075 | 0.762 | 0.812 | 48.5 | 40.1 | 88.2 |
 | Cheetah | 576.8 | 0.069 | 0.762 | 0.797 | 48.4 | 39.5 | 86.7 |
 | MAD-X | 576.7 | 0.070 | 0.762 | 0.798 | 48.5 | 39.5 | 87.1 |
-| Xsuite | 576.8 | 0.057 | 0.756 | 0.814 | 49.1 | 40.4 | 82.9 |
+| Xsuite | 576.8 | 0.057 | 0.756 | 0.807 | 49.1 | 40.2 | 82.9 |
 | ImpactX | 576.8 | 0.074 | 0.756 | 0.796 | 48.6 | 39.6 | 87.6 |
 | Bmad | 576.9 | 0.076 | 0.762 | 0.812 | 48.3 | 40.1 | 88.2 |
 
@@ -130,10 +133,10 @@ sigma_z 87.1 um, eps_nx 0.762 um, sigma_x 48.5 um, sigma_y 39.5 um):
 |---|---|---|---|---|---|---|---|
 | wakes | elegant | 0.146 | 0.762 | 0.792 | 49.5 | 40.6 | 48.2 |
 | wakes | Ocelot | 0.118 | 0.759 | 0.806 | 48.6 | 39.5 | 55.3 |
-| CSR | ImpactX | 0.067 | 1.68 | 0.796 | 81.5 | 39.6 | 85.9 |
-| CSR | Bmad | 0.072 | 2.00 | 0.812 | 98.3 | 40.0 | 87.1 |
+| CSR | Bmad | 0.071 | 2.20 | 0.812 | 105.7 | 40.0 | 87.0 |
 | CSR | elegant | 0.051 | 2.33 | 0.797 | 109.3 | 40.6 | 81.5 |
-| CSR | Ocelot | 0.070 | 3.31 | 0.812 | 154.8 | 40.1 | 87.2 |
+| CSR | ImpactX | 0.082 | 2.45 | 0.796 | 86.2 | 39.6 | 90.1 |
+| CSR | Ocelot | 0.072 | 4.04 | 0.812 | 178.5 | 40.1 | 88.2 |
 | LSC | elegant | 0.046 | 0.798 | 0.798 | 53.0 | 40.6 | 80.4 |
 | LSC | Ocelot | 0.052 | 0.871 | 0.812 | 56.4 | 40.1 | 82.9 |
 | 3D SC | Ocelot | 0.053 | 1.00 | 0.802 | 74.5 | 39.1 | 82.9 |
@@ -142,10 +145,11 @@ sigma_z 87.1 um, eps_nx 0.762 um, sigma_x 48.5 um, sigma_y 39.5 um):
 
 - **Wakes** (S- and X-band structures) reduce the chirp and almost halve the
   bunch length; elegant and Ocelot agree to ~14%.
-- **CSR** in the chicane triples the horizontal emittance. ImpactX, Bmad and
-  elegant agree within ~20% (ImpactX: steady-state CSR in the bends; elegant
-  and Bmad also downstream of them); Ocelot gives about twice ImpactX's growth
-  and is the outlier.
+- **CSR** in the chicane triples the horizontal emittance. Bmad, elegant and
+  ImpactX agree on eps_nx within ~10% all along the line (ImpactX:
+  steady-state CSR in the bends; elegant and Bmad also downstream of them),
+  though ImpactX's sigma_x is up to 40% smaller; Ocelot gives about twice the
+  others' growth and is the outlier.
 - **3D space charge** matters for this 250 pC, 3 ps beam at 35-120 MeV: eps_nx
   grows 20-40% and the beam arrives at the undulator mismatched (sigma_x
   62-75 um against 48.5 um). The three codes agree to 10-25% along the line;
@@ -159,24 +163,23 @@ just after the chicane. The full-compression valley runs diagonally:
 
 | Chicane angle [rad] | 0.105 | 0.110 | 0.115 | 0.120 | 0.125 | 0.130 | 0.135 | 0.140 |
 |---|---|---|---|---|---|---|---|---|
-| L4H phase at full compression [deg] | -200 | -200 | -195 | -190 | -185 | -180 | -175 | -170 |
-| minimum sigma_t [fs] | 163 | 29 | 20 | 47 | 60 | 57 | 37 | 14 |
+| L4H phase at full compression [deg] | -200 | -200 | -195 | -190 | -180 | -175 | -175 | -170 |
+| minimum sigma_t [fs] | 161 | 25 | 26 | 57 | 54 | 66 | 56 | 25 |
 
 The nominal setting (0.13 rad, L4H -184 deg) is on the over-compressed side of
 the valley: sigma_t ~190 fs, ~450 A after the chicane.
 
-`optimise_compression.py --target 1000` (Ocelot) finds 0.12983 rad, L4H
--181.7 deg at 23.3 MV/m: 1010 A, sigma_t 88 fs, flat profile (spikiness 1.23).
+`optimise_compression.py --target 1000` (Ocelot) finds 0.12927 rad, L4H
+-181.6 deg at 23.3 MV/m: 955 A, sigma_t 92 fs, flat profile (spikiness 1.22).
 Two lessons, both visible by re-running with other codes:
 
 - **The model must include what shapes the compression.** Cheetah and MAD-X do
   not model the structure wakes; the same optimisation in Cheetah finds 871 A,
   which is a ~13 kA spike once the wakes are included (elegant). In Ocelot the
-  optimum is 1388 A in elegant with CSR -- within ~40%.
+  optimum is 2060 A in elegant with CSR -- about twice the target.
 - **The optimum sits on the edge of full compression**: a 1e-4 rad change in the
-  chicane angle takes the peak current from 1 kA to 8 kA, so the optimiser
-  stops on its iteration limit rather than converging, and any real operating
-  point needs to be judged against that tolerance.
+  chicane angle takes the peak current from 1 kA to 8 kA, so any real
+  operating point needs to be judged against that tolerance.
 
 ## Matching into the undulator
 
@@ -225,7 +228,7 @@ peak current, eps_nx 3.8 um (CSR in the chicane), eps_ny 0.79 um.
 |---|---|---|---|---|---|
 | Ming Xie estimate (beam at the undulator) | 2.380 | 0.50 | | rho = 0.018 | |
 | Genesis steady-state (1 kW seed) | 2.380 | 0.76 | 15.7 m | 1.3 GW (1.7 GW at the end) | seconds |
-| Genesis time-dependent (SASE) | 2.380 | 0.72-0.82 | 15.5-17.0 m | 1.0-1.2 mJ (1.2-1.6 mJ at the end), 3.6-3.9 GW peak | ~4 min |
+| Genesis time-dependent (SASE) | 2.380 | 0.72-0.87 | 15.5-17.0 m | 0.8-1.2 mJ (1.2-1.6 mJ at the end), 3.6-3.9 GW peak | ~4 min |
 
 - The wavelength follows from K = 8.52 (helical), the 82 mm period and
   gamma = 1126: lambda = lambda_u (1 + K^2) / (2 gamma^2).
@@ -235,7 +238,7 @@ peak current, eps_nx 3.8 um (CSR in the chicane), eps_ny 0.79 um.
   correlations.
 - The time-dependent run resolves every wavelength (`sample: 1`): the
   cooperation length, lambda / (4 pi sqrt(3) rho), is only ~8 wavelengths. The
-  ranges are from two runs: SASE starts from the shot noise and changes from
+  ranges are from three runs: SASE starts from the shot noise and changes from
   run to run. Gain length and saturation are fitted to the pulse energy.
 - With `slippage_window: True` (the default) the time-dependent window is the
   bunch plus the slippage over the undulator (~0.57 mm, N_u lambda), so the

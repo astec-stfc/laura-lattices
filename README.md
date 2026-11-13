@@ -26,7 +26,16 @@ SECONDARY collects example lines where the beam makes secondary particles in mat
 
 ## Installation
 
-Requires Python >= 3.10.
+Requires Python >= 3.10. The lattice data alone needs nothing else; to load
+and run the examples you also need [LAURA](https://github.com/astec-stfc/laura)
+and [SIMBA](https://github.com/astec-stfc/simba). They are tested with LAURA
+v1.1.7 and SIMBA v0.7.2:
+
+```bash
+pip install "laura-accelerator>=1.1.7" "simba-accelerator>=0.7.2"
+```
+
+The tracking codes each example needs are listed in its machine's README.
 
 ### Install all machines
 
@@ -84,7 +93,7 @@ from laura_lattices import JFEL
 from laura.laura import LAURA
 
 machine = LAURA(lattice=JFEL)
-print(machine.elements)   # 438 CLARA elements
+print(machine.elements)   # JFEL's elements
 print(machine.sections)   # dict of SectionLattice objects
 ```
 
@@ -221,10 +230,10 @@ packages = [
 "laura_lattices.DIAMOND" = "DIAMOND"
 ```
 
-**`laura_lattices/__init__.py`** — add the name to the `MACHINES` list:
+**`laura_lattices/__init__.py`** — add the name to the `MACHINES` list and to `__all__`:
 
 ```python
-MACHINES: List[str] = ["CLARA", "FERMI", "ISIS", "UKXFEL", "UKXFEL_FEL", "DIAMOND"]
+MACHINES: List[str] = ["JFEL", "PLASMA", "ERL", "SECONDARY", "DIAMOND"]
 ```
 
 ### 4. Create a per-machine `pyproject.toml`
@@ -298,7 +307,7 @@ This matters because a machine can load the cache rather than the directory:
 
 | Machine | `element_list` points at |
 |---------|--------------------------|
-| JFEL | `YAML/` (the directory — no summary to keep in sync) |
+| JFEL | `YAML/` (the directory; `YAML/summary.yaml` is kept in sync for anyone who loads it directly) |
 | PLASMA | `YAML/` (the directory — no summary to keep in sync) |
 | ERL | `elements.yaml` (one combined file, with templates — no summary) |
 | SECONDARY | `YAML/` (the directory — no summary to keep in sync) |
@@ -339,11 +348,11 @@ individual machine wheel.
 
 ### Notes
 
-- No machine in this repository currently uses a summary file, so the check
-  reports that there is nothing to do and passes. It becomes active the moment
-  a `summary.yaml`/`summary.json` is added — that is all it takes to opt a
-  machine in. The script discovers whatever already exists and never invents a
-  summary for a machine that loads its directory directly.
+- JFEL is the only machine with a summary file (`JFEL/YAML/summary.yaml`), so
+  it is the only one the check covers. Adding a `summary.yaml`/`summary.json`
+  to another machine is all it takes to opt it in. The script discovers
+  whatever already exists and never invents a summary for a machine that
+  loads its directory directly.
 - Files that are not element documents are ignored, matching what LAURA itself
   does.
 - If two element files declare the same `name:`, the summary can only keep one.
@@ -361,7 +370,8 @@ laura-lattices/
 ├── .github/workflows/
 │   └── checks.yml              # Summary sync, install and build checks
 ├── tools/
-│   └── sync_summaries.py       # Regenerate/verify the derived summary files
+│   ├── sync_summaries.py       # Regenerate/verify the derived summary files
+│   └── collapse_schemas.py     # Fold repeated controls blocks into shared schemas
 ├── laura_lattices/
 │   └── __init__.py             # Top-level package with MACHINES list
 ├── JFEL/

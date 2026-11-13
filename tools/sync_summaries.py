@@ -3,8 +3,8 @@
 
 The per-element YAML files under ``<MACHINE>/YAML/`` are the source of truth.
 ``summary.yaml`` / ``summary.json`` next to them are a *derived* cache: a single
-mapping of ``element name -> that element's YAML document``, verbatim. Several
-machines load from the cache rather than the directory (see the ``element_list``
+mapping of ``element name -> that element's YAML document``, verbatim. A machine
+can load from the cache rather than the directory (see the ``element_list``
 line in each ``<MACHINE>/__init__.py``), so a stale cache means edits to the
 element files silently have no effect.
 
@@ -12,7 +12,7 @@ Usage
 -----
     python tools/sync_summaries.py            # rewrite every summary
     python tools/sync_summaries.py --check    # fail if any summary is stale (CI)
-    python tools/sync_summaries.py CLARA JFEL # limit to named machines
+    python tools/sync_summaries.py JFEL ERL   # limit to named machines
 
 Design notes
 ------------
@@ -21,8 +21,8 @@ Design notes
   break because of an unrelated change to the LAURA schema, and the summaries
   cannot drift into an older schema's shape (which is how they got out of sync
   in the first place).
-* ``laura.Importers.YAML_Loader.read_YAML_Combined_File`` feeds each value
-  straight to ``interpret_YAML_Element``, exactly as ``read_YAML_Element_File``
+* ``laura.importers.yaml_loader.read_yaml_combined_file`` feeds each value
+  straight to ``interpret_yaml_element``, exactly as ``read_yaml_element_file``
   does for a single file, so a verbatim union loads identically to loading the
   directory.
 * The one exception to "verbatim": an element whose ``controls.schema`` names

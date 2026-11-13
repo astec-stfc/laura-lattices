@@ -35,11 +35,11 @@ This script drives LAURA's own tooling to produce that form for a machine:
 
 Usage
 -----
-    python tools/collapse_schemas.py CLARA                # rewrite CLARA/YAML in place
-    python tools/collapse_schemas.py CLARA --dry-run      # report only
-    python tools/collapse_schemas.py CLARA -o out/CLARA   # write a collapsed copy
+    python tools/collapse_schemas.py JFEL                 # rewrite JFEL/YAML in place
+    python tools/collapse_schemas.py JFEL --dry-run       # report only
+    python tools/collapse_schemas.py JFEL -o out/JFEL     # write a collapsed copy
     python tools/collapse_schemas.py path/to/YAML         # any element tree
-    python tools/collapse_schemas.py CLARA --overwrite-schemas
+    python tools/collapse_schemas.py JFEL --overwrite-schemas
                                        # regenerate existing schemas from scratch
 
 By default, elements that already reference a schema are left as they are,
@@ -83,7 +83,7 @@ SUMMARY_NAMES = ("summary.yaml", "summary.json")
 
 
 def resolve_yaml_dir(target: str) -> Path:
-    """``CLARA`` -> ``<repo>/CLARA/YAML``; a directory path is used as-is."""
+    """``JFEL`` -> ``<repo>/JFEL/YAML``; a directory path is used as-is."""
     machine_yaml = REPO / target / "YAML"
     if machine_yaml.is_dir():
         return machine_yaml
@@ -468,7 +468,7 @@ def check_existing_schemas(source: Path, staging: Path) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("target", help="machine name (e.g. CLARA) or element YAML directory")
+    ap.add_argument("target", help="machine name (e.g. JFEL) or element YAML directory")
     ap.add_argument("-o", "--output", type=Path,
                     help="write the collapsed tree here instead of in place")
     ap.add_argument("--dry-run", action="store_true", help="report only; write nothing")

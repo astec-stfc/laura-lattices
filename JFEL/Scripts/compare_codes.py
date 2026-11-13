@@ -5,16 +5,16 @@ screen they have in common -- SIMBA's unit_tests/test_jfel_code_comparison.py
 as an example.
 
     python JFEL/Scripts/compare_codes.py
-    python JFEL/Scripts/compare_codes.py --codes elegant ocelot impactx --physics csr
+    python JFEL/Scripts/compare_codes.py --codes elegant ocelot impactx bmad --physics csr
     python JFEL/Scripts/compare_codes.py --physics none --check --plot compare.png
 
 --physics selects the collective effects, the same in every code (a code that
 does not model one ignores it, with a warning from SIMBA):
     none   single-particle optics only
-    wakes  RF-structure wakefields
-    csr    coherent synchrotron radiation in the bends
+    wakes  RF-structure wakefields (elegant, Ocelot)
+    csr    coherent synchrotron radiation in the bends (elegant, Ocelot, ImpactX, Bmad)
     lsc    longitudinal space charge (elegant, Ocelot)
-    sc3d   3D space charge (Ocelot, ImpactX), which also acts transversely
+    sc3d   3D space charge (Ocelot, ImpactX, Bmad), which also acts transversely
     all    wakes + CSR + LSC
 --check applies the pairwise ceilings from the SIMBA test (measured with its
 default settings) and exits 1 if any pair disagrees by more.
@@ -116,10 +116,8 @@ def track(code, args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    # Bmad is left out by default: LAURA's Bmad export of the VBC chicane
-    # (bends + patches) leaves the reference time 54 ps off the bent path, so
-    # every cavity after it sees the beam ~58 deg off phase. Add it with
-    # --codes ... bmad once that is fixed.
+    # Bmad is left out by default only because it needs a local Bmad build
+    # (libtao, see --libtao); add it with --codes ... bmad.
     parser.add_argument("--codes", nargs="+", default=["elegant", "ocelot", "cheetah", "madx", "xsuite", "impactx"])
     parser.add_argument("--physics", choices=PHYSICS, default="none")
     parser.add_argument("--bc-angle", type=float, default=None,

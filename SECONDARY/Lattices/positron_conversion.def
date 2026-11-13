@@ -19,7 +19,7 @@ files:
     input:
       species: positron
     tracking:
-      context: cpu   # Xsuite's GPU path fails element by element on feature/bdsim
+      context: cpu   # Xsuite's GPU path failed element by element when this was written (SIMBA 0.7.0)
     output:
       start_element: SEC-CONV-SIM-END-01
       end_element: SEC-CONV-DIA-SCR-01
